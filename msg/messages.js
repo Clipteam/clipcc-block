@@ -217,6 +217,17 @@ Blockly.Msg.OPERATORS_MATHOP_LOG = 'log';
 Blockly.Msg.OPERATORS_MATHOP_EEXP = 'e ^';
 Blockly.Msg.OPERATORS_MATHOP_10EXP = '10 ^';
 
+Blockly.Msg.OPERATORS_POWER = '%1 ^ %2';
+Blockly.Msg.OPERATORS_BITAND = '%1 & %2';
+Blockly.Msg.OPERATORS_BITOR = '%1 | %2';
+Blockly.Msg.OPERATORS_BITXOR = '%1 xor %2';
+Blockly.Msg.OPERATORS_BITNOT = '~ %1';
+Blockly.Msg.OPERATORS_GE = '%1 ≥ %2';
+Blockly.Msg.OPERATORS_LE = '%1 ≤ %2';
+Blockly.Msg.OPERATORS_NEQUALS = '%1 ≠ %2';
+Blockly.Msg.OPERATROS_GCD = 'grand central dispatch of %1 and %b';
+Blockly.Msg.OPERATROS_LCM = 'least common multiple of %1 and %b';
+
 // Procedures blocks
 Blockly.Msg.PROCEDURES_DEFINITION = 'define %1';
 
