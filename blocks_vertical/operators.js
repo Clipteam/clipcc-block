@@ -625,10 +625,6 @@ Blockly.Blocks['operator_bitnot'] = {
         {
           "type": "input_value",
           "name": "NUM1"
-        },
-        {
-          "type": "input_value",
-          "name": "NUM2"
         }
       ],
       "category": Blockly.Categories.operators,
