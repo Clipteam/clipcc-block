@@ -1284,7 +1284,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchCategoryMenu {',
-    'width: 60px;',
+    'width: 100px;',
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
     'font-size: .7rem;',
@@ -1315,9 +1315,10 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchCategoryMenuItem {',
-    'padding: 0.375rem 0px;',
     'cursor: pointer;',
     'text-align: center;',
+    'display: flex;',
+    'align-items: center;',
   '}',
 
   '.scratchCategoryMenuHorizontal .scratchCategoryMenuItem {',
@@ -1333,7 +1334,12 @@ Blockly.Css.CONTENT = [
     'height: 1.25rem;',
     'border: 1px solid;',
     'border-radius: 100%;',
-    'margin: 0 auto 0.125rem;',
+    'margin: 0.375rem;',
+    'display: inline-block;',
+  '}',
+
+  '.scratchCategoryMenuItemLabel {',
+    'display: inline-block;',
   '}',
 
   '.scratchCategoryItemIcon {',
