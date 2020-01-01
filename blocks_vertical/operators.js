@@ -471,60 +471,12 @@ Blockly.Blocks['operator_mathop'] = {
 
 Blockly.Blocks['operator_power'] = {
   /**
-   * Block for dividing two numbers.
+   * Block for getting power of two numbers.
    * @this Blockly.Block
    */
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.OPERATORS_POWER,
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "NUM1"
-        },
-        {
-          "type": "input_value",
-          "name": "NUM2"
-        }
-      ],
-      "category": Blockly.Categories.operators,
-      "extensions": ["colours_operators", "output_number"]
-    });
-  }
-};
-
-Blockly.Blocks['operator_lcm'] = {
-  /**
-   * Block for dividing two numbers.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": Blockly.Msg.OPERATORS_POWER,
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "NUM1"
-        },
-        {
-          "type": "input_value",
-          "name": "NUM2"
-        }
-      ],
-      "category": Blockly.Categories.operators,
-      "extensions": ["colours_operators", "output_number"]
-    });
-  }
-};
-
-Blockly.Blocks['operator_gcd'] = {
-  /**
-   * Block for dividing two numbers.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": Blockly.Msg.OPERATORS_GCD,
       "args0": [
         {
           "type": "input_value",
@@ -543,7 +495,7 @@ Blockly.Blocks['operator_gcd'] = {
 
 Blockly.Blocks['operator_bitand'] = {
   /**
-   * Block for dividing two numbers.
+   * Block for bit-and two numbers.
    * @this Blockly.Block
    */
   init: function() {
@@ -567,7 +519,7 @@ Blockly.Blocks['operator_bitand'] = {
 
 Blockly.Blocks['operator_bitor'] = {
   /**
-   * Block for dividing two numbers.
+   * Block for bit-or two numbers.
    * @this Blockly.Block
    */
   init: function() {
@@ -591,7 +543,7 @@ Blockly.Blocks['operator_bitor'] = {
 
 Blockly.Blocks['operator_bitxor'] = {
   /**
-   * Block for dividing two numbers.
+   * Block for bit-xor two numbers.
    * @this Blockly.Block
    */
   init: function() {
@@ -615,7 +567,7 @@ Blockly.Blocks['operator_bitxor'] = {
 
 Blockly.Blocks['operator_bitnot'] = {
   /**
-   * Block for dividing two numbers.
+   * Block for bit-not two numbers.
    * @this Blockly.Block
    */
   init: function() {
@@ -635,7 +587,7 @@ Blockly.Blocks['operator_bitnot'] = {
 
 Blockly.Blocks['operator_ge'] = {
   /**
-   * Block for greater than comparator.
+   * Block for greater than or equal to comparator.
    * @this Blockly.Block
    */
   init: function() {
@@ -659,7 +611,7 @@ Blockly.Blocks['operator_ge'] = {
 
 Blockly.Blocks['operator_le'] = {
   /**
-   * Block for greater than comparator.
+   * Block for greater than or equal to comparator.
    * @this Blockly.Block
    */
   init: function() {
@@ -683,7 +635,7 @@ Blockly.Blocks['operator_le'] = {
 
 Blockly.Blocks['operator_nequals'] = {
   /**
-   * Block for greater than comparator.
+   * Block for unequal to comparator.
    * @this Blockly.Block
    */
   init: function() {

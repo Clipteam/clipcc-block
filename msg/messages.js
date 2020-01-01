@@ -225,8 +225,6 @@ Blockly.Msg.OPERATORS_BITNOT = '~ %1';
 Blockly.Msg.OPERATORS_GE = '%1 ≥ %2';
 Blockly.Msg.OPERATORS_LE = '%1 ≤ %2';
 Blockly.Msg.OPERATORS_NEQUALS = '%1 ≠ %2';
-Blockly.Msg.OPERATROS_GCD = 'grand central dispatch of %1 and %2';
-Blockly.Msg.OPERATROS_LCM = 'least common multiple of %1 and %2';
 
 // Procedures blocks
 Blockly.Msg.PROCEDURES_DEFINITION = 'define %1';
