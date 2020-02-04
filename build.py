@@ -53,6 +53,28 @@ CLOSURE_ROOT_NPM = os.path.join("node_modules")
 CLOSURE_LIBRARY_NPM = "google-closure-library"
 CLOSURE_COMPILER_NPM = "google-closure-compiler"
 
+def init_closure_library():
+  """Initialize the closure library for closure compiler to use.
+  Only work when the OS is windows.
+  """
+  if sys.platform != "win32": return
+  src = os.path.join(os.getcwd(), CLOSURE_ROOT_NPM, CLOSURE_LIBRARY_NPM)
+  dst = os.path.join(os.getcwd(), "..", CLOSURE_LIBRARY)
+  # adminPrefixArg = ["runas", "/env", "/noprofile", "/user:" + os.environ.get("USERNAME")]
+  args = ["mklink /J ", dst, src]
+  try:
+    if not os.path.exists(dst):
+      linkProc = subprocess.Popen(args, shell=True)
+      linkProc.wait()
+      if linkProc.returncode != 0: raise Exception
+      print("Created hard link from \"{}\" to \"{}\"".format(src, dst))
+  except:
+    print("Can not create hard link, " + 
+          "It may be that you are not run this script as an administrator.\n" + 
+          "Try run command below manually in administrator:\n" +
+          ' '.join(args))
+    exit(1)
+
 def import_path(fullpath):
   """Import a file with full path specification.
   Allows one to import from any directory, something __import__ does not do.
@@ -309,6 +331,7 @@ class Gen_compressed(threading.Thread):
       self.report_stats(target_filename, json_data)
 
   def do_compile_local(self, params, target_filename):
+      import tempfile
       filter_keys = ["use_closure_library"]
 
       # Drop arg if arg is js_file else add dashes
@@ -324,12 +347,21 @@ class Gen_compressed(threading.Thread):
 
       # Build the final args array by prepending google-closure-compiler to
       # dash_args and dropping any falsy members
-      args = []
-      for group in [["google-closure-compiler"], dash_args]:
-        args.extend(filter(lambda item: item, group))
+      temp_file = tempfile.NamedTemporaryFile(delete=False)
+      temp_file_name = temp_file.name
+      args = ["google-closure-compiler", "--flagfile=" + temp_file_name]
+      
+      if sys.platform == "win32":
+        args[0] = os.path.join(CLOSURE_ROOT_NPM, ".bin", CLOSURE_COMPILER_NPM + ".cmd")
+      
+      for argv in dash_args:
+        temp_file.write(argv + " ")
+      temp_file.close()
 
       proc = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
       (stdout, stderr) = proc.communicate()
+
+      os.remove(temp_file_name)
 
       # Build the JSON response.
       filesizes = [os.path.getsize(value) for (arg, value) in params if arg == "js_file"]
@@ -560,10 +592,14 @@ def exclude_horizontal(item):
 
 if __name__ == "__main__":
   try:
+    init_closure_library()
     closure_dir = CLOSURE_DIR_NPM
     closure_root = CLOSURE_ROOT_NPM
     closure_library = CLOSURE_LIBRARY_NPM
     closure_compiler = CLOSURE_COMPILER_NPM
+
+    if sys.platform == "win32":
+      closure_compiler = os.path.join(CLOSURE_ROOT_NPM, ".bin", CLOSURE_COMPILER_NPM + ".cmd")
 
     # Load calcdeps from the local library
     calcdeps = import_path(os.path.join(
@@ -576,7 +612,7 @@ if __name__ == "__main__":
     assert stdout == read(os.path.join("build", "test_expect.js"))
 
     print("Using local compiler: google-closure-compiler ...\n")
-  except (ImportError, AssertionError):
+  except (ImportError, AssertionError, WindowsError):
     print("Using remote compiler: closure-compiler.appspot.com ...\n")
 
     try:
