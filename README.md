@@ -1,3 +1,7 @@
+<div style="text-align: center;margin: 50px;width: 100%;">
+<img src="https://clipsrc.blestudio.com/clip-logo-with-text.png"/>
+</div>
+
 # clip-block
 #### Clip Blocks is a library for building creative computing interfaces.
 
@@ -23,3 +27,7 @@ npm run build
 
 ## Donate
 Not now.
+
+<div style="text-align: center;width: 100%;">
+Copyright &copy; 2019<strong>Clipteam.</strong> All rights reserved.
+</div>
