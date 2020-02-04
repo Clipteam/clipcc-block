@@ -9,5 +9,17 @@ Clip Blocks is a fork of LLK's [scratch-blocks](https://github.com/LLK/scratch-b
 ## Documentation
 The "getting started" guide including [FAQ](https://scratch.mit.edu/developers#faq) and [design documentation](https://github.com/LLK/scratch-blocks/wiki/Design) can be found in the [wiki](https://github.com/LLK/scratch-blocks/wiki).
 
+## Development
+
+Cause we changed the method of the build script to support windows platform, you need to follow these steps to initialize your workspace:
+```bash
+npm i
+```
+
+Use npm script `build` to build your source, mind that in windows you may be asked to create junction link for closure-compiler and closure-library before you build:
+```bash
+npm run build
+```
+
 ## Donate
 Not now.
