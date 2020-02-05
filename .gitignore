@@ -22,6 +22,8 @@ python_compressed.js
 
 # Editor
 .vscode
+.idea
+/build/cache.json
 
 /accessible/*
 /dist

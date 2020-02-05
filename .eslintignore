@@ -1,5 +1,6 @@
 *_compressed*.js
 *_uncompressed*.js
+/build.js
 /msg/*
 /core/css.js
 /i18n/*
