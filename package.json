@@ -13,7 +13,8 @@
   "browser": "./shim/vertical.js",
   "scripts": {
     "deploy": "rimraf gh-pages/closure-library/scripts/ci/CloseAdobeDialog.exe && gh-pages -t -d gh-pages -m \"Build for $(git log --pretty=format:%H -n1)\"",
-    "build": "python build.py && webpack",
+    "build": "python build.py && webpack --hide-modules",
+    "dist": "python build.py production && webpack --mode=production --progress",
     "prepublishOnly": "python build.py && webpack",
     "test:unit": "node tests/jsunit/test_runner.js",
     "test:lint": "eslint .",
@@ -39,8 +40,8 @@
     "event-stream": "3.3.4",
     "gh-pages": "0.12.0",
     "glob": "7.1.2",
-    "google-closure-compiler": "^20180402.0.0",
-    "google-closure-library": "^20180204.0.0",
+    "google-closure-compiler": "^20200112.0.0",
+    "google-closure-library": "^20200112.0.0",
     "graceful-fs": "4.1.11",
     "json": "9.0.4",
     "rimraf": "2.6.2",
@@ -51,5 +52,11 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.1.1"
+  },
+  "optionalDependencies": {
+    "google-closure-compiler-js": "^20200112.0.0",
+    "google-closure-compiler-linux": "^20200112.0.0",
+    "google-closure-compiler-osx": "^20200112.0.0",
+    "google-closure-compiler-windows": "^20200112.0.0"
   }
 }

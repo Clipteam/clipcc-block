@@ -259,9 +259,10 @@ class Gen_compressed(threading.Thread):
     else:
       target_filename = 'blockly_compressed_horizontal.js'
       search_paths = self.search_paths_horizontal
+    print("Generating " + target_filename)
     # Define the parameters for the POST request.
     params = [
-      ("compilation_level", "SIMPLE"),
+      ("compilation_level", "SIMPLE" if sys.argv.__len__() > 1 and sys.argv[1] == "production" else "SIMPLE"),
 
       # remote will filter this out
       ("language_in", "ECMASCRIPT_2017"),
@@ -349,10 +350,12 @@ class Gen_compressed(threading.Thread):
       # dash_args and dropping any falsy members
       temp_file = tempfile.NamedTemporaryFile(delete=False)
       temp_file_name = temp_file.name
-      args = ["google-closure-compiler", "--flagfile=" + temp_file_name]
+      # args = ["google-closure-compiler", "--flagfile=" + temp_file_name]
+      args = [closure_compiler, "--flagfile=" + temp_file_name]
       
       if sys.platform == "win32":
-        args[0] = os.path.join(CLOSURE_ROOT_NPM, ".bin", CLOSURE_COMPILER_NPM + ".cmd")
+        if platform_postfix == "":
+          args[0] = os.path.join(CLOSURE_ROOT_NPM, ".bin", CLOSURE_COMPILER_NPM + ".cmd")
       
       for argv in dash_args:
         temp_file.write(argv + " ")
@@ -597,10 +600,24 @@ if __name__ == "__main__":
     closure_root = CLOSURE_ROOT_NPM
     closure_library = CLOSURE_LIBRARY_NPM
     closure_compiler = CLOSURE_COMPILER_NPM
+    platform_postfix = ""
 
-    if sys.platform == "win32":
+    if sys.platform == "win32" or sys.platform == "cygwin":
+      platform_postfix = "-windows"
+      closure_compiler = os.path.join(CLOSURE_ROOT_NPM, CLOSURE_COMPILER_NPM + platform_postfix, "compiler.exe")
+    elif sys.platform == "linux":
+      platform_postfix = "-linux"
+      closure_compiler = os.path.join(CLOSURE_ROOT_NPM, CLOSURE_COMPILER_NPM + platform_postfix, "compiler")
+    elif sys.platform == "darwin":
+      platform_postfix = "-osx"
+      closure_compiler = os.path.join(CLOSURE_ROOT_NPM, CLOSURE_COMPILER_NPM + platform_postfix, "compiler")
+
+    if not os.path.exists(closure_compiler) and platform_postfix != "":
       closure_compiler = os.path.join(CLOSURE_ROOT_NPM, ".bin", CLOSURE_COMPILER_NPM + ".cmd")
-
+      print('Using java compiler: ' + closure_compiler)
+    else:
+      print('Detected native compiler: ' + closure_compiler)
+    
     # Load calcdeps from the local library
     calcdeps = import_path(os.path.join(
         closure_root, closure_library, "closure", "bin", "calcdeps.py"))
@@ -651,16 +668,25 @@ if __name__ == "__main__":
     "closure_compiler": closure_compiler,
   }
 
+  threads = []
+
   # Run all tasks in parallel threads.
   # Uncompressed is limited by processor speed.
   # Compressed is limited by network and server speed.
   # Vertical:
-  Gen_uncompressed(search_paths_vertical, True, closure_env).start()
+  threads.append(Gen_uncompressed(search_paths_vertical, True, closure_env))
   # Horizontal:
-  Gen_uncompressed(search_paths_horizontal, False, closure_env).start()
+  threads.append(Gen_uncompressed(search_paths_horizontal, False, closure_env))
 
   # Compressed forms of vertical and horizontal.
-  Gen_compressed(search_paths_vertical, search_paths_horizontal, closure_env).start()
+  threads.append(Gen_compressed(search_paths_vertical, search_paths_horizontal, closure_env))
 
   # This is run locally in a separate thread.
-  # Gen_langfiles().start()
+  threads.append(Gen_langfiles())
+
+  for t in threads:
+    t.start()
+  for t in threads:
+    t.join()
+  print("Closure compile finished.")
+  
