@@ -289,6 +289,50 @@ Blockly.Blocks['sensing_mousedown'] = {
   }
 };
 
+Blockly.Blocks['sensing_mousepressed'] = {
+  /**
+   * Block to get if the mouse is down.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_MOUSEPRESSED,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "MOUSE_OPTION"
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_mouseoptions'] = {
+  /**
+   * Options for Keys
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "MOUSE_OPTION",
+          "options": [
+            [Blockly.Msg.SENSING_MOUSEPRESSED_LEFT, 0],
+            [Blockly.Msg.SENSING_MOUSEPRESSED_MIDDLE, 1],
+            [Blockly.Msg.SENSING_MOUSEPRESSED_RIGHT, 2]
+          ]
+        }
+      ],
+      "extensions": ["colours_sensing", "output_string"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_mousex'] = {
   /**
    * Block to report mouse's x position
