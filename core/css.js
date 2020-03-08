@@ -1347,7 +1347,9 @@ Blockly.Css.CONTENT = [
   '.scratchCategoryItemIcon {',
     'width: 1.25rem;',
     'height: 1.25rem;',
-    'margin: 0 auto 0.125rem;',
+    'border: 1px none;',
+    'margin: 0.375rem;',
+    'display: inline-block;',
     'background-size: 100%;',
   '}',
 

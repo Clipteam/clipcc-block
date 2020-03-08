@@ -237,6 +237,8 @@ Blockly.Msg.SENSING_TOUCHINGCOLOR = 'touching color %1?';
 Blockly.Msg.SENSING_COLORISTOUCHINGCOLOR = 'color %1 is touching %2?';
 Blockly.Msg.SENSING_DISTANCETO = 'distance to %1';
 Blockly.Msg.SENSING_DISTANCETO_POINTER = 'mouse-pointer';
+Blockly.Msg.SENSING_DISTANCEBETWEENPOSITION = 'distance from (x: %1, y: %2 ) to (x: %3 , y: %4 )';
+Blockly.Msg.SENSING_DIRECTIONBETWEENPOSITION = 'direction from (x: %1, y: %2 ) to (x: %3 , y: %4 )';
 Blockly.Msg.SENSING_ASKANDWAIT = 'ask %1 and wait';
 Blockly.Msg.SENSING_ASK_TEXT = 'What\'s your name?';
 Blockly.Msg.SENSING_ANSWER = 'answer';
@@ -277,6 +279,10 @@ Blockly.Msg.SENSING_CURRENT_SECOND = 'second';
 Blockly.Msg.SENSING_DAYSSINCE2000 = 'days since 2000';
 Blockly.Msg.SENSING_USERNAME = 'username';
 Blockly.Msg.SENSING_USERID = 'user id';
+Blockly.Msg.SENSING_ISTURBOMODE = 'turbo mode?';
+Blockly.Msg.SENSING_OPERATINGSYSTEM = 'operating system';
+Blockly.Msg.SENSING_TURNONTURBOMODE = 'turn on turbo mode';
+Blockly.Msg.SENSING_TURNOFFTURBOMODE = 'turn off turbo mode';
 
 // Sound blocks
 Blockly.Msg.SOUND_PLAY = 'start sound %1';

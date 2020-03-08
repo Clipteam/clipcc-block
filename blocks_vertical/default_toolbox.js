@@ -328,6 +328,28 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '<shadow type="sensing_distancetomenu"></shadow>' +
       '</value>' +
     '</block>' +
+    '<block type="sensing_distancebetweenposition">' +
+      '<value name="X1">' +
+        '<shadow type="math_number">' +
+          '<field name="NUM"/>' +
+        '</shadow>' +
+      '</value>' +
+      '<value name="Y1">' +
+        '<shadow type="math_number">' +
+          '<field name="NUM"/>' +
+        '</shadow>' +
+      '</value>' +
+      '<value name="X2">' +
+        '<shadow type="math_number">' +
+          '<field name="NUM"/>' +
+        '</shadow>' +
+      '</value>' +
+      '<value name="Y2">' +
+        '<shadow type="math_number">' +
+          '<field name="NUM"/>' +
+        '</shadow>' +
+      '</value>' +
+    '</block>' +
     '<block type="sensing_keypressed" id="sensing_keypressed">' +
         '<value name="KEY_OPTION">' +
           '<shadow type="sensing_keyoptions"></shadow>' +

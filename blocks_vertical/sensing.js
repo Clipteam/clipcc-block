@@ -157,6 +157,70 @@ Blockly.Blocks['sensing_distancetomenu'] = {
   }
 };
 
+Blockly.Blocks['sensing_distancebetweenposition'] = {
+  /**
+   * Distance between two position.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_DISTANCEBETWEENPOSITION,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "X1",
+        },
+        {
+          "type": "input_value",
+          "name": "Y1",
+        },
+        {
+          "type": "input_value",
+          "name": "X2",
+        },
+        {
+          "type": "input_value",
+          "name": "Y2",
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_directionbetweenposition'] = {
+  /**
+   * Direction between two position.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_DIRECTIONBETWEENPOSITION,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "X1",
+        },
+        {
+          "type": "input_value",
+          "name": "Y1",
+        },
+        {
+          "type": "input_value",
+          "name": "X2",
+        },
+        {
+          "type": "input_value",
+          "name": "Y2",
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_askandwait'] = {
   /**
    * Block to ask a question and wait
@@ -578,6 +642,62 @@ Blockly.Blocks['sensing_userid'] = {
       "message0": Blockly.Msg.SENSING_USERID,
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_operatingsystem'] = {
+  /**
+   * Block to report user's operating system
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_OPERATINGSYSTEM,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_isturbomode'] = {
+  /**
+   * Block to report whether it is in turbo mode
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_ISTURBOMODE,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_turnonturbomode'] = {
+  /**
+   * Block to turn on turbo mode
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_TURNONTURBOMODE,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_turnoffturbomode'] = {
+  /**
+   * Block to turn off turbo mode
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_TURNOFFTURBOMODE,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "shape_statement"]
     });
   }
 };
