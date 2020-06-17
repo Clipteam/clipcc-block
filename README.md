@@ -10,6 +10,9 @@ Clip Blocks is a fork of LLK's [scratch-blocks](https://github.com/LLK/scratch-b
 
 *This project is in active development and should be considered a "developer preview" at this time.*
 
+## Branch Information
+This branch is only used to transplant ClipCC 1.x blocks, the stability cannot be guaranteed, please use master branch first
+
 ## Documentation
 The "getting started" guide including [FAQ](https://scratch.mit.edu/developers#faq) and [design documentation](https://github.com/LLK/scratch-blocks/wiki/Design) can be found in the [wiki](https://github.com/LLK/scratch-blocks/wiki).
 
