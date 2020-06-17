@@ -17,12 +17,12 @@ The "getting started" guide including [FAQ](https://scratch.mit.edu/developers#f
 
 Cause we changed the method of the build script to support windows platform, you need to follow these steps to initialize your workspace:
 ```bash
-npm i
+yarn
 ```
 
 Use npm script `build` to build your source, mind that in windows you may be asked to create junction link for closure-compiler and closure-library before you build:
 ```bash
-npm run build
+yarn run build
 ```
 
 ## Donate
