@@ -57,6 +57,10 @@ Blockly.Msg.CONTROL_CLEARCOUNTER = 'clear counter';
 Blockly.Msg.CONTROL_ALLATONCE = 'all at once';
 
 // Data blocks
+Blockly.Msg.DATA_CREATEVAR ='Create a variable : %1';
+Blockly.Msg.DATA_DELETEVAR ='Delete a variable : %1';
+Blockly.Msg.DATA_FINDVAR ='Is variable %1 presence?';
+Blockly.Msg.DATA_GETVARVALUE ='Value of %1';
 Blockly.Msg.DATA_SETVARIABLETO = 'set %1 to %2';
 Blockly.Msg.DATA_CHANGEVARIABLEBY = 'change %1 by %2';
 Blockly.Msg.DATA_SHOWVARIABLE = 'show variable %1';
@@ -308,6 +312,7 @@ Blockly.Msg.CATEGORY_SENSING = 'Sensing';
 Blockly.Msg.CATEGORY_OPERATORS = 'Operators';
 Blockly.Msg.CATEGORY_VARIABLES = 'Variables';
 Blockly.Msg.CATEGORY_MYBLOCKS = 'My Blocks';
+Blockly.Msg.CATEGORY_CLIPBLOCKS = 'Clip Blocks';
 
 // Context menus
 Blockly.Msg.DUPLICATE = 'Duplicate';
@@ -369,3 +374,6 @@ Blockly.Msg.NEW_BROADCAST_MESSAGE = 'New message';
 Blockly.Msg.NEW_BROADCAST_MESSAGE_TITLE = 'New message name:';
 Blockly.Msg.BROADCAST_MODAL_TITLE = 'New Message';
 Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME = 'message1';
+
+// Clip Blocks
+Block.Msg.CLIPBLOCKS_SHOWTIP ='Show a prompt   title:%1 text:%2 alignLeft:%3 buttonText:%4';

@@ -53,6 +53,26 @@ Blockly.Blocks['data_variable'] = {
   }
 };
 
+Blockly.Blocks['data_createvar'] = {
+  /**
+   * Create a variable
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.DATA_CREATEVAR,
+      "args0": [
+        {
+          "type": "input_variable",
+          "name": "VARNAME"
+        }
+      ],
+      "category": Blockly.Categories.data,
+      "extensions": ["colours_data", "shape_statement"]
+    });
+  }
+};
+
 Blockly.Blocks['data_setvariableto'] = {
   /**
    * Block to set variable to a certain value
