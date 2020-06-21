@@ -1314,6 +1314,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchCategoryMenuRow {',
+    'margin-bottom: 1px',
   '}',
 
   '.scratchCategoryMenuItem {',
@@ -1331,12 +1332,10 @@ Blockly.Css.CONTENT = [
     'background: $colour_toolboxSelected;',
   '}',
 
-  '.scratchCategoryItemBubble {',
-    'width: 1.25rem;',
-    'height: 1.25rem;',
-    'border: 1px solid;',
-    'border-radius: 100%;',
-    'margin: 0.375rem;',
+  '.scratchCategoryItemBar {',
+    'width: 0.35rem;',
+    'height: 2rem;',
+    'margin: 0 0.5rem 0 0;',
     'display: inline-block;',
   '}',
 

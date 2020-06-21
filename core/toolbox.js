@@ -714,7 +714,8 @@ Blockly.Toolbox.Category.prototype.createDom = function() {
   this.label_ = goog.dom.createDom('div',
       {'class': 'scratchCategoryMenuItemLabel'},
       Blockly.utils.replaceMessageReferences(this.name_));
-  if (this.iconURI_) {
+  // Alex Cui: Use left bar instead of icon.
+  /*if (this.iconURI_) {
     this.bubble_ = goog.dom.createDom('div',
         {'class': 'scratchCategoryItemIcon'});
     this.bubble_.style.backgroundImage = 'url(' + this.iconURI_ + ')';
@@ -723,8 +724,13 @@ Blockly.Toolbox.Category.prototype.createDom = function() {
         {'class': 'scratchCategoryItemBubble'});
     this.bubble_.style.backgroundColor = this.colour_;
     this.bubble_.style.borderColor = this.secondaryColour_;
-  }
-  this.item_.appendChild(this.bubble_);
+  }*/
+  this.bar_ = goog.dom.createDom('div',
+  {'class': 'scratchCategoryItemBar'});
+  this.bar_.style.backgroundColor = this.colour_;
+  this.bar_.style.borderColor = this.secondaryColour_;
+
+  this.item_.appendChild(this.bar_);
   this.item_.appendChild(this.label_);
   this.parentHtml_.appendChild(this.item_);
   Blockly.bindEvent_(
