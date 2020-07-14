@@ -353,6 +353,17 @@ Blockly.Procedures.getDefineBlock = function(procCode, workspace) {
   return null;
 };
 
+Blockly.Procedures.checkDefineBlock = function(procCode, workspace) {
+  var blocks = workspace.getDefineBlocks();
+  console.log(blocks);
+  for (var i = 0; i < blocks.length; i++) {
+    if (blocks[i].getAttribute('proccode') == procCode) {
+      return true;
+    }
+  }
+  return false;
+};
+
 /**
  * Find the prototype block for the named procedure.
  * @param {string} procCode The identifier of the procedure.

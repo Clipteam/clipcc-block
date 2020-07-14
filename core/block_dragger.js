@@ -280,7 +280,7 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
         if (block.type == Blockly.PROCEDURES_CALL_BLOCK_TYPE) {
           var procCode = block.getProcCode();
           // Check for call blocks with no associated define block.
-          if (!Blockly.Procedures.getDefineBlock(procCode, ws)) {
+          if (!Blockly.Procedures.checkDefineBlock(procCode, ws)) {
             // TODO:(#1151)
             alert('To delete a block definition, first remove all uses of the block');
             ws.undo();

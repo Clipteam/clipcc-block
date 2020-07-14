@@ -12,6 +12,10 @@ Blockly.ProcedureList = function(workspace) {
   this.workspace = workspace;
 };
 
+Blockly.ProcedureList.prototype.clear = function() {
+  this.procedureList_ = [];
+};
+
 Blockly.ProcedureList.prototype.getProcedureByProccode = function(proccode) {
   for (var j = 0, procedure; procedure = this.procedureList_[j]; j++) {
     if (procedure.getAttribute('proccode') == proccode) {
@@ -22,7 +26,6 @@ Blockly.ProcedureList.prototype.getProcedureByProccode = function(proccode) {
 };
 
 Blockly.ProcedureList.prototype.createProcedureFromMutation = function(mutation) {
-  console.log(mutation.getAttribute('proccode'));
   var procedure = this.getProcedureByProccode(mutation.getAttribute('proccode'));
   if (procedure) {
     return procedure;

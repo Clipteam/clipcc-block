@@ -310,6 +310,7 @@ Blockly.Workspace.prototype.clear = function() {
     Blockly.Events.setGroup(false);
   }
   this.variableMap_.clear();
+  this.procedureList_.clear();
   // Any block with a drop-down or WidgetDiv was disposed.
   if (Blockly.DropDownDiv) {
     Blockly.DropDownDiv.hideWithoutAnimation();
@@ -600,6 +601,10 @@ Blockly.Workspace.prototype.getBlockById = function(id) {
  */
 Blockly.Workspace.prototype.getCommentById = function(id) {
   return this.commentDB_[id] || null;
+};
+
+Blockly.Workspace.prototype.getDefineBlocks = function() {
+  return this.procedureList_.procedureList_;
 };
 
 /**
