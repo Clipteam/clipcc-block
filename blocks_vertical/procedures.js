@@ -82,6 +82,7 @@ Blockly.ScratchBlocks.ProcedureUtils.definitionMutationToDom = function(
   container.setAttribute('argumentdefaults',
       JSON.stringify(this.argumentDefaults_));
   container.setAttribute('warp', JSON.stringify(this.warp_));
+  container.setAttribute('global', JSON.stringify(this.global_));
   return container;
 };
 
@@ -94,6 +95,7 @@ Blockly.ScratchBlocks.ProcedureUtils.definitionMutationToDom = function(
 Blockly.ScratchBlocks.ProcedureUtils.definitionDomToMutation = function(xmlElement) {
   this.procCode_ = xmlElement.getAttribute('proccode');
   this.warp_ = JSON.parse(xmlElement.getAttribute('warp'));
+  this.global_ = JSON.parse(xmlElement.getAttribute('global'));
 
   var prevArgIds = this.argumentIds_;
   var prevDisplayNames = this.displayNames_;
@@ -666,6 +668,14 @@ Blockly.ScratchBlocks.ProcedureUtils.setWarp = function(warp) {
   this.warp_ = warp;
 };
 
+Blockly.ScratchBlocks.ProcedureUtils.getGlobal = function() {
+  return this.global_;
+};
+
+Blockly.ScratchBlocks.ProcedureUtils.setGlobal = function(global) {
+  this.global_ = global;
+};
+
 /**
  * Callback to remove a field, only for the declaration block.
  * @param {Blockly.Field} field The field being removed.
@@ -836,6 +846,7 @@ Blockly.Blocks['procedures_prototype'] = {
     this.argumentIds_ = [];
     this.argumentDefaults_ = [];
     this.warp_ = false;
+    this.global_ = false;
   },
   // Shared.
   getProcCode: Blockly.ScratchBlocks.ProcedureUtils.getProcCode,
@@ -871,6 +882,7 @@ Blockly.Blocks['procedures_declaration'] = {
     this.argumentIds_ = [];
     this.argumentDefaults_ = [];
     this.warp_ = false;
+    this.global_ = false;
   },
   // Shared.
   getProcCode: Blockly.ScratchBlocks.ProcedureUtils.getProcCode,
@@ -894,6 +906,8 @@ Blockly.Blocks['procedures_declaration'] = {
   focusLastEditor_: Blockly.ScratchBlocks.ProcedureUtils.focusLastEditor_,
   getWarp: Blockly.ScratchBlocks.ProcedureUtils.getWarp,
   setWarp: Blockly.ScratchBlocks.ProcedureUtils.setWarp,
+  getGlobal: Blockly.ScratchBlocks.ProcedureUtils.getGlobal,
+  setGlobal: Blockly.ScratchBlocks.ProcedureUtils.setGlobal,
   addLabelExternal: Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal,
   addBooleanExternal: Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal,
   addStringNumberExternal: Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal,

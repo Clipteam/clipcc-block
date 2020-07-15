@@ -103,7 +103,8 @@ Blockly.Workspace = function(opt_options) {
    */
   this.variableMap_ = new Blockly.VariableMap(this);
 
-  this.procedureList_ = new Blockly.ProcedureList(this);
+  this.localProcedureList_ = new Blockly.ProcedureList(this);
+  this.globalProcedureList_ = new Blockly.ProcedureList(this);
 
   /**
    * Blocks in the flyout can refer to variables that don't exist in the main
@@ -310,7 +311,8 @@ Blockly.Workspace.prototype.clear = function() {
     Blockly.Events.setGroup(false);
   }
   this.variableMap_.clear();
-  this.procedureList_.clear();
+  this.localProcedureList_.clear();
+  this.globalProcedureList_.clear();
   // Any block with a drop-down or WidgetDiv was disposed.
   if (Blockly.DropDownDiv) {
     Blockly.DropDownDiv.hideWithoutAnimation();
@@ -451,7 +453,11 @@ Blockly.Workspace.prototype.getAllVariables = function() {
 /* End functions that are just pass-throughs to the variable map. */
 
 Blockly.Workspace.prototype.createProcedureFromMutation = function(mutation) {
-  return this.procedureList_.createProcedureFromMutation(mutation);
+  if (mutation.getAttribute('global') === 'true') {
+    return this.globalProcedureList_.createProcedureFromMutation(mutation);
+  } else {
+    return this.localProcedureList_.createProcedureFromMutation(mutation);
+  }
 };
 
 /**
@@ -604,7 +610,7 @@ Blockly.Workspace.prototype.getCommentById = function(id) {
 };
 
 Blockly.Workspace.prototype.getDefineBlocks = function() {
-  return this.procedureList_.procedureList_;
+  return this.globalProcedureList_.procedureList_.concat(this.localProcedureList_.procedureList_);
 };
 
 /**
