@@ -81,6 +81,8 @@ def main():
   constants = {}  # Values that are constant across all languages.
   description = ''
   infile = codecs.open(args.input_file, 'r', 'utf-8')
+  result = {}
+  result['meaning'] = ''
   for line in infile:
     if line.startswith('///'):
       if description:
