@@ -276,6 +276,13 @@ class Gen_compressed(threading.Thread):
       # local will filter this out
       ("use_closure_library", "true"),
     ]
+    
+    # debug params
+    if '--debug' in sys.argv:
+      params += [
+        ("debug", "true"),
+        ("formatting", "PRETTY_PRINT")
+      ]
 
     # Read in all the source files.
     filenames = calcdeps.CalculateDependencies(search_paths,

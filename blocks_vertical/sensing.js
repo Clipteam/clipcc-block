@@ -386,9 +386,9 @@ Blockly.Blocks['sensing_mouseoptions'] = {
           "type": "field_dropdown",
           "name": "MOUSE_OPTION",
           "options": [
-            [Blockly.Msg.SENSING_MOUSEPRESSED_LEFT, 0],
-            [Blockly.Msg.SENSING_MOUSEPRESSED_MIDDLE, 1],
-            [Blockly.Msg.SENSING_MOUSEPRESSED_RIGHT, 2]
+            [Blockly.Msg.SENSING_MOUSEPRESSED_LEFT, '0'],
+            [Blockly.Msg.SENSING_MOUSEPRESSED_MIDDLE, '1'],
+            [Blockly.Msg.SENSING_MOUSEPRESSED_RIGHT, '2']
           ]
         }
       ],
