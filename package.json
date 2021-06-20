@@ -16,7 +16,6 @@
     "build": "python build.py && webpack --hide-modules",
     "build:debug": "python build.py --debug && webpack --hide-modules",
     "dist": "python build.py production && webpack --mode=production --progress",
-    "prepublishOnly": "python build.py && webpack",
     "test:unit": "node tests/jsunit/test_runner.js",
     "test:lint": "eslint .",
     "test:messages": "yarn run i18n && node i18n/test_scratch_msgs.js",
