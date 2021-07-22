@@ -960,6 +960,16 @@ cli-width@^2.0.0:
   resolved "https://registry.npm.taobao.org/cli-width/download/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
+clipcc-l10n@latest:
+  version "3.0.0-1"
+  resolved "https://registry.npmjs.org/clipcc-l10n/-/clipcc-l10n-3.0.0-1.tgz#c27fa7f30808b79939a2be048019bebfbbc83a77"
+  integrity sha512-mp28lZ6wyURV5gh0yyOKWDJ7mIBBDlAMcUf8wVMcRetIgg+m7m/VhKJxeXX671LNrSUDWwhDeX82Kri+Z3zvKg==
+  dependencies:
+    "@babel/cli" "^7.1.2"
+    "@babel/core" "^7.1.2"
+    babel-plugin-react-intl "^3.0.1"
+    poeditor-api "^1.0.0"
+
 cliui@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npm.taobao.org/cliui/download/cliui-5.0.0.tgz#deefcfdb2e800784aa34f46fa08e06851c7bbbc5"
@@ -3680,6 +3690,11 @@ pluralize@^7.0.0:
   resolved "https://registry.npm.taobao.org/pluralize/download/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
   integrity sha1-KYuJ34uTsCIdv0Ia0rGx6iP8Z3c=
 
+poeditor-api@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/poeditor-api/-/poeditor-api-1.0.0.tgz#d7b04149eacb6d9c834cbe7b7204cdabc7962689"
+  integrity sha512-wPaugdtltymA8YOdUEaJ2qQuLHfodRhFk1zS3wECxCIFlzP4+adLjUwz0wcFrhLOQ/Mv0ZAfKUFtJe9M2iLQfA==
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/posix-character-classes/download/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -4095,16 +4110,6 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
-
-scratch-l10n@^3.7.20200128224436:
-  version "3.7.20200317213230"
-  resolved "https://registry.npm.taobao.org/scratch-l10n/download/scratch-l10n-3.7.20200317213230.tgz#d940b29bb4c2bba0467199087f5a25f919560fad"
-  integrity sha1-2UCym7TCu6BGcZkIf1ol+RlWD60=
-  dependencies:
-    "@babel/cli" "^7.1.2"
-    "@babel/core" "^7.1.2"
-    babel-plugin-react-intl "^3.0.1"
-    transifex "1.6.6"
 
 selenium-webdriver@^4.0.0-alpha.1:
   version "4.0.0-alpha.7"
@@ -4679,7 +4684,7 @@ tough-cookie@~2.5.0:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-transifex@1.6.6, transifex@^1.6.6:
+transifex@^1.6.6:
   version "1.6.6"
   resolved "https://registry.npm.taobao.org/transifex/download/transifex-1.6.6.tgz#a6648b10eeabc964f67a2d2b01ebe8fe8e0bcef7"
   integrity sha1-pmSLEO6ryWT2ei0rAevo/o4Lzvc=

@@ -1322,6 +1322,7 @@ Blockly.Css.CONTENT = [
     'text-align: center;',
     'display: flex;',
     'align-items: center;',
+    'transition: 0.25s ease-out;',
   '}',
 
   '.scratchCategoryMenuHorizontal .scratchCategoryMenuItem {',
@@ -1341,6 +1342,7 @@ Blockly.Css.CONTENT = [
 
   '.scratchCategoryMenuItemLabel {',
     'display: inline-block;',
+    'transition: 0.25s ease-out;',
   '}',
 
   '.scratchCategoryItemIcon {',
