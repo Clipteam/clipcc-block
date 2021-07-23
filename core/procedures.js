@@ -222,6 +222,7 @@ Blockly.Procedures.flyoutCategory = function(workspace) {
   var xmlList = [];
 
   Blockly.Procedures.addCreateButton_(workspace, xmlList);
+  Blockly.Procedures.addCreateReturnableButton_(workspace, xmlList);
 
   // Create call blocks for each procedure defined in the workspace
   //var mutations = Blockly.Procedures.allProcedureMutations(workspace);
@@ -252,6 +253,19 @@ Blockly.Procedures.addCreateButton_ = function(workspace, xmlList) {
   var button = goog.dom.createDom('button');
   var msg = Blockly.Msg.NEW_PROCEDURE;
   var callbackKey = 'CREATE_PROCEDURE';
+  var callback = function() {
+    Blockly.Procedures.createProcedureDefCallback_(workspace);
+  };
+  button.setAttribute('text', msg);
+  button.setAttribute('callbackKey', callbackKey);
+  workspace.registerButtonCallback(callbackKey, callback);
+  xmlList.push(button);
+};
+
+Blockly.Procedures.addCreateReturnableButton_ = function(workspace, xmlList) {
+  var button = goog.dom.createDom('button');
+  var msg = Blockly.Msg.NEW_RETURNABLE_PROCEDURE;
+  var callbackKey = 'CREATE_RETURNABLE_PROCEDURE';
   var callback = function() {
     Blockly.Procedures.createProcedureDefCallback_(workspace);
   };
@@ -410,12 +424,56 @@ Blockly.Procedures.createProcedureDefCallback_ = function(workspace) {
 };
 
 /**
+ * Callback to create a new procedure custom reporter block.
+ * @param {!Blockly.Workspace} workspace The workspace to create the new procedure on.
+ * @private
+ */
+ Blockly.Procedures.createReturnableProcedureDefCallback_ = function(workspace) {
+  Blockly.Procedures.externalProcedureDefCallback(
+      Blockly.Procedures.newProcedureMutation(),
+      Blockly.Procedures.createReturnableProcedureCallbackFactory_(workspace)
+  );
+};
+
+/**
  * Callback factory for adding a new custom procedure from a mutation.
  * @param {!Blockly.Workspace} workspace The workspace to create the new procedure on.
  * @return {function(?Element)} callback for creating the new custom procedure.
  * @private
  */
 Blockly.Procedures.createProcedureCallbackFactory_ = function(workspace) {
+  return function(mutation) {
+    if (mutation) {
+      var blockText = '<xml>' +
+          '<block type="procedures_definition">' +
+          '<statement name="custom_block">' +
+          '<shadow type="procedures_prototype">' +
+          Blockly.Xml.domToText(mutation) +
+          '</shadow>' +
+          '</statement>' +
+          '</block>' +
+          '</xml>';
+      var blockDom = Blockly.Xml.textToDom(blockText).firstChild;
+      Blockly.Events.setGroup(true);
+      workspace.createProcedureFromMutation(mutation);
+      var block = Blockly.Xml.domToBlock(blockDom, workspace);
+      var scale = workspace.scale; // To convert from pixel units to workspace units
+      // Position the block so that it is at the top left of the visible workspace,
+      // padded from the edge by 30 units. Position in the top right if RTL.
+      var posX = -workspace.scrollX;
+      if (workspace.RTL) {
+        posX += workspace.getMetrics().contentWidth - 30;
+      } else {
+        posX += 30;
+      }
+      block.moveBy(posX / scale, (-workspace.scrollY + 30) / scale);
+      block.scheduleSnapAndBump();
+      Blockly.Events.setGroup(false);
+    }
+  };
+};
+
+Blockly.Procedures.createReturnableProcedureCallbackFactory_ = function(workspace) {
   return function(mutation) {
     if (mutation) {
       var blockText = '<xml>' +
