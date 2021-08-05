@@ -128,7 +128,7 @@ Blockly.ContextMenu.position_ = function(menu, e, rtl) {
   var anchorBBox = {
     top: e.clientY + viewportBBox.top,
     bottom: e.clientY + viewportBBox.top,
-    left: e.clientX + viewportBBox.left,
+    left: e.clientX + viewportBBox.left + 10,
     right: e.clientX + viewportBBox.left
   };
 
