@@ -245,6 +245,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "SENSING_USERID": "用户id",
     "SENSING_ISTURBOMODE": "快速模式?",
     "SENSING_OPERATINGSYSTEM": "操作系统",
+    "SENSING_CLIPCC_VERSION": "ClipCC版本",
     "SENSING_TURNONTURBOMODE": "打开快速模式",
     "SENSING_TURNOFFTURBOMODE": "关闭快速模式",
     "SOUND_PLAY": "播放声音 %1",
@@ -916,6 +917,7 @@ Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
     "PROCEDURE_DEFAULT_NAME": "积木名称",
     "NEW_LIST": "建立一个列表",
     "NEW_LIST_TITLE": "新的列表名：",
+    "SENSING_CLIPCC_VERSION": "纪年",
     "LIST_MODAL_TITLE": "新建列表",
     "LIST_ALREADY_EXISTS": "名为 「%1」 的列表已存在。",
     "RENAME_LIST_TITLE": "将所有的「%1」列表改名为：",
@@ -926,7 +928,7 @@ Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
     "NEW_BROADCAST_MESSAGE": "新消息",
     "NEW_BROADCAST_MESSAGE_TITLE": "新消息的名称：",
     "BROADCAST_MODAL_TITLE": "新消息",
-    "DEFAULT_BROADCAST_MESSAGE_NAME": "消息1"
+    "DEFAULT_BROADCAST_MESSAGE_NAME": "消息1",
 };
 
 Blockly.ScratchMsgs.locales["en"] =
@@ -1165,6 +1167,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "SENSING_USERNAME": "username",
     "SENSING_USERID": "user id",
     "SENSING_ISTURBOMODE": "turbo mode?",
+    "SENSING_CLIPCC_VERSION": "ClipCC version",
     "SENSING_OPERATINGSYSTEM": "operating system",
     "SENSING_TURNONTURBOMODE": "turn on turbo mode",
     "SENSING_TURNOFFTURBOMODE": "turn off turbo mode",
