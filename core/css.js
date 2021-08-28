@@ -491,7 +491,6 @@ Blockly.Css.CONTENT = [
   '.blocklyFlyout {',
     'position: absolute;',
     'z-index: 20;',
-    'outline: solid 1px #DDD',
   '}',
   '.blocklyFlyoutButton {',
     'fill: none;',
@@ -1356,6 +1355,53 @@ Blockly.Css.CONTENT = [
 
   '.scratchCategoryMenuItem:hover {',
     'color: $colour_toolboxHover !important;',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutLabelText, .blocklyText {',
+    'fill: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutButton, {',
+    'fill: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutButton .blocklyText {',
+    'fill: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .blocklySvg {',
+    'background-color: rgb(36, 36, 36);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutBackground, [theme=\'dark\'] .blocklyFlyoutCheckbox {',
+    'fill: rgb(13, 13, 13);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyToolboxDiv {',
+    'background-color: rgb(51, 51, 51);',
+    'color: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .scratchCategoryMenu {',
+    'background: rgb(51, 51, 51);',
+    'color: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .scratchCategoryMenuItem.categorySelected {',
+    'background: rgb(77, 77, 77);',
+    'color: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutButton:hover {',
+    'fill: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] [id ^= "blocklyGridPattern"] line {',
+    'stroke: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutScrollbar, [theme=\'dark\'] .blocklyScrollbarHandle {',
+    'fill: rgb(51, 51, 51);',
   '}',
   ''
 ];
