@@ -1403,5 +1403,23 @@ Blockly.Css.CONTENT = [
   '[theme=\'dark\'] .blocklyFlyoutScrollbar, [theme=\'dark\'] .blocklyScrollbarHandle {',
     'fill: rgb(51, 51, 51);',
   '}',
+
+  '[theme=\'dark\'] .blocklyZoom>image {',
+    'filter: invert(1);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menu {',
+    'background-color: rgb(38, 38, 38);',
+    'color : white',
+  '}',
+
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem-highlight,',
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem-hover {',
+    'background-color: rgb(77, 77, 77);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem {',
+    'color: white;',
+    '}',
   ''
 ];
