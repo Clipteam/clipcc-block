@@ -193,6 +193,7 @@ Blockly.Msg.OPERATORS_AND = '%1 and %2';
 Blockly.Msg.OPERATORS_OR = '%1 or %2';
 Blockly.Msg.OPERATORS_NOT = 'not %1';
 Blockly.Msg.OPERATORS_JOIN = 'join %1 %2';
+Blockly.Msg.OPERATORS_INDEXOF = 'position %1 of %2 contain %3';
 Blockly.Msg.OPERATORS_JOIN_APPLE = 'apple';
 Blockly.Msg.OPERATORS_JOIN_BANANA = 'banana';
 Blockly.Msg.OPERATORS_LETTEROF = 'letter %1 of %2';

@@ -195,6 +195,7 @@ Blockly.Msg["OPERATORS_DIVIDE"] = "%1 / %2";
 Blockly.Msg["OPERATORS_EQUALS"] = "%1 = %2";
 Blockly.Msg["OPERATORS_GE"] = "%1 ≥ %2";
 Blockly.Msg["OPERATORS_GT"] = "%1 > %2";
+Blockly.Msg["OPERATORS_INDEXOF"] = "position %1 of %2 contain %3";
 Blockly.Msg["OPERATORS_JOIN"] = "join %1 %2";
 Blockly.Msg["OPERATORS_JOIN_APPLE"] = "apple";
 Blockly.Msg["OPERATORS_JOIN_BANANA"] = "banana";

@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2021-08-16 08:53:14.814884",
+		"lastupdated": "2021-08-30 17:22:09.163440",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -154,6 +154,7 @@
 	"OPERATORS_OR": "%1 or %2",
 	"OPERATORS_NOT": "not %1",
 	"OPERATORS_JOIN": "join %1 %2",
+	"OPERATORS_INDEXOF": "position %1 of %2 contain %3",
 	"OPERATORS_JOIN_APPLE": "apple",
 	"OPERATORS_JOIN_BANANA": "banana",
 	"OPERATORS_LETTEROF": "letter %1 of %2",

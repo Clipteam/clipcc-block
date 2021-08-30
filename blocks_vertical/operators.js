@@ -361,6 +361,34 @@ Blockly.Blocks['operator_length'] = {
   }
 };
 
+Blockly.Blocks['operator_indexof'] = {
+  /**
+   * Block for index of operator.
+   * @this Blockly.Block
+   */
+  init: function () {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_INDEXOF,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "POS"
+        },
+        {
+          "type": "input_value",
+          "name": "STRING"
+        },
+        {
+          "type": "input_value",
+          "name": "SUBSTRING"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_string"]
+    });
+  }
+};
+
 Blockly.Blocks['operator_contains'] = {
   /**
    * Block for _ contains _ operator

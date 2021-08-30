@@ -159,6 +159,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "OPERATORS_OR": "%1 或 %2",
     "OPERATORS_NOT": "%1 不成立",
     "OPERATORS_JOIN": "连接 %1 和 %2",
+    "OPERATORS_INDEXOF": "字符串 %2 中子串 %3 第 %1 次出现的位置",
     "OPERATORS_JOIN_APPLE": "苹果",
     "OPERATORS_JOIN_BANANA": "香蕉",
     "OPERATORS_LETTEROF": "%2 的第 %1 个字符",
