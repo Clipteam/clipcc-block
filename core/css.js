@@ -492,6 +492,9 @@ Blockly.Css.CONTENT = [
     'position: absolute;',
     'z-index: 20;',
   '}',
+  '[effect=\'blur\'] .blocklyFlyout {',
+    'backdrop-filter: blur(4px);',
+  '}',
   '.blocklyFlyoutButton {',
     'fill: none;',
     'pointer-events: all;',
@@ -1047,6 +1050,11 @@ Blockly.Css.CONTENT = [
     'box-shadow: 0 8px 8px 0 hsla(0, 0%, 0%, 0.15);',
     'transition: 0.25s ease-out;',
     'z-index: 20000;',  /* Arbitrary, but some apps depend on it... */
+  '}',
+  
+  '[effect=\'blur\'] .blocklyWidgetDiv .goog-menu {',
+    'background: hsla(100, 100%, 100%, 0.8);',
+    'backdrop-filter: blur(6px);',
   '}',
 
   '.blocklyDropDownDiv .goog-menu {',
