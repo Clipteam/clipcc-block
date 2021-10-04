@@ -4,9 +4,6 @@
  * Licensed under the W3C SOFTWARE AND DOCUMENT NOTICE AND LICENSE.
  * https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
  *
- * Changes:
- *  - Remove unused functionality
- *  - Weird changes to improve performance for our usecase
  */
 
 'use strict';
