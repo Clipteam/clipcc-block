@@ -68,6 +68,7 @@ Blockly.BlockSvg = function(workspace, prototypeName, opt_id) {
       {'class': 'blocklyPath blocklyBlockBackground'},
       this.svgGroup_);
   this.svgPath_.tooltip = this;
+  this.svgGroup_.block = this;
 
   /** @type {boolean} */
   this.rendered = false;
@@ -279,6 +280,39 @@ Blockly.BlockSvg.prototype.getIcons = function() {
   return icons;
 };
 
+
+Blockly.BlockSvg.prototype.visible_ = true;
+Blockly.BlockSvg.prototype.placeholder = null;
+
+Blockly.BlockSvg.prototype.setIntersects = function(visible) {
+  if (visible === this.visible_) {
+    return;
+  }
+  this.visible_ = visible;
+  var root = this.getSvgRoot();
+  if (!root) return;
+  if (visible) {
+    root.style.display = '';
+    if (this.placeholder) {
+      this.workspace.intersectionObserver.unobserve(this.placeholder);
+      goog.dom.removeNode(this.placeholder);
+      this.placeholder = null;
+    }
+  } else {
+    root.style.display = 'none';
+    var widthAndHeight = this.getHeightWidth();
+    this.placeholder = Blockly.utils.createSvgElement('rect', {
+      fill: this.getColour(),
+      width: widthAndHeight.width,
+      height: widthAndHeight.height,
+      transform: root.getAttribute('transform')
+    }, null);
+    this.placeholder.block = this;
+    root.parentNode.insertBefore(this.placeholder, root);
+    this.workspace.intersectionObserver.observe(this.placeholder);
+  }
+};
+
 /**
  * Set parent of this block to be a new block or null.
  * @param {Blockly.BlockSvg} newParent New parent block.
@@ -299,6 +333,8 @@ Blockly.BlockSvg.prototype.setParent = function(newParent) {
   if (this.workspace.isClearing || !svgRoot) {
     return;
   }
+  
+  this.setIntersects(true);
 
   var oldXY = this.getRelativeToSurfaceXY();
   if (newParent) {
@@ -391,6 +427,7 @@ Blockly.BlockSvg.prototype.moveBy = function(dx, dy) {
 Blockly.BlockSvg.prototype.translate = function(x, y) {
   this.getSvgRoot().setAttribute('transform',
       'translate(' + x + ',' + y + ')');
+  if (this.placeholder) this.placeholder.setAttribute('transform', this.getSvgRoot().getAttribute('transform'));
 };
 
 /**
@@ -854,8 +891,14 @@ Blockly.BlockSvg.prototype.dispose = function(healStack, animate) {
     Blockly.Events.enable();
   }
   Blockly.BlockSvg.superClass_.dispose.call(this, healStack);
+  
+  if (blockWorkspace.intersectionObserver) {
+    blockWorkspace.intersectionObserver.unobserve(this.getSvgRoot());
+    if (this.placeholder) blockWorkspace.intersectionObserver.unobserve(this.placeholder);
+  }
 
   goog.dom.removeNode(this.svgGroup_);
+  if (this.placeholder) goog.dom.removeNode(this.placeholder);
   blockWorkspace.resizeContents();
   // Sever JavaScript to DOM connections.
   this.svgGroup_ = null;
