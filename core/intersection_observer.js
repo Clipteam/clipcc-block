@@ -322,6 +322,15 @@ Blockly.IntersectionObserver.prototype._getRootRect = function () {
             bottom: html.clientHeight || body.clientHeight,
             height: html.clientHeight || body.clientHeight
         };
+        // minimum size
+        if (rootRect.right <= 900) {
+        	rootRect.right = 900;
+        	rootRect.width = 900;
+        }
+        if (rootRect.bottom <= 675) {
+        	rootRect.bottom = 675;
+        	rootRect.height = 675;
+        }
     }
     return this._expandRectByRootMargin(rootRect);
 };
