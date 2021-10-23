@@ -524,8 +524,14 @@ Blockly.Procedures.makeEditOption = function(block) {
  * @private
  */
 Blockly.Procedures.showProcedureDefCallback_ = function(block) {
-  alert('TODO(#1136): implement showing procedure definition (procCode was "' +
-      block.procCode_ + '")');
+  // If block clicked is in the toolbox, its definition will be in
+  // block.workspace.targetWorkspace. Otherwise, it will be in block.workspace.
+  var workspace = block.workspace.targetWorkspace || block.workspace;
+  var proto = Blockly.Procedures.getPrototypeBlock(block.getProcCode(), workspace);
+  if (proto) {
+    workspace.centerOnBlock(proto.id);
+    proto.select();
+  }
 };
 
 /**
