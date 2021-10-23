@@ -282,6 +282,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "UNDO": "撤销",
     "REDO": "重做",
     "EDIT_PROCEDURE": "编辑",
+    "PROCEDURE_USED": "要删除一个自定义模块，请先移除该自定义模块的定义。",
     "SHOW_PROCEDURE_DEFINITION": "查看定义",
     "WORKSPACE_COMMENT_DEFAULT_TEXT": "说些什么……",
     "COLOUR_HUE_LABEL": "颜色",
@@ -626,7 +627,7 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
 
 Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
 {
-    "CONTROL_FOREVER": "再来亿次",
+    "CONTROL_FOREVER": "蚌埠住了",
     "CONTROL_REPEAT": "再来 %1 次",
     "CONTROL_IF": "如果 %1 那么",
     "CONTROL_ELSE": "否则",
@@ -1206,6 +1207,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "REDO": "Redo",
     "EDIT_PROCEDURE": "Edit",
     "SHOW_PROCEDURE_DEFINITION": "Go to definition",
+    "PROCEDURE_USED": "To delete a block definition, first remove all uses of the block.",
     "WORKSPACE_COMMENT_DEFAULT_TEXT": "Say something...",
     "COLOUR_HUE_LABEL": "Color",
     "COLOUR_SATURATION_LABEL": "Saturation",
