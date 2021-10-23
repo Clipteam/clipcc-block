@@ -231,6 +231,7 @@ Blockly.Msg["OPERATORS_SUBTRACT"] = "%1 - %2";
 Blockly.Msg["PROCEDURES_DEFINITION"] = "define %1";
 Blockly.Msg["PROCEDURE_ALREADY_EXISTS"] = "A procedure named '%1' already exists.";
 Blockly.Msg["PROCEDURE_DEFAULT_NAME"] = "block name";
+Blockly.Msg["PROCEDURE_USED"] = "To delete a block definition, first remove all uses of the block";
 Blockly.Msg["REDO"] = "Redo";
 Blockly.Msg["REMOVE_COMMENT"] = "Remove Comment";
 Blockly.Msg["RENAME_LIST"] = "Rename list";
