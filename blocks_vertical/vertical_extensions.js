@@ -176,8 +176,7 @@ Blockly.ScratchBlocks.VerticalExtensions.PROCEDURE_DEF_CONTEXTMENU = {
           var didDelete = Blockly.Procedures.deleteProcedureDefCallback(
               procCode, rootBlock);
           if (!didDelete) {
-            // TODO:(#1151)
-            alert('To delete a block definition, first remove all uses of the block');
+            alert(Blockly.Msg.PROCEDURE_USED);
           }
         };
       }
@@ -203,12 +202,13 @@ Blockly.ScratchBlocks.VerticalExtensions.PROCEDURE_DEF_CONTEXTMENU = {
 Blockly.ScratchBlocks.VerticalExtensions.PROCEDURE_CALL_CONTEXTMENU = {
   /**
    * Add the "edit" option to the context menu.
-   * @todo Add "go to definition" option once implemented.
+   * Add "go to definition" option.
    * @param {!Array.<!Object>} menuOptions List of menu options to edit.
    * @this Blockly.Block
    */
   customContextMenu: function(menuOptions) {
     menuOptions.push(Blockly.Procedures.makeEditOption(this));
+    menuOptions.push(Blockly.Procedures.makeShowDefinitionOption(this));
   }
 };
 

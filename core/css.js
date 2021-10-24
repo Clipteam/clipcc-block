@@ -491,8 +491,9 @@ Blockly.Css.CONTENT = [
   '.blocklyFlyout {',
     'position: absolute;',
     'z-index: 20;',
+  '}',
+  '[effect=\'blur\'] .blocklyFlyout {',
     'backdrop-filter: blur(4px);',
-    'outline: solid 1px #DDD',
   '}',
   '.blocklyFlyoutButton {',
     'fill: none;',
@@ -1036,18 +1037,24 @@ Blockly.Css.CONTENT = [
 
   '.blocklyWidgetDiv .goog-menu {',
     'background: #fff;',
-    'border-color: #ccc #666 #666 #ccc;',
-    'border-style: solid;',
-    'border-width: 1px;',
+    //启用菜单模糊请取消注释掉下面并删掉上面
+    //'background: hsla(100, 100%, 100%, 0.8);',
+    //'backdrop-filter: blur(6px);',
     'cursor: default;',
     'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
     'margin: 0;',
     'outline: none;',
-    'padding: 4px 0;',
     'position: absolute;',
-    'overflow-y: auto;',
+    'overflow-y: hidden;',
     'overflow-x: hidden;',
+    'box-shadow: 0 8px 8px 0 hsla(0, 0%, 0%, 0.15);',
+    'transition: 0.25s ease-out;',
     'z-index: 20000;',  /* Arbitrary, but some apps depend on it... */
+  '}',
+  
+  '[effect=\'blur\'] .blocklyWidgetDiv .goog-menu {',
+    'background: hsla(100, 100%, 100%, 0.8);',
+    'backdrop-filter: blur(6px);',
   '}',
 
   '.blocklyDropDownDiv .goog-menu {',
@@ -1094,6 +1101,8 @@ Blockly.Css.CONTENT = [
      /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
     'padding: 4px 7em 4px 28px;',
     'white-space: nowrap;',
+    'transition: 0.25s ease-out;',
+    'padding: 10px 20px;',
   '}',
 
   '.blocklyDropDownDiv .goog-menuitem {',
@@ -1102,10 +1111,10 @@ Blockly.Css.CONTENT = [
     'font-weight: bold;',
     'list-style: none;',
     'margin: 0;',
-    'min-height: 24px;',
      /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
     'padding: 4px 7em 4px 28px;',
     'white-space: nowrap;',
+    'transition: 0.25s ease-out;',
   '}',
 
   /* BiDi override for the resting state. */
@@ -1162,10 +1171,8 @@ Blockly.Css.CONTENT = [
      /* Use an explicit top and bottom border so that the selection is visible',
       * in high contrast mode. */
     'border-color: #d6e9f8;',
-    'border-style: dotted;',
+    'border-style: none;',
     'border-width: 1px 0;',
-    'padding-bottom: 3px;',
-    'padding-top: 3px;',
   '}',
 
   '.blocklyDropDownDiv .goog-menuitem-highlight,',
@@ -1357,5 +1364,70 @@ Blockly.Css.CONTENT = [
   '.scratchCategoryMenuItem:hover {',
     'color: $colour_toolboxHover !important;',
   '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutLabelText, .blocklyText {',
+    'fill: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutButton, {',
+    'fill: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutButton .blocklyText {',
+    'fill: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .blocklySvg {',
+    'background-color: rgb(36, 36, 36);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutBackground, [theme=\'dark\'] .blocklyFlyoutCheckbox {',
+    'fill: rgb(13, 13, 13);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyToolboxDiv {',
+    'background-color: rgb(51, 51, 51);',
+    'color: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .scratchCategoryMenu {',
+    'background: rgb(51, 51, 51);',
+    'color: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .scratchCategoryMenuItem.categorySelected {',
+    'background: rgb(77, 77, 77);',
+    'color: rgb(255, 255, 255);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutButton:hover {',
+    'fill: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] [id ^= "blocklyGridPattern"] line {',
+    'stroke: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyFlyoutScrollbar, [theme=\'dark\'] .blocklyScrollbarHandle {',
+    'fill: rgb(51, 51, 51);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyZoom>image {',
+    'filter: invert(1);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menu {',
+    'background-color: rgb(38, 38, 38);',
+    'color : white',
+  '}',
+
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem-highlight,',
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem-hover {',
+    'background-color: rgb(77, 77, 77);',
+  '}',
+
+  '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem {',
+    'color: white;',
+    '}',
   ''
 ];

@@ -193,6 +193,7 @@ Blockly.Msg.OPERATORS_AND = '%1 and %2';
 Blockly.Msg.OPERATORS_OR = '%1 or %2';
 Blockly.Msg.OPERATORS_NOT = 'not %1';
 Blockly.Msg.OPERATORS_JOIN = 'join %1 %2';
+Blockly.Msg.OPERATORS_INDEXOF = 'position %1 of %2 contain %3';
 Blockly.Msg.OPERATORS_JOIN_APPLE = 'apple';
 Blockly.Msg.OPERATORS_JOIN_BANANA = 'banana';
 Blockly.Msg.OPERATORS_LETTEROF = 'letter %1 of %2';
@@ -284,6 +285,7 @@ Blockly.Msg.SENSING_USERNAME = 'username';
 Blockly.Msg.SENSING_USERID = 'user id';
 Blockly.Msg.SENSING_ISTURBOMODE = 'turbo mode?';
 Blockly.Msg.SENSING_OPERATINGSYSTEM = 'operating system';
+Blockly.Msg.SENSING_CLIPCC_VERSION = 'ClipCC version';
 Blockly.Msg.SENSING_TURNONTURBOMODE = 'turn on turbo mode';
 Blockly.Msg.SENSING_TURNOFFTURBOMODE = 'turn off turbo mode';
 
@@ -353,6 +355,7 @@ Blockly.Msg.DELETE_VARIABLE = 'Delete the "%1" variable';
 Blockly.Msg.NEW_PROCEDURE = 'Make a Block';
 Blockly.Msg.NEW_RETURNABLE_PROCEDURE = 'Make a Reporter';
 Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A procedure named "%1" already exists.';
+Blockly.Msg.PROCEDURE_USED = 'To delete a block definition, first remove all uses of the block';
 Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block name';
 
 // Lists

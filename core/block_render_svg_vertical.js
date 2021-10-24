@@ -685,6 +685,7 @@ Blockly.BlockSvg.prototype.render = function(opt_bubble) {
     }
   }
   Blockly.Field.stopCache();
+  this.updateIntersectionObserver();
 };
 
 /**

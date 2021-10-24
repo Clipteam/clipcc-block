@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2021-07-23 08:21:59.033465",
+		"lastupdated": "2021-10-24 08:27:32.467258",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -154,6 +154,10 @@
 	"OPERATORS_OR": "%1 or %2",
 	"OPERATORS_NOT": "not %1",
 	"OPERATORS_JOIN": "join %1 %2",
+<<<<<<< HEAD
+=======
+	"OPERATORS_INDEXOF": "position %1 of %2 contain %3",
+>>>>>>> master
 	"OPERATORS_JOIN_APPLE": "apple",
 	"OPERATORS_JOIN_BANANA": "banana",
 	"OPERATORS_LETTEROF": "letter %1 of %2",
@@ -240,6 +244,10 @@
 	"SENSING_USERID": "user id",
 	"SENSING_ISTURBOMODE": "turbo mode?",
 	"SENSING_OPERATINGSYSTEM": "operating system",
+<<<<<<< HEAD
+=======
+	"SENSING_CLIPCC_VERSION": "ClipCC version",
+>>>>>>> master
 	"SENSING_TURNONTURBOMODE": "turn on turbo mode",
 	"SENSING_TURNOFFTURBOMODE": "turn off turbo mode",
 	"SOUND_PLAY": "start sound %1",
@@ -293,8 +301,13 @@
 	"CANNOT_DELETE_VARIABLE_PROCEDURE": "Can't delete the variable '%1' because it's part of the definition of the function '%2'",
 	"DELETE_VARIABLE": "Delete the '%1' variable",
 	"NEW_PROCEDURE": "Make a Block",
+<<<<<<< HEAD
 	"NEW_RETURNABLE_PROCEDURE": "Make a Reporter",
 	"PROCEDURE_ALREADY_EXISTS": "A procedure named '%1' already exists.",
+=======
+	"PROCEDURE_ALREADY_EXISTS": "A procedure named '%1' already exists.",
+	"PROCEDURE_USED": "To delete a block definition, first remove all uses of the block",
+>>>>>>> master
 	"PROCEDURE_DEFAULT_NAME": "block name",
 	"NEW_LIST": "Make a List",
 	"NEW_LIST_TITLE": "New list name:",

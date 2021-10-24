@@ -660,6 +660,20 @@ Blockly.Blocks['sensing_operatingsystem'] = {
   }
 };
 
+Blockly.Blocks['sensing_clipcc_version'] = {
+  /**
+   * Block to report user's clipcc version
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_CLIPCC_VERSION,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_isturbomode'] = {
   /**
    * Block to report whether it is in turbo mode

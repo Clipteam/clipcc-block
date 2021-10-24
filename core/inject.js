@@ -67,7 +67,10 @@ Blockly.inject = function(container, opt_options) {
   // Create surfaces for dragging things. These are optimizations
   // so that the broowser does not repaint during the drag.
   var blockDragSurface = new Blockly.BlockDragSurfaceSvg(subContainer);
-  var workspaceDragSurface = new Blockly.WorkspaceDragSurfaceSvg(subContainer);
+  // In my view, the workspace drag surface is unnecessary and unefficient.
+  // It definitely cause the lagging while dragging the workspace.
+  // var workspaceDragSurface = new Blockly.WorkspaceDragSurfaceSvg(subContainer);
+  var workspaceDragSurface = null;
 
   var workspace = Blockly.createMainWorkspace_(svg, options, blockDragSurface,
       workspaceDragSurface);

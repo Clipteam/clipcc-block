@@ -159,6 +159,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "OPERATORS_OR": "%1 或 %2",
     "OPERATORS_NOT": "%1 不成立",
     "OPERATORS_JOIN": "连接 %1 和 %2",
+    "OPERATORS_INDEXOF": "字符串 %2 中子串 %3 第 %1 次出现的位置",
     "OPERATORS_JOIN_APPLE": "苹果",
     "OPERATORS_JOIN_BANANA": "香蕉",
     "OPERATORS_LETTEROF": "%2 的第 %1 个字符",
@@ -245,6 +246,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "SENSING_USERID": "用户id",
     "SENSING_ISTURBOMODE": "快速模式?",
     "SENSING_OPERATINGSYSTEM": "操作系统",
+    "SENSING_CLIPCC_VERSION": "ClipCC版本",
     "SENSING_TURNONTURBOMODE": "打开快速模式",
     "SENSING_TURNOFFTURBOMODE": "关闭快速模式",
     "SOUND_PLAY": "播放声音 %1",
@@ -280,6 +282,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "UNDO": "撤销",
     "REDO": "重做",
     "EDIT_PROCEDURE": "编辑",
+    "PROCEDURE_USED": "要删除一个自定义模块，请先移除该自定义模块的定义。",
     "SHOW_PROCEDURE_DEFINITION": "查看定义",
     "WORKSPACE_COMMENT_DEFAULT_TEXT": "说些什么……",
     "COLOUR_HUE_LABEL": "颜色",
@@ -624,7 +627,7 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
 
 Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
 {
-    "CONTROL_FOREVER": "再来亿次",
+    "CONTROL_FOREVER": "蚌埠住了",
     "CONTROL_REPEAT": "再来 %1 次",
     "CONTROL_IF": "如果 %1 那么",
     "CONTROL_ELSE": "否则",
@@ -916,6 +919,7 @@ Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
     "PROCEDURE_DEFAULT_NAME": "积木名称",
     "NEW_LIST": "建立一个列表",
     "NEW_LIST_TITLE": "新的列表名：",
+    "SENSING_CLIPCC_VERSION": "纪年",
     "LIST_MODAL_TITLE": "新建列表",
     "LIST_ALREADY_EXISTS": "名为 「%1」 的列表已存在。",
     "RENAME_LIST_TITLE": "将所有的「%1」列表改名为：",
@@ -926,7 +930,7 @@ Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
     "NEW_BROADCAST_MESSAGE": "新消息",
     "NEW_BROADCAST_MESSAGE_TITLE": "新消息的名称：",
     "BROADCAST_MODAL_TITLE": "新消息",
-    "DEFAULT_BROADCAST_MESSAGE_NAME": "消息1"
+    "DEFAULT_BROADCAST_MESSAGE_NAME": "消息1",
 };
 
 Blockly.ScratchMsgs.locales["en"] =
@@ -1165,6 +1169,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "SENSING_USERNAME": "username",
     "SENSING_USERID": "user id",
     "SENSING_ISTURBOMODE": "turbo mode?",
+    "SENSING_CLIPCC_VERSION": "ClipCC version",
     "SENSING_OPERATINGSYSTEM": "operating system",
     "SENSING_TURNONTURBOMODE": "turn on turbo mode",
     "SENSING_TURNOFFTURBOMODE": "turn off turbo mode",
@@ -1202,6 +1207,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "REDO": "Redo",
     "EDIT_PROCEDURE": "Edit",
     "SHOW_PROCEDURE_DEFINITION": "Go to definition",
+    "PROCEDURE_USED": "To delete a block definition, first remove all uses of the block.",
     "WORKSPACE_COMMENT_DEFAULT_TEXT": "Say something...",
     "COLOUR_HUE_LABEL": "Color",
     "COLOUR_SATURATION_LABEL": "Saturation",
