@@ -473,14 +473,7 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
     }
   }
   
-  this.intersectionObserver = new Blockly.IntersectionObserver(function(intersections) {
-    for (var i = 0; i < intersections.length; i++) {
-      var intersection = intersections[i];
-      intersection.target.block.setIntersects(intersection.intersectionRatio > 0);
-    }
-  }, {
-    root: this.getParentSvg()
-  });
+  this.intersectionObserver = new Blockly.IntersectionObserver(this);
 
   // Determine if there needs to be a category tree, or a simple list of
   // blocks.  This cannot be changed later, since the UI is very different.
@@ -561,7 +554,7 @@ Blockly.WorkspaceSvg.prototype.dispose = function() {
     Blockly.unbindEvent_(this.resizeHandlerWrapper_);
     this.resizeHandlerWrapper_ = null;
   }
-  if (this.intersectionObserver) this.intersectionObserver.disconnect();
+  if (this.intersectionObserver) this.intersectionObserver.dispose();
 };
 
 /**
@@ -702,7 +695,7 @@ Blockly.WorkspaceSvg.prototype.resize = function() {
   if (this.zoomControls_) this.zoomControls_.position();
   if (this.scrollbar) this.scrollbar.resize();
   this.updateScreenCalculations_();
-  this.intersectionObserver.checkForIntersections(); //Check the status of background
+  this.intersectionObserver.queueIntersectionCheck();
 };
 
 /**
@@ -772,7 +765,7 @@ Blockly.WorkspaceSvg.prototype.translate = function(x, y) {
   }
   // Now update the block drag surface if we're using one.
   if (this.blockDragSurface_) this.blockDragSurface_.translateAndScaleGroup(x, y, this.scale);
-  this.intersectionObserver.checkForIntersections();
+  this.intersectionObserver.queueIntersectionCheck();
 };
 
 /**
@@ -1803,7 +1796,7 @@ Blockly.WorkspaceSvg.prototype.setScale = function(newScale) {
   }
   Blockly.hideChaff(false);
   if (this.flyout_) this.flyout_.reflow(); // No toolbox, resize flyout.
-  this.intersectionObserver.checkForIntersections();
+  this.intersectionObserver.queueIntersectionCheck();
 };
 
 /**
