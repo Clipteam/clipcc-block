@@ -50,7 +50,6 @@ goog.require('Blockly.WorkspaceCommentSvg.render');
 goog.require('Blockly.WorkspaceDragSurfaceSvg');
 goog.require('Blockly.Xml');
 goog.require('Blockly.ZoomControls');
-goog.require('Blockly.IntersectionObserver');
 
 goog.require('goog.array');
 goog.require('goog.dom');
@@ -472,15 +471,6 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
           this.onMouseWheel_);
     }
   }
-  
-  this.intersectionObserver = new Blockly.IntersectionObserver(function(intersections) {
-    for (var i = 0; i < intersections.length; i++) {
-      var intersection = intersections[i];
-      intersection.target.block.setIntersects(intersection.intersectionRatio > 0);
-    }
-  }, {
-    root: this.getParentSvg()
-  });
 
   // Determine if there needs to be a category tree, or a simple list of
   // blocks.  This cannot be changed later, since the UI is very different.
@@ -561,7 +551,6 @@ Blockly.WorkspaceSvg.prototype.dispose = function() {
     Blockly.unbindEvent_(this.resizeHandlerWrapper_);
     this.resizeHandlerWrapper_ = null;
   }
-  if (this.intersectionObserver) this.intersectionObserver.disconnect();
 };
 
 /**
@@ -696,13 +685,22 @@ Blockly.WorkspaceSvg.prototype.resizeContents = function() {
  * trash, zoom, toolbox, etc. (e.g. window resize).
  */
 Blockly.WorkspaceSvg.prototype.resize = function() {
-  if (this.toolbox_) this.toolbox_.position();
-  if (this.flyout_) this.flyout_.position();
-  if (this.trashcan) this.trashcan.position();
-  if (this.zoomControls_) this.zoomControls_.position();
-  if (this.scrollbar) this.scrollbar.resize();
+  if (this.toolbox_) {
+    this.toolbox_.position();
+  }
+  if (this.flyout_) {
+    this.flyout_.position();
+  }
+  if (this.trashcan) {
+    this.trashcan.position();
+  }
+  if (this.zoomControls_) {
+    this.zoomControls_.position();
+  }
+  if (this.scrollbar) {
+    this.scrollbar.resize();
+  }
   this.updateScreenCalculations_();
-  this.intersectionObserver.checkForIntersections(); //Check the status of background
 };
 
 /**
@@ -771,8 +769,9 @@ Blockly.WorkspaceSvg.prototype.translate = function(x, y) {
     this.svgBubbleCanvas_.setAttribute('transform', translation);
   }
   // Now update the block drag surface if we're using one.
-  if (this.blockDragSurface_) this.blockDragSurface_.translateAndScaleGroup(x, y, this.scale);
-  this.intersectionObserver.checkForIntersections();
+  if (this.blockDragSurface_) {
+    this.blockDragSurface_.translateAndScaleGroup(x, y, this.scale);
+  }
 };
 
 /**
@@ -1802,8 +1801,10 @@ Blockly.WorkspaceSvg.prototype.setScale = function(newScale) {
     this.translate(this.scrollX, this.scrollY);
   }
   Blockly.hideChaff(false);
-  if (this.flyout_) this.flyout_.reflow(); // No toolbox, resize flyout.
-  this.intersectionObserver.checkForIntersections();
+  if (this.flyout_) {
+    // No toolbox, resize flyout.
+    this.flyout_.reflow();
+  }
 };
 
 /**
