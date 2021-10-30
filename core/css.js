@@ -1051,7 +1051,7 @@ Blockly.Css.CONTENT = [
     'transition: 0.25s ease-out;',
     'z-index: 20000;',  /* Arbitrary, but some apps depend on it... */
   '}',
-  
+
   '[effect=\'blur\'] .blocklyWidgetDiv .goog-menu {',
     'background: hsla(100, 100%, 100%, 0.8);',
     'backdrop-filter: blur(6px);',
@@ -1363,6 +1363,10 @@ Blockly.Css.CONTENT = [
 
   '.scratchCategoryMenuItem:hover {',
     'color: $colour_toolboxHover !important;',
+  '}',
+
+  '[theme=\'dark\'] :not(.checked) > .blocklyFlyoutCheckboxPath {',
+    'display: none;',
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutLabelText, .blocklyText {',
