@@ -2262,6 +2262,17 @@ Blockly.WorkspaceSvg.prototype.getGrid = function() {
   return this.grid_;
 };
 
+Blockly.WorkspaceSvg.prototype.switchToCache = function(id) {
+  Blockly.WorkspaceSvg.superClass_.switchToCache.call(this, id);
+
+  this.svgBlockCanvas_.innerHTML = '';
+  
+  var topBlocks = this.getTopBlocks();
+  for (var i = 0, block; block = topBlocks[i]; i++) {
+    block.initSvg();
+  }
+};
+
 // Export symbols that would otherwise be renamed by Closure compiler.
 Blockly.WorkspaceSvg.prototype['setVisible'] =
     Blockly.WorkspaceSvg.prototype.setVisible;

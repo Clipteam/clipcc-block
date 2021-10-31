@@ -27,6 +27,7 @@
 goog.provide('Blockly.Workspace');
 
 goog.require('Blockly.VariableMap');
+goog.require('Blockly.WorkspaceCache');
 goog.require('Blockly.WorkspaceComment');
 goog.require('goog.array');
 goog.require('goog.math');
@@ -36,9 +37,10 @@ goog.require('goog.math');
  * Class for a workspace.  This is a data structure that contains blocks.
  * There is no UI, and can be created headlessly.
  * @param {!Blockly.Options=} opt_options Dictionary of options.
+ * @param {!string} opt_id id.
  * @constructor
  */
-Blockly.Workspace = function(opt_options) {
+Blockly.Workspace = function(opt_options, opt_id) {
   /** @type {string} */
   this.id = Blockly.utils.genUid();
   Blockly.Workspace.WorkspaceDB_[this.id] = this;
@@ -52,28 +54,37 @@ Blockly.Workspace = function(opt_options) {
   this.toolboxPosition = this.options.toolboxPosition;
 
   /**
+   * @type {!Object}
+   * @private
+   */
+  this.workspaceCache = {};
+
+  this.currentCache = new Blockly.WorkspaceCache(this, opt_id || this.id);
+  this.workspaceCache[opt_id || this.id] = this.currentCache;
+
+  /**
    * @type {!Array.<!Blockly.Block>}
    * @private
    */
-  this.topBlocks_ = [];
+  this.topBlocks_ = this.currentCache.topBlocks_;
   /**
    * @type {!Array.<!Blockly.WorkspaceComment>}
    * @private
    */
-  this.topComments_ = [];
+  this.topComments_ = this.currentCache.topComments_;
   /**
    * @type {!Object}
    * @private
    */
-  this.commentDB_ = Object.create(null);
+  this.commentDB_ = this.currentCache.commentDB_;
   /**
    * @type {!Array.<!Function>}
    * @private
    */
-  this.listeners_ = [];
+  this.listeners_ = this.currentCache.listeners_;
 
   /** @type {!Array.<!Function>} */
-  this.tapListeners_ = [];
+  this.tapListeners_ = []; // unused
 
   /**
    * @type {!Array.<!Blockly.Events.Abstract>}
@@ -91,7 +102,7 @@ Blockly.Workspace = function(opt_options) {
    * @type {!Object}
    * @private
    */
-  this.blockDB_ = Object.create(null);
+  this.blockDB_ = this.currentCache.blockDB_;
 
   /**
    * @type {!Blockly.VariableMap}
@@ -100,7 +111,7 @@ Blockly.Workspace = function(opt_options) {
    * that are not currently in use.
    * @private
    */
-  this.variableMap_ = new Blockly.VariableMap(this);
+  this.variableMap_ = this.currentCache.variableMap_;
 
   /**
    * Blocks in the flyout can refer to variables that don't exist in the main
@@ -112,7 +123,7 @@ Blockly.Workspace = function(opt_options) {
    * @type {!Blockly.VariableMap}
    * @private
    */
-  this.potentialVariableMap_ = null;
+  this.potentialVariableMap_ = this.currentCache.potentialVariableMap_;
 };
 
 /**
@@ -636,7 +647,8 @@ Blockly.Workspace.prototype.getPotentialVariableMap = function() {
  * @package
  */
 Blockly.Workspace.prototype.createPotentialVariableMap = function() {
-  this.potentialVariableMap_ = new Blockly.VariableMap(this);
+  this.currentCache.createPotentialVariableMap();
+  this.potentialVariableMap_ = this.currentCache.potentialVariableMap_;
 };
 
 /**
@@ -646,6 +658,18 @@ Blockly.Workspace.prototype.createPotentialVariableMap = function() {
  */
 Blockly.Workspace.prototype.getVariableMap = function() {
   return this.variableMap_;
+};
+
+Blockly.Workspace.prototype.switchToCache = function(id) {
+  this.currentCache = this.workspaceCache[id];
+
+  this.topBlocks_ = this.currentCache.topBlocks_;
+  this.topComments_ = this.currentCache.topComments_;
+  this.commentDB_ = this.currentCache.commentDB_;
+  this.listeners_ = this.currentCache.listeners_;
+  this.blockDB_ = this.currentCache.blockDB_;
+  this.variableMap_ = this.currentCache.variableMap_;
+  this.potentialVariableMap_ = this.currentCache.potentialVariableMap_;
 };
 
 /**
