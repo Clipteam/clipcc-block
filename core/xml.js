@@ -416,6 +416,29 @@ Blockly.Xml.clearWorkspaceAndLoadFromXml = function(xml, workspace) {
 };
 
 /**
+ * Switch to a new workspace cache and then ecode an XML DOM
+ * and create blocks on the workspace.
+ * @param {!Element} xml XML DOM.
+ * @param {!Blockly.Workspace} workspace The workspace.
+ * @param {!string} id The cache id.
+ * @return {Array.<string>} An array containing new block ids.
+ */
+Blockly.Xml.createWorkspaceCacheAndLoadFromXml = function(xml, workspace, id) {
+  workspace.setResizesEnabled(false);
+  workspace.setToolboxRefreshEnabled(false);
+  if (workspace.hasCache(id)) {
+    throw 'Attempt to create a workspace cache with an existed id.';
+  }
+  var cache = new Blockly.WorkspaceCache(workspace, id);
+  workspace.workspaceCache[id] = cache;
+  workspace.switchToCache(id);
+  var blockIds = Blockly.Xml.domToWorkspace(xml, workspace);
+  workspace.setResizesEnabled(true);
+  workspace.setToolboxRefreshEnabled(true);
+  return blockIds;
+};
+
+/**
  * Decode an XML DOM and create blocks on the workspace.
  * @param {!Element} xml XML DOM.
  * @param {!Blockly.Workspace} workspace The workspace.

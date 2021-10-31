@@ -660,6 +660,10 @@ Blockly.Workspace.prototype.getVariableMap = function() {
   return this.variableMap_;
 };
 
+/**
+ * Switch the workspace to a cache of the given id.
+ * @param {!string} id The cache id.
+ */
 Blockly.Workspace.prototype.switchToCache = function(id) {
   this.currentCache = this.workspaceCache[id];
 
@@ -670,6 +674,15 @@ Blockly.Workspace.prototype.switchToCache = function(id) {
   this.blockDB_ = this.currentCache.blockDB_;
   this.variableMap_ = this.currentCache.variableMap_;
   this.potentialVariableMap_ = this.currentCache.potentialVariableMap_;
+};
+
+/**
+ * Check whether the given cache name exists.
+ * @param {!string} id The cache id.
+ * @return {!boolean} True if exists.
+ */
+Blockly.Workspace.prototype.hasCache = function(id) {
+  return this.workspaceCache.hasOwnProperty(id);
 };
 
 /**
