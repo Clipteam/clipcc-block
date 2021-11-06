@@ -2272,7 +2272,7 @@ Blockly.WorkspaceSvg.prototype.switchToCache = function(id) {
     block.initSvg();
   }
 
-  this.refreshToolboxSelection_();
+  // this.refreshToolboxSelection_();
 };
 
 // Export symbols that would otherwise be renamed by Closure compiler.
