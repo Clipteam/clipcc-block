@@ -232,6 +232,7 @@ Blockly.Msg.OPERATORS_NEQUALS = '%1 ≠ %2';
 
 // Procedures blocks
 Blockly.Msg.PROCEDURES_DEFINITION = 'define %1';
+Blockly.Msg.PROCEDURES_RETURN = 'return %1';
 
 // Sensing blocks
 Blockly.Msg.SENSING_TOUCHINGOBJECT = 'touching %1?';
