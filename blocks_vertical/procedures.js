@@ -43,6 +43,8 @@ Blockly.ScratchBlocks.ProcedureUtils.callerMutationToDom = function() {
   container.setAttribute('proccode', this.procCode_);
   container.setAttribute('argumentids', JSON.stringify(this.argumentIds_));
   container.setAttribute('warp', JSON.stringify(this.warp_));
+  container.setAttribute('global', JSON.stringify(this.global_));
+  container.setAttribute('return', JSON.stringify(this.return_));
   return container;
 };
 
@@ -58,6 +60,8 @@ Blockly.ScratchBlocks.ProcedureUtils.callerDomToMutation = function(xmlElement) 
       JSON.parse(xmlElement.getAttribute('generateshadows'));
   this.argumentIds_ = JSON.parse(xmlElement.getAttribute('argumentids'));
   this.warp_ = JSON.parse(xmlElement.getAttribute('warp'));
+  this.global_ = JSON.parse(xmlElement.getAttribute('global'));
+  this.return_ = JSON.parse(xmlElement.getAttribute('return'));
   this.updateDisplay_();
 };
 
@@ -83,6 +87,7 @@ Blockly.ScratchBlocks.ProcedureUtils.definitionMutationToDom = function(
       JSON.stringify(this.argumentDefaults_));
   container.setAttribute('warp', JSON.stringify(this.warp_));
   container.setAttribute('global', JSON.stringify(this.global_));
+  container.setAttribute('return', JSON.stringify(this.return_));
   return container;
 };
 
@@ -96,6 +101,7 @@ Blockly.ScratchBlocks.ProcedureUtils.definitionDomToMutation = function(xmlEleme
   this.procCode_ = xmlElement.getAttribute('proccode');
   this.warp_ = JSON.parse(xmlElement.getAttribute('warp'));
   this.global_ = JSON.parse(xmlElement.getAttribute('global'));
+  this.return_ = JSON.parse(xmlElement.getAttribute('return'));
 
   var prevArgIds = this.argumentIds_;
   var prevDisplayNames = this.displayNames_;
@@ -676,6 +682,14 @@ Blockly.ScratchBlocks.ProcedureUtils.setGlobal = function(global) {
   this.global_ = global;
 };
 
+Blockly.ScratchBlocks.ProcedureUtils.getReturn = function() {
+  return this.return_;
+};
+
+Blockly.ScratchBlocks.ProcedureUtils.setReturn = function(ret) {
+  this.return_ = ret;
+};
+
 /**
  * Callback to remove a field, only for the declaration block.
  * @param {Blockly.Field} field The field being removed.
@@ -999,6 +1013,8 @@ Blockly.Blocks['procedures_declaration'] = {
   setWarp: Blockly.ScratchBlocks.ProcedureUtils.setWarp,
   getGlobal: Blockly.ScratchBlocks.ProcedureUtils.getGlobal,
   setGlobal: Blockly.ScratchBlocks.ProcedureUtils.setGlobal,
+  getReturn: Blockly.ScratchBlocks.ProcedureUtils.getReturn,
+  setReturn: Blockly.ScratchBlocks.ProcedureUtils.setReturn,
   addLabelExternal: Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal,
   addBooleanExternal: Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal,
   addStringNumberExternal: Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal,
