@@ -68,7 +68,6 @@ Blockly.BlockSvg = function(workspace, prototypeName, opt_id) {
       {'class': 'blocklyPath blocklyBlockBackground'},
       this.svgGroup_);
   this.svgPath_.tooltip = this;
-  this.svgGroup_.block = this;
 
   /** @type {boolean} */
   this.rendered = false;
@@ -280,39 +279,6 @@ Blockly.BlockSvg.prototype.getIcons = function() {
   return icons;
 };
 
-
-Blockly.BlockSvg.prototype.visible_ = true;
-
-Blockly.BlockSvg.prototype.setIntersects = function(visible) {
-  if (visible === this.visible_) {
-    return;
-  }
-  this.visible_ = visible;
-  var root = this.getSvgRoot();
-  if (!root) return;
-  if (visible) {
-    root.style.display = '';
-    if (this.placeholder) {
-      this.workspace.intersectionObserver.unobserve(this.placeholder);
-      goog.dom.removeNode(this.placeholder);
-      this.placeholder = null;
-    }
-  } else {
-    root.style.display = 'none';
-    }
-};
-
-Blockly.BlockSvg.prototype.updateIntersectionObserver = function() {
-  if (this.workspace.intersectionObserver) {
-    if (this.getParent()) {
-      this.workspace.intersectionObserver.unobserve(this);
-      if (!this.visible_) this.setIntersects(true);
-    } else {
-      this.workspace.intersectionObserver.observe(this);
-    }
-  }
-};
-
 /**
  * Set parent of this block to be a new block or null.
  * @param {Blockly.BlockSvg} newParent New parent block.
@@ -333,8 +299,6 @@ Blockly.BlockSvg.prototype.setParent = function(newParent) {
   if (this.workspace.isClearing || !svgRoot) {
     return;
   }
-  
-  this.updateIntersectionObserver();;
 
   var oldXY = this.getRelativeToSurfaceXY();
   if (newParent) {
@@ -890,10 +854,6 @@ Blockly.BlockSvg.prototype.dispose = function(healStack, animate) {
     Blockly.Events.enable();
   }
   Blockly.BlockSvg.superClass_.dispose.call(this, healStack);
-  
-  if (blockWorkspace.intersectionObserver) {
-    blockWorkspace.intersectionObserver.unobserve(this);
-  }
 
   goog.dom.removeNode(this.svgGroup_);
   blockWorkspace.resizeContents();
