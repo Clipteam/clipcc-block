@@ -999,7 +999,7 @@ Blockly.Blocks['procedures_return'] = {
         }
       ],
       "category": Blockly.Categories.more,
-      "extensions": ["colours_function", "shape_statement"]
+      "extensions": ["colours_function", "shape_end"]
     });
   }
 };
