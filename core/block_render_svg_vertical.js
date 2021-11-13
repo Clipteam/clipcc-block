@@ -844,7 +844,9 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
         paddedHeight = Blockly.BlockSvg.INPUT_SHAPE_HEIGHT;
       }
       if (input.connection.type === Blockly.INPUT_VALUE) {
-        paddedHeight += 2 * Blockly.BlockSvg.INLINE_PADDING_Y;
+        if (this.type != Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE) {
+          paddedHeight += 2 * Blockly.BlockSvg.INLINE_PADDING_Y;
+        }
       }
       if (input.connection.type === Blockly.NEXT_STATEMENT) {
         // Subtract height of notch, only if the last block in the stack has a next connection.
@@ -882,7 +884,6 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
     if (row.type != Blockly.BlockSvg.INLINE) {
       if (row.type == Blockly.NEXT_STATEMENT) {
         hasStatement = true;
-        fieldStatementWidth = Math.max(fieldStatementWidth, input.fieldWidth);
       } else {
         if (row.type == Blockly.INPUT_VALUE) {
           hasValue = true;
@@ -892,6 +893,7 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
         fieldValueWidth = Math.max(fieldValueWidth, input.fieldWidth);
       }
     }
+    fieldStatementWidth = Math.max(fieldStatementWidth, input.fieldWidth);
     previousRow = row;
   }
   // Compute padding for output blocks.
@@ -1228,7 +1230,7 @@ Blockly.BlockSvg.prototype.renderClassify_ = function() {
  * @private
  */
 Blockly.BlockSvg.prototype.renderDrawTop_ = function(steps, rightEdge) {
-  if (this.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE) {
+  if (Blockly.utils.isProcedureDefinitionBlock(this.type)) {
     steps.push('m 0, 0');
     steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_DEFINE_HAT);
   } else {
@@ -1320,18 +1322,23 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps,
       // Move to the right edge
       cursorX = Math.max(cursorX, inputRows.rightEdge);
       this.width = Math.max(this.width, cursorX);
-      if (!this.edgeShape_) {
-        // Include corner radius in drawing the horizontal line.
-        steps.push('H', cursorX - Blockly.BlockSvg.CORNER_RADIUS - this.edgeShapeWidth_);
-        steps.push(Blockly.BlockSvg.TOP_RIGHT_CORNER);
-      } else {
-        // Don't include corner radius - no corner (edge shape drawn).
-        steps.push('H', cursorX - this.edgeShapeWidth_);
+      if (Blockly.utils.isProcedureDefinitionBlock(this.type)) {
+        this.renderDefineBlock_(steps, inputRows, row[0], row, cursorY);
       }
-      // Subtract CORNER_RADIUS * 2 to account for the top right corner
-      // and also the bottom right corner. Only move vertically the non-corner length.
-      if (!this.edgeShape_) {
-        steps.push('v', row.height - Blockly.BlockSvg.CORNER_RADIUS * 2);
+      else {
+        if (!this.edgeShape_) {
+          // Include corner radius in drawing the horizontal line.
+          steps.push('H', cursorX - Blockly.BlockSvg.CORNER_RADIUS - this.edgeShapeWidth_);
+          steps.push(Blockly.BlockSvg.TOP_RIGHT_CORNER);
+        } else {
+          // Don't include corner radius - no corner (edge shape drawn).
+          steps.push('H', cursorX - this.edgeShapeWidth_);
+        }
+        // Subtract CORNER_RADIUS * 2 to account for the top right corner
+        // and also the bottom right corner. Only move vertically the non-corner length.
+        if (!this.edgeShape_) {
+          steps.push('v', row.height - Blockly.BlockSvg.CORNER_RADIUS * 2);
+        }
       }
     } else if (row.type == Blockly.NEXT_STATEMENT) {
       // Nested statement.
@@ -1345,7 +1352,7 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps,
       // Move to the start of the notch.
       cursorX = inputRows.statementEdge + Blockly.BlockSvg.NOTCH_WIDTH;
 
-      if (this.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE) {
+      if (Blockly.utils.isProcedureDefinitionBlock(this.type)) {
         this.renderDefineBlock_(steps, inputRows, input, row, cursorY);
       } else {
         Blockly.BlockSvg.drawStatementInputFromTopRight_(steps, cursorX,
@@ -1359,7 +1366,7 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps,
         this.width = Math.max(this.width, inputRows.statementEdge +
           input.connection.targetBlock().getHeightWidth().width);
       }
-      if (this.type != Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE &&
+      if (!Blockly.utils.isProcedureDefinitionBlock(this.type) &&
         (y == inputRows.length - 1 ||
           inputRows[y + 1].type == Blockly.NEXT_STATEMENT)) {
         // If the final input is a statement stack, add a small row underneath.
