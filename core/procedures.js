@@ -225,19 +225,17 @@ Blockly.Procedures.flyoutCategory = function(workspace) {
 
   // Add return statement
   xmlList.push(Blockly.Xml.textToDom(
-  // eslint-disable-next-line indent
-    '<xml><block type="procedures_return" gap="16">' +
-      '<value name="VALUE">' +
-        '<shadow type="text">' +
-          '<field name="TEXT">0</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block></xml>'
+      '<xml><block type="procedures_return" gap="16">' +
+        '<value name="VALUE">' +
+          '<shadow type="text">' +
+            '<field name="TEXT">0</field>' +
+          '</shadow>' +
+        '</value>' +
+      '</block></xml>'
   ).firstChild);
 
   // Create call blocks for each procedure defined in the workspace
-  //var mutations = Blockly.Procedures.allProcedureMutations(workspace);
-  var mutations = workspace.globalProcedureList_.procedureList_.concat(workspace.localProcedureList_.procedureList_);
+  var mutations = workspace.getAllProcedureMutations();
   mutations = Blockly.Procedures.sortProcedureMutations_(mutations);
   for (var i = 0; i < mutations.length; i++) {
     var mutation = mutations[i];
@@ -366,7 +364,7 @@ Blockly.Procedures.getDefineBlock = function(procCode, workspace) {
 };
 
 Blockly.Procedures.checkDefineBlock = function(procCode, workspace) {
-  var blocks = workspace.getDefineBlocks();
+  var blocks = workspace.getAllProcedureMutations();
   console.log(blocks);
   for (var i = 0; i < blocks.length; i++) {
     if (blocks[i].getAttribute('proccode') == procCode) {
@@ -403,7 +401,9 @@ Blockly.Procedures.newProcedureMutation = function() {
       ' argumentids="[]"' +
       ' argumentnames="[]"' +
       ' argumentdefaults="[]"' +
-      ' warp="false">' +
+      ' warp="false"' +
+      ' global="false"' +
+      ' return="false">' +
       '</mutation>' +
       '</xml>';
   return Blockly.Xml.textToDom(mutationText).firstChild;

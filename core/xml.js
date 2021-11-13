@@ -46,6 +46,7 @@ goog.require('goog.dom');
 Blockly.Xml.workspaceToDom = function(workspace, opt_noId) {
   var xml = goog.dom.createDom('xml');
   xml.appendChild(Blockly.Xml.variablesToDom(workspace.getAllVariables()));
+  xml.appendChild(Blockly.Xml.proceduresToDom(workspace.getAllProcedureMutations()));
   var comments = workspace.getTopComments(true).filter(function(topComment) {
     return topComment instanceof Blockly.WorkspaceComment;
   });
@@ -76,6 +77,19 @@ Blockly.Xml.variablesToDom = function(variableList) {
     variables.appendChild(element);
   }
   return variables;
+};
+
+/**
+ * Encode a list of procedures as XML.
+ * @param {!Array.<Object>} procedureList List of all procedures mutations
+ * @return {!Element} List of XML elements.
+ */
+Blockly.Xml.proceduresToDom = function(procedureList) {
+  var procedures = goog.dom.createDom('procedures');
+  for (var i = 0, procedure; procedure = procedureList[i]; i++) {
+    procedures.appendChild(procedure);
+  }
+  return procedures;
 };
 
 /**

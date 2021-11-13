@@ -26,11 +26,9 @@ Blockly.ProcedureList.prototype.getProcedureByProccode = function(proccode) {
 };
 
 Blockly.ProcedureList.prototype.createProcedureFromMutation = function(mutation) {
-  var procedure = this.getProcedureByProccode(mutation.getAttribute('proccode'));
-  if (procedure) {
-    return procedure;
-  }
-
   this.procedureList_.push(mutation);
-  return mutation;
+};
+
+Blockly.ProcedureList.prototype.getProcedureList = function() {
+  return this.procedureList_;
 };
