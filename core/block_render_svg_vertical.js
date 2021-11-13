@@ -884,6 +884,7 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
     if (row.type != Blockly.BlockSvg.INLINE) {
       if (row.type == Blockly.NEXT_STATEMENT) {
         hasStatement = true;
+        fieldStatementWidth = Math.max(fieldStatementWidth, input.fieldWidth);
       } else {
         if (row.type == Blockly.INPUT_VALUE) {
           hasValue = true;
@@ -893,7 +894,9 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
         fieldValueWidth = Math.max(fieldValueWidth, input.fieldWidth);
       }
     }
-    fieldStatementWidth = Math.max(fieldStatementWidth, input.fieldWidth);
+    if (this.type == Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE) {
+      fieldStatementWidth = Math.max(fieldStatementWidth, input.fieldWidth);
+    }
     previousRow = row;
   }
   // Compute padding for output blocks.
