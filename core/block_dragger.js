@@ -241,6 +241,8 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
   var isDeletingProcDef = this.wouldDeleteBlock_ &&
       (Blockly.utils.isProcedureDefinitionBlock(this.draggingBlock_.type));
 
+  var deletingProcCode = isDeletingProcDef ? this.draggingBlock_.getProcCode() : null;
+
   var deleted = this.maybeDeleteBlock_();
   if (!deleted) {
     // These are expensive and don't need to be done if we're deleting.
@@ -288,6 +290,7 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
           }
         }
       }
+      ws.deleteProcedureByProccode(deletingProcCode);
       // The proc deletion was valid, update the toolbox.
       ws.refreshToolboxSelection_();
     });

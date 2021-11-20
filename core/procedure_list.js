@@ -29,6 +29,15 @@ Blockly.ProcedureList.prototype.createProcedureFromMutation = function(mutation)
   this.procedureList_.push(mutation);
 };
 
+Blockly.ProcedureList.prototype.deleteProcedureByProccode = function(proccode) {
+  for (var j = 0, procedure; procedure = this.procedureList_[j]; j++) {
+    if (procedure.getAttribute('proccode') == proccode) {
+      this.procedureList_.splice(j, 1);
+      break;
+    }
+  }
+};
+
 Blockly.ProcedureList.prototype.getProcedureList = function() {
   return this.procedureList_;
 };

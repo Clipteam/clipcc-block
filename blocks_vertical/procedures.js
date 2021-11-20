@@ -118,6 +118,17 @@ Blockly.ScratchBlocks.ProcedureUtils.definitionDomToMutation = function(xmlEleme
 
 // End of serialization and deserialization.
 
+/**
+ * Returns the proccode of current procedures_definition.
+ * @return {string} Procedure name.
+ */
+Blockly.ScratchBlocks.ProcedureUtils.getDefinitionProcCode = function() {
+  var input = this.getInput('custom_block');
+  // If this input does not exist.
+  if (!input) return null;
+  return input.connection.targetBlock().getProcCode();
+};
+
 // Shared by all three procedure blocks (procedures_declaration,
 // procedures_call, and procedures_prototype).
 /**
@@ -808,7 +819,8 @@ Blockly.Blocks['procedures_definition'] = {
       ],
       "extensions": ["colours_more", "shape_hat", "procedure_def_contextmenu"]
     });
-  }
+  },
+  getProcCode: Blockly.ScratchBlocks.ProcedureUtils.getDefinitionProcCode
 };
 
 Blockly.Blocks['procedures_definition_return'] = {
@@ -827,7 +839,8 @@ Blockly.Blocks['procedures_definition_return'] = {
       ],
       "extensions": ["colours_more", "shape_hat", "procedure_def_contextmenu"]
     });
-  }
+  },
+  getProcCode: Blockly.ScratchBlocks.ProcedureUtils.getDefinitionProcCode
 };
 
 Blockly.Blocks['procedures_call'] = {
