@@ -556,6 +556,14 @@ Blockly.BlockSvg.prototype.updateColour = function() {
       field.setText(null);
     }
   }
+
+  // Set disabled
+  if (this.disabled) {
+    Blockly.utils.addClass(this.svgGroup_, 'blocklyDisabled');
+  }
+  else {
+    Blockly.utils.removeClass(this.svgGroup_, 'blocklyDisabled');
+  }
 };
 
 /**

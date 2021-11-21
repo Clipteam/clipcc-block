@@ -1121,5 +1121,24 @@ Blockly.Blocks['procedures_return'] = {
       "category": Blockly.Categories.more,
       "extensions": ["colours_function", "shape_end"]
     });
+  },
+  /**
+   * Called whenever anything on the workspace changes.
+   * Add warning if this flow block is not nested inside a loop.
+   * @param {!Blockly.Events.Abstract} _event Change event.
+   * @this {Blockly.Block}
+   */
+  onchange: function(_event) {
+    if (!this.workspace.isDragging || this.workspace.isDragging()) {
+      return;  // Don't change state at the start of a drag.
+    }
+    if (this.getRootBlock().type == 'procedures_definition_return') {
+      if (!this.isInFlyout) {
+        this.setDisabled(false);
+      }
+    }
+    else if (!this.isInFlyout && !this.getInheritedDisabled()) {
+      this.setDisabled(true);
+    }
   }
 };
