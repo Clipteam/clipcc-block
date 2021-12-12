@@ -1293,7 +1293,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchCategoryMenu {',
-    'width: 6.25rem;',
+    'width: 100px;',
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
     'font-size: .7rem;',
