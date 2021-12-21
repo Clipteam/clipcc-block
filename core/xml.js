@@ -427,7 +427,8 @@ Blockly.Xml.createWorkspaceCacheAndLoadFromXml = function(xml, workspace, id) {
   workspace.setResizesEnabled(false);
   workspace.setToolboxRefreshEnabled(false);
   if (workspace.hasCache(id)) {
-    throw 'Attempt to create a workspace cache with an existed id.';
+    // throw 'Attempt to create a workspace cache with an existed id.';
+    delete workspace.workspaceCache[id];
   }
   var cache = new Blockly.WorkspaceCache(workspace, id);
   workspace.workspaceCache[id] = cache;
