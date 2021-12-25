@@ -111,7 +111,7 @@ Blockly.WorkspaceAudio.prototype.load = function(filenames, name) {
 Blockly.WorkspaceAudio.prototype.preload = function() {
   for (var name in this.SOUNDS_) {
     var sound = this.SOUNDS_[name];
-    sound.volume = 0.01;
+    sound.volume = 1;
     var playPromise = sound.play();
 
     // Edge does not return a promise, so we need to check.
@@ -141,6 +141,7 @@ Blockly.WorkspaceAudio.prototype.preload = function() {
  * @param {number=} opt_volume Volume of sound (0-1).
  */
 Blockly.WorkspaceAudio.prototype.play = function(name, opt_volume) {
+  console.log('play a sound ', name);
   var sound = this.SOUNDS_[name];
   if (sound) {
     // Don't play one sound on top of another.
