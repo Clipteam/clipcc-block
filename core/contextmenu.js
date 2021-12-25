@@ -237,6 +237,24 @@ Blockly.ContextMenu.blockDeleteOption = function(block) {
 };
 
 /**
+ * Make a context menu option for disabling the current block.
+ * @param {!Blockly.BlockSvg} block The block where the right-click originated.
+ * @return {!Object} A menu option, containing text, enabled, and a callback.
+ * @package
+ */
+Blockly.ContextMenu.blockDisableOption = function(block) {
+  var blockStatus = block.disabled;
+  var disableOption = {
+    text: blockStatus ? Blockly.Msg.ENABLE_BLOCK : Blockly.Msg.DISABLE_BLOCK,
+    enabled: true,
+    callback: function() {
+      block.setDisabled(!blockStatus);
+    }
+  };
+  return disableOption;
+};
+
+/**
  * Make a context menu option for showing help for the current block.
  * @param {!Blockly.BlockSvg} block The block where the right-click originated.
  * @return {!Object} A menu option, containing text, enabled, and a callback.

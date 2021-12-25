@@ -680,6 +680,7 @@ Blockly.BlockSvg.prototype.showContextMenu_ = function(e) {
       menuOptions.push(Blockly.ContextMenu.blockCommentOption(block));
     }
     menuOptions.push(Blockly.ContextMenu.blockDeleteOption(block));
+    // menuOptions.push(Blockly.ContextMenu.blockDisableOption(block));
   } else if (this.parentBlock_ && this.isShadow_) {
     this.parentBlock_.showContextMenu_(e);
     return;
@@ -864,10 +865,32 @@ Blockly.BlockSvg.prototype.dispose = function(healStack, animate) {
 };
 
 /**
+ * Set whether the block is disabled or not.
+ * @param {boolean} disabled True if disabled.
+ */
+Blockly.BlockSvg.prototype.setDisabled = function(disabled) {
+  if (this.disabled != disabled) {
+    Blockly.BlockSvg.superClass_.setDisabled.call(this, disabled);
+    if (this.rendered && !this.getInheritedDisabled()) {
+      this.updateDisabled();
+    }
+  }
+};
+
+/**
  * Enable or disable a block.
  */
 Blockly.BlockSvg.prototype.updateDisabled = function() {
-  // not supported
+  var children = this.getChildren(false);
+  this.updateColour();
+  if (this.isCollapsed()) {
+    return;
+  }
+  for (var i = 0, child; (child = children[i]); i++) {
+    if (child.rendered) {
+      child.updateDisabled();
+    }
+  }
 };
 
 /**

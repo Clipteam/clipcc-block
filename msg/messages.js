@@ -232,6 +232,7 @@ Blockly.Msg.OPERATORS_NEQUALS = '%1 ≠ %2';
 
 // Procedures blocks
 Blockly.Msg.PROCEDURES_DEFINITION = 'define %1';
+Blockly.Msg.PROCEDURES_RETURN = 'return %1';
 
 // Sensing blocks
 Blockly.Msg.SENSING_TOUCHINGOBJECT = 'touching %1?';
@@ -312,7 +313,7 @@ Blockly.Msg.CATEGORY_CONTROL = 'Control';
 Blockly.Msg.CATEGORY_SENSING = 'Sensing';
 Blockly.Msg.CATEGORY_OPERATORS = 'Operators';
 Blockly.Msg.CATEGORY_VARIABLES = 'Variables';
-Blockly.Msg.CATEGORY_MYBLOCKS = 'My Blocks';
+Blockly.Msg.CATEGORY_FUNCTIONS = 'Functions';
 
 // Context menus
 Blockly.Msg.DUPLICATE = 'Duplicate';
@@ -322,6 +323,8 @@ Blockly.Msg.REMOVE_COMMENT = 'Remove Comment';
 Blockly.Msg.DELETE_BLOCK = 'Delete Block';
 Blockly.Msg.DELETE_X_BLOCKS = 'Delete %1 Blocks';
 Blockly.Msg.DELETE_ALL_BLOCKS = 'Delete all %1 blocks?';
+Blockly.Msg.DISABLE_BLOCK = 'Disable Block';
+Blockly.Msg.ENABLE_BLOCK = 'Enable Block';
 Blockly.Msg.CLEAN_UP = 'Clean up Blocks';
 Blockly.Msg.HELP = 'Help';
 Blockly.Msg.UNDO = 'Undo';
@@ -352,10 +355,10 @@ Blockly.Msg.DELETE_VARIABLE = 'Delete the "%1" variable';
 
 // Custom Procedures
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
-Blockly.Msg.NEW_PROCEDURE = 'Make a Block';
-Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A procedure named "%1" already exists.';
-Blockly.Msg.PROCEDURE_USED = 'To delete a block definition, first remove all uses of the block';
-Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block name';
+Blockly.Msg.NEW_PROCEDURE = 'Make a Function';
+Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A function named "%1" already exists.';
+Blockly.Msg.PROCEDURE_USED = 'To delete a function definition, first remove all uses of the block';
+Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'function name';
 
 // Lists
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI

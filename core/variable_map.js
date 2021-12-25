@@ -29,6 +29,7 @@ goog.provide('Blockly.VariableMap');
 goog.require('Blockly.Events.VarDelete');
 goog.require('Blockly.Events.VarRename');
 goog.require('Blockly.VariableModel');
+goog.require('Blockly.utils');
 
 
 /**
@@ -244,8 +245,7 @@ Blockly.VariableMap.prototype.deleteVariableById = function(id) {
     var variableName = variable.name;
     var uses = this.getVariableUsesById(id);
     for (var i = 0, block; block = uses[i]; i++) {
-      if (block.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE ||
-        block.type == 'procedures_defreturn') {
+      if (Blockly.utils.isProcedureDefinitionBlock(block.type)) {
         var procedureName = block.getFieldValue('NAME');
         var deleteText = Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE.
             replace('%1', variableName).

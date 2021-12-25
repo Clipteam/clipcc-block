@@ -56,7 +56,7 @@ Blockly.Colours = {
     "tertiary": "#2E8EB8"
   },
   "pen": {
-    "primary": "#0fBD8C",
+    "primary": "#0FBD8C",
     "secondary": "#0DA57A",
     "tertiary": "#0B8E69"
   },
@@ -81,6 +81,12 @@ Blockly.Colours = {
     "primary": "#FF6680",
     "secondary": "#FF4D6A",
     "tertiary": "#FF3355"
+  },
+  // Not a new category but for function blocks
+  "function": {
+    "primary": "#FD80C6",
+    "secondary": "#EF7ABC",
+    "tertiary": "#E26CB0",
   },
   "text": "#575E75",
   "workspace": "#F9F9F9",

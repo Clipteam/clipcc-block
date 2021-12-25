@@ -364,18 +364,21 @@ Blockly.SCALAR_VARIABLE_TYPE = '';
  * @const {string}
  */
 Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE = 'procedures_definition';
+Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE = 'procedures_definition_return';
 
 /**
  * The type of all procedure prototype blocks.
  * @const {string}
  */
 Blockly.PROCEDURES_PROTOTYPE_BLOCK_TYPE = 'procedures_prototype';
+Blockly.PROCEDURES_PROTOTYPE_RETURN_BLOCK_TYPE = 'procedures_prototype_return';
 
 /**
  * The type of all procedure call blocks.
  * @const {string}
  */
 Blockly.PROCEDURES_CALL_BLOCK_TYPE = 'procedures_call';
+Blockly.PROCEDURES_CALL_RETURN_BLOCK_TYPE = 'procedures_call_return';
 
 /**
  * ENUM for flyout status button states.

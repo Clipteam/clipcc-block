@@ -725,8 +725,7 @@ Blockly.Toolbox.Category.prototype.createDom = function() {
     this.bubble_.style.backgroundColor = this.colour_;
     this.bubble_.style.borderColor = this.secondaryColour_;
   }*/
-  this.bar_ = goog.dom.createDom('div',
-  {'class': 'scratchCategoryItemBar'});
+  this.bar_ = goog.dom.createDom('div', {'class': 'scratchCategoryItemBar'});
   this.bar_.style.backgroundColor = this.colour_;
   this.bar_.style.borderColor = this.secondaryColour_;
 
