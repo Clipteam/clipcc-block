@@ -31,6 +31,7 @@ goog.require('Blockly.Events.BlockMove');
 goog.require('Blockly.Events.DragBlockOutside');
 goog.require('Blockly.Events.EndBlockDrag');
 goog.require('Blockly.InsertionMarkerManager');
+goog.require('Blockly.utils');
 
 goog.require('goog.math.Coordinate');
 goog.require('goog.asserts');
@@ -238,7 +239,9 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
 
   // Scratch-specific: note possible illegal definition deletion for rollback below.
   var isDeletingProcDef = this.wouldDeleteBlock_ &&
-      (this.draggingBlock_.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE);
+      (Blockly.utils.isProcedureDefinitionBlock(this.draggingBlock_.type));
+
+  var deletingProcCode = isDeletingProcDef ? this.draggingBlock_.getProcCode() : null;
 
   var deleted = this.maybeDeleteBlock_();
   if (!deleted) {
@@ -277,7 +280,7 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
       var allBlocks = ws.getAllBlocks();
       for (var i = 0; i < allBlocks.length; i++) {
         var block = allBlocks[i];
-        if (block.type == Blockly.PROCEDURES_CALL_BLOCK_TYPE) {
+        if (Blockly.utils.isProcedureCallBlock(block.type)) {
           var procCode = block.getProcCode();
           // Check for call blocks with no associated define block.
           if (!Blockly.Procedures.getDefineBlock(procCode, ws)) {
@@ -287,6 +290,7 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
           }
         }
       }
+      ws.deleteProcedureByProccode(deletingProcCode);
       // The proc deletion was valid, update the toolbox.
       ws.refreshToolboxSelection_();
     });

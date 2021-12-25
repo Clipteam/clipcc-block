@@ -450,8 +450,8 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.blocklyDisabled>.blocklyPath {',
-    'fill-opacity: .5;',
-    'stroke-opacity: .5;',
+    'fill-opacity: .4;',
+    'stroke-opacity: .7;',
   '}',
 
   '.blocklyInsertionMarker>.blocklyPath {',

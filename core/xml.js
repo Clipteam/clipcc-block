@@ -46,6 +46,7 @@ goog.require('goog.dom');
 Blockly.Xml.workspaceToDom = function(workspace, opt_noId) {
   var xml = goog.dom.createDom('xml');
   xml.appendChild(Blockly.Xml.variablesToDom(workspace.getAllVariables()));
+  xml.appendChild(Blockly.Xml.proceduresToDom(workspace.getAllProcedureMutations()));
   var comments = workspace.getTopComments(true).filter(function(topComment) {
     return topComment instanceof Blockly.WorkspaceComment;
   });
@@ -76,6 +77,19 @@ Blockly.Xml.variablesToDom = function(variableList) {
     variables.appendChild(element);
   }
   return variables;
+};
+
+/**
+ * Encode a list of procedures as XML.
+ * @param {!Array.<Object>} procedureList List of all procedures mutations
+ * @return {!Element} List of XML elements.
+ */
+Blockly.Xml.proceduresToDom = function(procedureList) {
+  var procedures = goog.dom.createDom('procedures');
+  for (var i = 0, procedure; procedure = procedureList[i]; i++) {
+    procedures.appendChild(procedure);
+  }
+  return procedures;
 };
 
 /**
@@ -515,6 +529,8 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
             'another location.');
         }
         variablesFirst = false;
+      } else if (name == 'procedures') {
+        Blockly.Xml.domToProcedures(xmlChild, workspace);
       }
     }
   } finally {
@@ -671,6 +687,19 @@ Blockly.Xml.domToVariables = function(xmlVariables, workspace) {
     }
     workspace.createVariable(name, type, id, isLocal, isCloud);
   }
+};
+
+/**
+ * Decode an XML list of procedures and add the procedures to the workspace.
+ * @param {!Element} xmlProcedures List of XML procedure elements.
+ * @param {!Blockly.Workspace} workspace The workspace to which the procedure
+ *     should be added.
+ */
+Blockly.Xml.domToProcedures = function(xmlProcedures, workspace) {
+  for (var i = 0, xmlChild; xmlChild = xmlProcedures.children[i]; i++) {
+    workspace.createProcedureFromMutation(xmlChild);
+  }
+  workspace.refreshToolboxSelection_();
 };
 
 /**

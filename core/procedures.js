@@ -36,6 +36,7 @@ goog.require('Blockly.Events.BlockChange');
 goog.require('Blockly.Field');
 goog.require('Blockly.Names');
 goog.require('Blockly.Workspace');
+goog.require('Blockly.utils');
 
 
 /**
@@ -84,7 +85,7 @@ Blockly.Procedures.allProcedureMutations = function(root) {
   var blocks = root.getAllBlocks();
   var mutations = [];
   for (var i = 0; i < blocks.length; i++) {
-    if (blocks[i].type == Blockly.PROCEDURES_PROTOTYPE_BLOCK_TYPE) {
+    if (Blockly.utils.isProcedurePrototypeBlock(blocks[i].type)) {
       var mutation = blocks[i].mutationToDom(/* opt_generateShadows */ true);
       if (mutation) {
         mutations.push(mutation);
@@ -223,16 +224,33 @@ Blockly.Procedures.flyoutCategory = function(workspace) {
 
   Blockly.Procedures.addCreateButton_(workspace, xmlList);
 
+  // Add return statement
+  xmlList.push(Blockly.Xml.textToDom(
+      '<xml><block type="procedures_return" gap="16">' +
+        '<value name="VALUE">' +
+          '<shadow type="text">' +
+            '<field name="TEXT">0</field>' +
+          '</shadow>' +
+        '</value>' +
+      '</block></xml>'
+  ).firstChild);
+
   // Create call blocks for each procedure defined in the workspace
-  var mutations = Blockly.Procedures.allProcedureMutations(workspace);
+  var mutations = workspace.getAllProcedureMutations();
   mutations = Blockly.Procedures.sortProcedureMutations_(mutations);
   for (var i = 0; i < mutations.length; i++) {
     var mutation = mutations[i];
+    mutation.setAttribute('generateshadows', true);
     // <block type="procedures_call">
     //   <mutation ...></mutation>
     // </block>
     var block = goog.dom.createDom('block');
-    block.setAttribute('type', 'procedures_call');
+    if (mutation.getAttribute('return') == 'true') {
+      block.setAttribute('type', 'procedures_call_return');
+    }
+    else {
+      block.setAttribute('type', 'procedures_call');
+    }
     block.setAttribute('gap', 16);
     block.appendChild(mutation);
     xmlList.push(block);
@@ -288,7 +306,7 @@ Blockly.Procedures.getCallers = function(name, ws, definitionRoot,
   var callers = [];
   for (var i = 0; i < allBlocks.length; i++) {
     var block = allBlocks[i];
-    if (block.type == Blockly.PROCEDURES_CALL_BLOCK_TYPE ) {
+    if (Blockly.utils.isProcedureCallBlock(block.type)) {
       var procCode = block.getProcCode();
       if (procCode && procCode == name) {
         callers.push(block);
@@ -341,7 +359,7 @@ Blockly.Procedures.getDefineBlock = function(procCode, workspace) {
   // Assume that a procedure definition is a top block.
   var blocks = workspace.getTopBlocks(false);
   for (var i = 0; i < blocks.length; i++) {
-    if (blocks[i].type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE) {
+    if (Blockly.utils.isProcedureDefinitionBlock(blocks[i].type)) {
       var prototypeBlock = blocks[i].getInput('custom_block').connection.targetBlock();
       if (prototypeBlock.getProcCode && prototypeBlock.getProcCode() == procCode) {
         return blocks[i];
@@ -349,6 +367,17 @@ Blockly.Procedures.getDefineBlock = function(procCode, workspace) {
     }
   }
   return null;
+};
+
+Blockly.Procedures.checkDefineBlock = function(procCode, workspace) {
+  var blocks = workspace.getAllProcedureMutations();
+  console.log(blocks);
+  for (var i = 0; i < blocks.length; i++) {
+    if (blocks[i].getAttribute('proccode') == procCode) {
+      return true;
+    }
+  }
+  return false;
 };
 
 /**
@@ -378,7 +407,9 @@ Blockly.Procedures.newProcedureMutation = function() {
       ' argumentids="[]"' +
       ' argumentnames="[]"' +
       ' argumentdefaults="[]"' +
-      ' warp="false">' +
+      ' warp="false"' +
+      ' global="false"' +
+      ' return="false">' +
       '</mutation>' +
       '</xml>';
   return Blockly.Xml.textToDom(mutationText).firstChild;
@@ -405,7 +436,20 @@ Blockly.Procedures.createProcedureDefCallback_ = function(workspace) {
 Blockly.Procedures.createProcedureCallbackFactory_ = function(workspace) {
   return function(mutation) {
     if (mutation) {
-      var blockText = '<xml>' +
+      var blockText;
+      if (mutation.getAttribute('return') == 'true') {
+        blockText = '<xml>' +
+          '<block type="procedures_definition_return">' +
+          '<value name="custom_block">' +
+          '<shadow type="procedures_prototype_return">' +
+          Blockly.Xml.domToText(mutation) +
+          '</shadow>' +
+          '</value>' +
+          '</block>' +
+          '</xml>';
+      }
+      else {
+        blockText = '<xml>' +
           '<block type="procedures_definition">' +
           '<statement name="custom_block">' +
           '<shadow type="procedures_prototype">' +
@@ -414,8 +458,10 @@ Blockly.Procedures.createProcedureCallbackFactory_ = function(workspace) {
           '</statement>' +
           '</block>' +
           '</xml>';
+      }
       var blockDom = Blockly.Xml.textToDom(blockText).firstChild;
       Blockly.Events.setGroup(true);
+      workspace.createProcedureFromMutation(mutation);
       var block = Blockly.Xml.domToBlock(blockDom, workspace);
       var scale = workspace.scale; // To convert from pixel units to workspace units
       // Position the block so that it is at the top left of the visible workspace,
@@ -441,7 +487,7 @@ Blockly.Procedures.createProcedureCallbackFactory_ = function(workspace) {
 Blockly.Procedures.editProcedureCallback_ = function(block) {
   // Edit can come from one of three block types (call, define, prototype)
   // Normalize by setting the block to the prototype block for the procedure.
-  if (block.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE) {
+  if (Blockly.utils.isProcedureDefinitionBlock(block.type)) {
     var input = block.getInput('custom_block');
     if (!input) {
       alert('Bad input'); // TODO: Decide what to do about this.
@@ -454,12 +500,12 @@ Blockly.Procedures.editProcedureCallback_ = function(block) {
     }
     var innerBlock = conn.targetBlock();
     if (!innerBlock ||
-        !innerBlock.type == Blockly.PROCEDURES_PROTOTYPE_BLOCK_TYPE) {
+        !Blockly.utils.isProcedurePrototypeBlock(innerBlock.type)) {
       alert('Bad inner block'); // TODO: Decide what to do about this.
       return;
     }
     block = innerBlock;
-  } else if (block.type == Blockly.PROCEDURES_CALL_BLOCK_TYPE) {
+  } else if (Blockly.utils.isProcedureCallBlock(block.type)) {
     // This is a call block, find the prototype corresponding to the procCode.
     // Make sure to search the correct workspace, call block can be in flyout.
     var workspaceToSearch = block.workspace.isFlyout ?
