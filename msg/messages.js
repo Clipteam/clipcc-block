@@ -355,10 +355,10 @@ Blockly.Msg.DELETE_VARIABLE = 'Delete the "%1" variable';
 
 // Custom Procedures
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
-Blockly.Msg.NEW_PROCEDURE = 'Make a Block';
-Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A procedure named "%1" already exists.';
-Blockly.Msg.PROCEDURE_USED = 'To delete a block definition, first remove all uses of the block';
-Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block name';
+Blockly.Msg.NEW_PROCEDURE = 'Make a Function';
+Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A function named "%1" already exists.';
+Blockly.Msg.PROCEDURE_USED = 'To delete a function definition, first remove all uses of the block';
+Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'function name';
 
 // Lists
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
