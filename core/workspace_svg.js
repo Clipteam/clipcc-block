@@ -76,6 +76,7 @@ Blockly.WorkspaceSvg = function(options, opt_blockDragSurface, opt_wsDragSurface
       options.setMetrics || Blockly.WorkspaceSvg.setTopLevelWorkspaceMetrics_;
 
   Blockly.ConnectionDB.init(this);
+  this.currentCache.connectionDBList = this.connectionDBList;
 
   if (opt_blockDragSurface) {
     this.blockDragSurface_ = opt_blockDragSurface;
@@ -2264,6 +2265,8 @@ Blockly.WorkspaceSvg.prototype.getGrid = function() {
 
 Blockly.WorkspaceSvg.prototype.switchToCache = function(id) {
   Blockly.WorkspaceSvg.superClass_.switchToCache.call(this, id);
+  
+  this.connectionDBList = this.currentCache.connectionDBList;
 
   this.svgBlockCanvas_.innerHTML = '';
   
