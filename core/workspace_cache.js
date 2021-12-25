@@ -8,6 +8,7 @@ goog.provide('Blockly.WorkspaceCache');
 
 goog.require('Blockly.VariableMap');
 goog.require('Blockly.WorkspaceComment');
+goog.require('Blockly.ConnectionDB');
 
 /**
  * Class for a workspace cache storing data of a workspace
@@ -64,6 +65,13 @@ Blockly.WorkspaceCache = function(workspace, id) {
    * @private
    */
   this.potentialVariableMap_ = null;
+
+  /**
+   * @type {!Array.<!Blockly.ConnectionDB>}
+   * @private
+   */
+  this.connectionDBList = null;
+  Blockly.ConnectionDB.init(this);
 
   this.isClearing = false;
 };
