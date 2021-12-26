@@ -24,7 +24,7 @@
     "i18n": "node i18n/js_to_json.js && node i18n/json_to_js.js",
     "i18n:push": "poe-push block msg/json/en.json",
     "i18n:sync:src": "tx-push-src scratch-editor blocks msg/json/en.json",
-    "i18n:sync:translations": "node i18n/sync_tx_translations.js",
+    "i18n:sync:translations": "node i18n/sync_clipcc_l10n.js",
     "i18n:update": "yarn run i18n:sync:src && yarn run i18n:sync:translations"
   },
   "dependencies": {
