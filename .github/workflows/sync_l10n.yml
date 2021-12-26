@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: 14
       - run: yarn add https://github.com/Clipteam/clipcc-l10n
+      - run: cd ./node_modules/clipcc-l10n && yarn && yarn run build && cd ../../
       - run: node i18n/sync_clipcc_l10n.js
       - name: Push Commit
         uses: github-actions-x/commit@v2.8
