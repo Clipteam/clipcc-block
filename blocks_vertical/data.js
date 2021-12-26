@@ -663,7 +663,7 @@ Blockly.Constants.Data.RENAME_OPTION_CALLBACK_FACTORY = function(block,
 Blockly.Constants.Data.DELETE_OPTION_CALLBACK_FACTORY = function(block,
     fieldName) {
   return function() {
-    var workspace = block.workspace;
+    var workspace = block.workspace.targetWorkspace;
     var variable = block.getField(fieldName).getVariable();
     workspace.deleteVariableById(variable.getId());
   };
