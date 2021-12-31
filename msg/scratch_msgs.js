@@ -318,7 +318,8 @@ Blockly.ScratchMsgs.locales["en"] =
     "DISABLE_BLOCK": "Disable Block",
     "ENABLE_BLOCK": "Enable Block",
     "PROCEDURE_USED": "To delete a function definition, first remove all uses of the block",
-    "CATEGORY_FUNCTIONS": "Functions"
+    "CATEGORY_FUNCTIONS": "Functions",
+    "OBSOLETED_BLOCKS": "Obsoleted Blocks"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn"] =
@@ -335,7 +336,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "CONTROL_WAITUNTIL": "等待 %1",
     "CONTROL_REPEATUNTIL": "重复执行直到 %1",
     "CONTROL_WHILE": "当 %1 重复执行",
-    "CONTROL_FOREACH": "对于 %2 中的每个 %1",
+    "CONTROL_FOREACH": "重复执行 %2 次并递增 %1",
     "CONTROL_STARTASCLONE": "当作为克隆体启动时",
     "CONTROL_CREATECLONEOF": "克隆 %1",
     "CONTROL_CREATECLONEOF_MYSELF": "自己",
@@ -632,7 +633,8 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "DISABLE_BLOCK": "禁用积木",
     "ENABLE_BLOCK": "启用积木",
     "PROCEDURE_USED": "要删除函数定义，需先删除引用该函数的所有积木",
-    "CATEGORY_FUNCTIONS": "函数"
+    "CATEGORY_FUNCTIONS": "函数",
+    "OBSOLETED_BLOCKS": "弃用的积木"
 };
 
 Blockly.ScratchMsgs.locales["zh-tw"] =
@@ -946,7 +948,8 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "DISABLE_BLOCK": "禁用積木",
     "ENABLE_BLOCK": "啟用積木",
     "PROCEDURE_USED": "刪除本函數前，請先刪除它的所有引用",
-    "CATEGORY_FUNCTIONS": "函數"
+    "CATEGORY_FUNCTIONS": "函數",
+    "OBSOLETED_BLOCKS": "Obsoleted Blocks"
 };
 
 Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
@@ -1260,6 +1263,7 @@ Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
     "DISABLE_BLOCK": "置之不理",
     "ENABLE_BLOCK": "重新理她",
     "PROCEDURE_USED": "废掉这个宝典前请废掉她的所有臣民",
-    "CATEGORY_FUNCTIONS": "宝典"
+    "CATEGORY_FUNCTIONS": "宝典",
+    "OBSOLETED_BLOCKS": "遗忘之地"
 };
 // End of combined translations
