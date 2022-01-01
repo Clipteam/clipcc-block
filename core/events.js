@@ -158,6 +158,12 @@ Blockly.Events.COMMENT_CHANGE = 'comment_change';
 Blockly.Events.COMMENT_DELETE = 'comment_delete';
 
 /**
+ * Name of event that modifies a function prototype.
+ * @const
+ */
+Blockly.Events.FUNC_MODIFY = 'func_modify';
+
+/**
  * Name of event that records a UI change.
  * @const
  */
@@ -372,6 +378,9 @@ Blockly.Events.fromJson = function(json, workspace) {
       break;
     case Blockly.Events.COMMENT_DELETE:
       event = new Blockly.Events.CommentDelete(null);
+      break;
+    case Blockly.Events.FUNC_MODIFY:
+      event = new Blockly.Events.FuncModify(null);
       break;
     case Blockly.Events.UI:
       event = new Blockly.Events.Ui(null);

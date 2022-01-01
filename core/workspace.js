@@ -473,6 +473,10 @@ Blockly.Workspace.prototype.deleteProcedureByProccode = function(proccode) {
   this.procedureList_.deleteProcedureByProccode(proccode);
 };
 
+Blockly.Workspace.prototype.getProcedureByProccode = function(proccode) {
+  return this.procedureList_.getProcedureByProccode(proccode);
+};
+
 /**
  * Returns the horizontal offset of the workspace.
  * Intended for LTR/RTL compatibility in XML.
