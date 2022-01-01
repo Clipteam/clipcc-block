@@ -949,7 +949,7 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "ENABLE_BLOCK": "啟用積木",
     "PROCEDURE_USED": "刪除本函數前，請先刪除它的所有引用",
     "CATEGORY_FUNCTIONS": "函數",
-    "OBSOLETED_BLOCKS": "Obsoleted Blocks"
+    "OBSOLETED_BLOCKS": "弃用的積木"
 };
 
 Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
@@ -1145,8 +1145,8 @@ Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
     "SENSING_COLORISTOUCHINGCOLOR": "颜色 %1 碰到 %2 ?",
     "SENSING_DISTANCETO": "到 %1 的距离",
     "SENSING_DISTANCETO_POINTER": "鼠标指针",
-    "SENSING_DISTANCEBETWEENPOSITION": "distance from (x: %1, y: %2 ) to (x: %3 , y: %4 )",
-    "SENSING_DIRECTIONBETWEENPOSITION": "direction from (x: %1, y: %2 ) to (x: %3 , y: %4 )",
+    "SENSING_DISTANCEBETWEENPOSITION": "从 (x: %1, y: %2) 到 (x: %3, y: %4) 的距离",
+    "SENSING_DIRECTIONBETWEENPOSITION": "从 (x: %1, y: %2) 到 (x: %3, y: %4) 的的方向",
     "SENSING_ASKANDWAIT": "公主请教你 %1 并等待",
     "SENSING_ASK_TEXT": "君的名字",
     "SENSING_ANSWER": "陛下的回应",
