@@ -224,6 +224,22 @@ Blockly.Procedures.flyoutCategory = function(workspace) {
 
   Blockly.Procedures.addCreateButton_(workspace, xmlList);
 
+  // Create call blocks for each procedure defined in the workspace
+  var mutations = workspace.getAllProcedureMutations();
+  mutations = Blockly.Procedures.sortProcedureMutations_(mutations);
+  for (var i = 0; i < mutations.length; i++) {
+    var mutation = mutations[i];
+    mutation.setAttribute('generateshadows', true);
+    // <block type="procedures_call">
+    //   <mutation ...></mutation>
+    // </block>
+    var block = goog.dom.createDom('block');
+    block.setAttribute('type', 'procedures_call');
+    block.setAttribute('gap', 16);
+    block.appendChild(mutation);
+    xmlList.push(block);
+  }
+
   // Add return statement
   xmlList.push(Blockly.Xml.textToDom(
       '<xml><block type="procedures_return" gap="16">' +
@@ -235,26 +251,6 @@ Blockly.Procedures.flyoutCategory = function(workspace) {
       '</block></xml>'
   ).firstChild);
 
-  // Create call blocks for each procedure defined in the workspace
-  var mutations = workspace.getAllProcedureMutations();
-  mutations = Blockly.Procedures.sortProcedureMutations_(mutations);
-  for (var i = 0; i < mutations.length; i++) {
-    var mutation = mutations[i];
-    mutation.setAttribute('generateshadows', true);
-    // <block type="procedures_call">
-    //   <mutation ...></mutation>
-    // </block>
-    var block = goog.dom.createDom('block');
-    if (mutation.getAttribute('return') == 'true') {
-      block.setAttribute('type', 'procedures_call_return');
-    }
-    else {
-      block.setAttribute('type', 'procedures_call');
-    }
-    block.setAttribute('gap', 16);
-    block.appendChild(mutation);
-    xmlList.push(block);
-  }
   return xmlList;
 };
 
@@ -439,29 +435,15 @@ Blockly.Procedures.createProcedureDefCallback_ = function(workspace) {
 Blockly.Procedures.createProcedureCallbackFactory_ = function(workspace) {
   return function(mutation) {
     if (mutation) {
-      var blockText;
-      if (mutation.getAttribute('return') == 'true') {
-        blockText = '<xml>' +
-          '<block type="procedures_definition_return">' +
-          '<value name="custom_block">' +
-          '<shadow type="procedures_prototype_return">' +
-          Blockly.Xml.domToText(mutation) +
-          '</shadow>' +
-          '</value>' +
-          '</block>' +
-          '</xml>';
-      }
-      else {
-        blockText = '<xml>' +
-          '<block type="procedures_definition">' +
-          '<statement name="custom_block">' +
-          '<shadow type="procedures_prototype">' +
-          Blockly.Xml.domToText(mutation) +
-          '</shadow>' +
-          '</statement>' +
-          '</block>' +
-          '</xml>';
-      }
+      var blockText = '<xml>' +
+        '<block type="procedures_definition">' +
+        '<statement name="custom_block">' +
+        '<shadow type="procedures_prototype">' +
+        Blockly.Xml.domToText(mutation) +
+        '</shadow>' +
+        '</statement>' +
+        '</block>' +
+        '</xml>';
       var blockDom = Blockly.Xml.textToDom(blockText).firstChild;
       Blockly.Events.setGroup(true);
       workspace.createProcedureFromMutation(mutation);

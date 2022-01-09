@@ -323,12 +323,6 @@ Blockly.Connection.prototype.canConnectWithReason_ = function(target) {
     // And hack to fix #1534: Fail attempts to connect anything but a
     // defnoreturn block to a prototype block.
     return Blockly.Connection.REASON_CUSTOM_PROCEDURE;
-  } else if ((blockA.type == Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE &&
-      blockB.type != Blockly.PROCEDURES_PROTOTYPE_RETURN_BLOCK_TYPE &&
-      superiorConn == blockA.getInput('custom_block').connection) ||
-      (blockB.type == Blockly.PROCEDURES_PROTOTYPE_RETURN_BLOCK_TYPE &&
-      blockA.type != Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE)) {
-    return Blockly.Connection.REASON_CUSTOM_PROCEDURE;
   }
   return Blockly.Connection.CAN_CONNECT;
 };

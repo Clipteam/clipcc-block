@@ -949,16 +949,13 @@ Blockly.utils.toRadians = function(angleDegrees) {
 };
 
 Blockly.utils.isProcedureDefinitionBlock = function(type) {
-  return (type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE ||
-      type == Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE);
+  return type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE;
 };
 
 Blockly.utils.isProcedurePrototypeBlock = function(type) {
-  return (type == Blockly.PROCEDURES_PROTOTYPE_BLOCK_TYPE ||
-      type == Blockly.PROCEDURES_PROTOTYPE_RETURN_BLOCK_TYPE);
+  return type == Blockly.PROCEDURES_PROTOTYPE_BLOCK_TYPE;
 };
 
 Blockly.utils.isProcedureCallBlock = function(type) {
-  return (type == Blockly.PROCEDURES_CALL_BLOCK_TYPE ||
-      type == Blockly.PROCEDURES_CALL_RETURN_BLOCK_TYPE);
+  return type == Blockly.PROCEDURES_CALL_BLOCK_TYPE;
 };

@@ -852,7 +852,7 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
         paddedHeight = Blockly.BlockSvg.INPUT_SHAPE_HEIGHT;
       }
       if (input.connection.type === Blockly.INPUT_VALUE) {
-        if (this.type != Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE) {
+        if (!(this.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE && this.return_)) {
           paddedHeight += 2 * Blockly.BlockSvg.INLINE_PADDING_Y;
         }
       }
@@ -902,7 +902,7 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
         fieldValueWidth = Math.max(fieldValueWidth, input.fieldWidth);
       }
     }
-    if (this.type == Blockly.PROCEDURES_DEFINITION_RETURN_BLOCK_TYPE) {
+    if (this.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE && this.return_) {
       fieldStatementWidth = Math.max(fieldStatementWidth, input.fieldWidth);
     }
     previousRow = row;
