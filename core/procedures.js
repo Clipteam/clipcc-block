@@ -318,9 +318,9 @@ Blockly.Procedures.getCallers = function(name, ws, definitionRoot,
 
 /**
  * Find and edit all callers with a procCode using a new mutation.
- * @param {string} name Name of procedure (procCode in scratch-blocks).
  * @param {!Blockly.Workspace} ws The workspace to find callers in.
- * @param {!Element} mutation New mutation for the callers.
+ * @param {!Element} oldMutation Old mutation for the callers.
+ * @param {!Element} newMutation New mutation for the callers.
  * @package
  */
 Blockly.Procedures.mutateCallersAndPrototype = function(ws, oldMutation, newMutation) {
@@ -426,7 +426,8 @@ Blockly.Procedures.newProcedureMutation = function() {
 Blockly.Procedures.createProcedureDefCallback_ = function(workspace) {
   Blockly.Procedures.externalProcedureDefCallback(
       Blockly.Procedures.newProcedureMutation(),
-      Blockly.Procedures.createProcedureCallbackFactory_(workspace)
+      Blockly.Procedures.createProcedureCallbackFactory_(workspace),
+      true
   );
 };
 
@@ -522,13 +523,15 @@ Blockly.Procedures.editProcedureCallback_ = function(block) {
   // Block now refers to the procedure prototype block, it is safe to proceed.
   Blockly.Procedures.externalProcedureDefCallback(
       mutation,
-      Blockly.Procedures.editProcedureCallbackFactory_(ws, mutation)
+      Blockly.Procedures.editProcedureCallbackFactory_(ws, mutation),
+      false
   );
 };
 
 /**
  * Callback factory for editing an existing custom procedure.
- * @param {!Blockly.Block} block The procedure prototype block being edited.
+ * @param {!Blockly.Workspace} ws The procedure prototype block being edited.
+ * @param {!Element} mutation The old mutation of custom procedure.
  * @return {function(?Element)} Callback for editing the custom procedure.
  * @private
  */
