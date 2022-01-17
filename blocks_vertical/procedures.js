@@ -668,6 +668,25 @@ Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal = function() {
 };
 
 /**
+ * Externally-visible function to update a procedure declaration's shape.
+ * @public
+ */
+Blockly.ScratchBlocks.ProcedureUtils.updateProcedureShape = function() {
+  if (this.return_) {
+    this.setOutputShape(2);
+    this.setPreviousStatement(false);
+    this.setNextStatement(false);
+    this.setOutput(true);
+  }
+  else {
+    this.setOutputShape(0);
+    this.setOutput(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  }
+}
+
+/**
  * Externally-visible function to get the warp on procedure declaration.
  * @return {boolean} The value of the warp_ property.
  * @public
@@ -1031,6 +1050,7 @@ Blockly.Blocks['procedures_declaration'] = {
   addLabelExternal: Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal,
   addBooleanExternal: Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal,
   addStringNumberExternal: Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal,
+  updateProcedureShape: Blockly.ScratchBlocks.ProcedureUtils.updateProcedureShape,
   onChangeFn: Blockly.ScratchBlocks.ProcedureUtils.updateDeclarationProcCode_
 };
 
