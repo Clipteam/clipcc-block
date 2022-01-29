@@ -684,7 +684,7 @@ Blockly.ScratchBlocks.ProcedureUtils.updateProcedureShape = function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
   }
-}
+};
 
 /**
  * Externally-visible function to get the warp on procedure declaration.
