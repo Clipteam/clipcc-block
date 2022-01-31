@@ -1013,10 +1013,10 @@ cli-width@^2.0.0:
   resolved "https://registry.npm.taobao.org/cli-width/download/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
-clipcc-l10n@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/clipcc-l10n/-/clipcc-l10n-3.1.0.tgz#64fab9a9f35cc845b250932f323c6e65772a4d06"
-  integrity sha512-qTdjA+4tYBITrH3hb7MdsBWRLCo7Dw/QmDm/K7sHZtomkOT1mNfxb5HrOYKBpgcjpTKtL7aMGbyyJa17nwOsuA==
+clipcc-l10n@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/clipcc-l10n/-/clipcc-l10n-3.1.1.tgz#ab594503570da64f4add48e9ce56588980fcb43b"
+  integrity sha512-EWpTkzzki7zcOZx8FinMAMJsGkfrUbOWzdW2KSa01bFod8HP2yAxBddgW3aWCbsT1rcYL6HtKkaOa9r+wRCN7A==
   dependencies:
     "@babel/cli" "^7.1.2"
     "@babel/core" "^7.1.2"
@@ -2896,10 +2896,10 @@ json5@^2.1.0:
   dependencies:
     minimist "^1.2.5"
 
-json@9.0.4:
-  version "9.0.4"
-  resolved "https://registry.npm.taobao.org/json/download/json-9.0.4.tgz#d0dbf2404c128572a935ecafadfc782ec81112ce"
-  integrity sha1-0NvyQEwShXKpNeyvrfx4LsgREs4=
+json@10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/json/-/json-10.0.0.tgz#c49a939d4abc7067cc225419d5dd17ab7bf2f66c"
+  integrity sha512-iK7tAZtpoghibjdB1ncCWykeBMmke3JThUe+rnkD4qkZaglOIQ70Pw7r5UJ4lyUT+7gnw7ehmmLUHDuhqzQD+g==
 
 jsonfile@^4.0.0:
   version "4.0.0"
