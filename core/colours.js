@@ -83,10 +83,10 @@ Blockly.Colours = {
     "tertiary": "#FF3355"
   },
   // Not a new category but for function blocks
-  "function": {
-    "primary": "#FD80C6",
-    "secondary": "#EF7ABC",
-    "tertiary": "#E26CB0",
+  "more2": {
+    "primary": "#673AB7",
+    "secondary": "#5D30AD",
+    "tertiary": "#5326A3",
   },
   "text": "#575E75",
   "workspace": "#F9F9F9",

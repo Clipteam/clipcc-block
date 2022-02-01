@@ -869,7 +869,7 @@ Blockly.Blocks['procedures_call'] = {
    */
   init: function() {
     this.jsonInit({
-      "extensions": ["colours_more", "shape_statement", "procedure_call_contextmenu"]
+      "extensions": ["colours_more2", "shape_statement", "procedure_call_contextmenu"]
     });
     this.procCode_ = '';
     this.argumentIds_ = [];
@@ -901,7 +901,7 @@ Blockly.Blocks['procedures_call_return'] = {
    */
   init: function() {
     this.jsonInit({
-      "extensions": ["colours_more", "output_number", "output_string", "procedure_call_contextmenu"]
+      "extensions": ["colours_more2", "output_number", "output_string", "procedure_call_contextmenu"]
     });
     this.procCode_ = '';
     this.argumentIds_ = [];
@@ -1011,7 +1011,7 @@ Blockly.Blocks['procedures_declaration'] = {
    */
   init: function() {
     this.jsonInit({
-      "extensions": ["colours_more", "shape_statement"]
+      "extensions": ["colours_more2", "shape_statement"]
     });
     /* Data known about the procedure. */
     this.procCode_ = '';
@@ -1139,7 +1139,7 @@ Blockly.Blocks['procedures_return'] = {
         }
       ],
       "category": Blockly.Categories.more,
-      "extensions": ["colours_function", "shape_end"]
+      "extensions": ["colours_more", "shape_end"]
     });
   },
   /**
