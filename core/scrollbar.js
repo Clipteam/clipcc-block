@@ -220,7 +220,7 @@ Blockly.Scrollbar = function(workspace, horizontal, opt_pair, opt_class) {
     this.svgBackground_.setAttribute('height', scrollbarThickness);
     this.outerSvg_.setAttribute('height', scrollbarThickness);
     this.svgHandle_.setAttribute('height', scrollbarThickness - 5);
-    this.svgHandle_.setAttribute('y', 2.5);
+    this.svgHandle_.setAttribute('y', 3);
 
     this.lengthAttribute_ = 'width';
     this.positionAttribute_ = 'x';
@@ -228,7 +228,7 @@ Blockly.Scrollbar = function(workspace, horizontal, opt_pair, opt_class) {
     this.svgBackground_.setAttribute('width', scrollbarThickness);
     this.outerSvg_.setAttribute('width', scrollbarThickness);
     this.svgHandle_.setAttribute('width', scrollbarThickness - 5);
-    this.svgHandle_.setAttribute('x', 2.5);
+    this.svgHandle_.setAttribute('x', 3);
 
     this.lengthAttribute_ = 'height';
     this.positionAttribute_ = 'y';

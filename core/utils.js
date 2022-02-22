@@ -807,6 +807,7 @@ Blockly.utils.wrapToText_ = function(words, wordBreaks) {
  * @return {boolean} true if 3D transforms are supported.
  */
 Blockly.utils.is3dSupported = function() {
+  /*
   if (Blockly.utils.is3dSupported.cached_ !== undefined) {
     return Blockly.utils.is3dSupported.cached_;
   }
@@ -849,6 +850,9 @@ Blockly.utils.is3dSupported = function() {
   document.body.removeChild(el);
   Blockly.utils.is3dSupported.cached_ = has3d !== 'none';
   return Blockly.utils.is3dSupported.cached_;
+  */
+  // There's no need to check it.
+  return true;
 };
 
 /**

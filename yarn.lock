@@ -1013,10 +1013,10 @@ cli-width@^2.0.0:
   resolved "https://registry.npm.taobao.org/cli-width/download/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
-clipcc-l10n@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/clipcc-l10n/-/clipcc-l10n-3.1.1.tgz#ab594503570da64f4add48e9ce56588980fcb43b"
-  integrity sha512-EWpTkzzki7zcOZx8FinMAMJsGkfrUbOWzdW2KSa01bFod8HP2yAxBddgW3aWCbsT1rcYL6HtKkaOa9r+wRCN7A==
+clipcc-l10n@3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/clipcc-l10n/-/clipcc-l10n-3.1.3.tgz#105699391e3624dfddb7e86ca0c1be659ed8f23c"
+  integrity sha512-fv72aGd++WjEEBGutQx8bTgtVkkdD52dz2M7S8hgHUSUnMJ9bATMWnbH1hvdSJBjg/FJw0JqCsefOoDc3Pw+JA==
   dependencies:
     "@babel/cli" "^7.1.2"
     "@babel/core" "^7.1.2"
