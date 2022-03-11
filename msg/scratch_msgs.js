@@ -611,9 +611,9 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "DELETE_VARIABLE_CONFIRMATION": "删除%1处「%2」变量吗？",
     "CANNOT_DELETE_VARIABLE_PROCEDURE": "无法删除变量「%1」，因为函数「%2」的定义中用到了它",
     "DELETE_VARIABLE": "删除变量「%1」",
-    "NEW_PROCEDURE": "制作新的积木",
+    "NEW_PROCEDURE": "制作新的函数",
     "PROCEDURE_ALREADY_EXISTS": "已经存在名为「%1」的程序。",
-    "PROCEDURE_DEFAULT_NAME": "积木名称",
+    "PROCEDURE_DEFAULT_NAME": "函数名称",
     "NEW_LIST": "建立一个列表",
     "NEW_LIST_TITLE": "新的列表名：",
     "LIST_MODAL_TITLE": "新建列表",
@@ -952,7 +952,7 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "OBSOLETED_BLOCKS": "弃用的積木"
 };
 
-Blockly.ScratchMsgs.locales["zh-chuunibyo"] =
+Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
 {
     "CONTROL_FOREVER": "再来亿次",
     "CONTROL_REPEAT": "再来 %1 次",
