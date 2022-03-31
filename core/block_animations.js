@@ -84,7 +84,8 @@ Blockly.BlockAnimations.disposeUiStep_ = function(clone, rtl, start,
  * @package
  */
 Blockly.BlockAnimations.connectionUiEffect = function(block) {
-  block.workspace.getAudioManager().play('click');
+  var randomSoundNum = Math.floor(Math.random() * 12) + 1;
+  block.workspace.getAudioManager().play('click' + randomSoundNum);
 };
 
 /**
@@ -96,6 +97,8 @@ Blockly.BlockAnimations.connectionUiEffect = function(block) {
 Blockly.BlockAnimations.disconnectUiEffect = function(
     /* eslint-disable no-unused-vars */ _block
     /* eslint-enable no-unused-vars */) {
+  var randomSoundNum = Math.floor(Math.random() * 12) + 1;
+  _block.workspace.getAudioManager().play('click' + randomSoundNum);
 };
 
 /**

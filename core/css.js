@@ -227,7 +227,7 @@ Blockly.Css.CONTENT = [
     'box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);',
     'color: #000;',
     'display: none;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
     'font-size: 9pt;',
     'opacity: 0.9;',
     'padding: 2px;',
@@ -312,8 +312,8 @@ Blockly.Css.CONTENT = [
     'border: 1px solid $colour_numPadBorder;',
     'cursor: pointer;',
     'font-weight: 600;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
+    'font-size: 16pt;',
     '-webkit-tap-highlight-color: rgba(0,0,0,0);',
   '}',
 
@@ -349,7 +349,7 @@ Blockly.Css.CONTENT = [
     'overflow: auto;',
     'word-wrap: break-word;',
     'text-align: center;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
     'font-size: .8em;',
   '}',
 
@@ -460,13 +460,13 @@ Blockly.Css.CONTENT = [
 
   '.blocklyText {',
     'fill: #fff;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
+    'font-size: 21pt;',
     'font-weight: 500;',
   '}',
 
   '.blocklyTextTruncated {',
-    'font-size: 11pt;',
+    'font-size: 14pt;',
   '}',
 
   '.blocklyNonEditableText>text {',
@@ -531,8 +531,8 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.blocklyFlyoutLabelText {',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 14pt;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
+    'font-size: 18pt;',
     'fill: #575E75;',
     'font-weight: bold;',
   '}',
@@ -684,8 +684,8 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchCommentText {',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
+    'font-size: 16pt;',
     'font-weight: 400;',
   '}',
 
@@ -715,8 +715,8 @@ Blockly.Css.CONTENT = [
 
   '.blocklyHtmlInput {',
     'border: none;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
+    'font-size: 16pt;',
     'height: 100%;',
     'margin: 0;',
     'outline: none;',
@@ -856,7 +856,7 @@ Blockly.Css.CONTENT = [
     'overflow-x: visible;',
     'overflow-y: auto;',
     'position: absolute;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
     'z-index: 40;', /* so blocks go over toolbox when dragging */
     '-webkit-tap-highlight-color: transparent;', /* issue #1345 */
   '}',
@@ -946,7 +946,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyTreeLabel {',
     'cursor: default;',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
     'font-size: 16px;',
     'padding: 0 3px;',
     'vertical-align: middle;',
@@ -994,7 +994,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchColourPickerLabel {',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
     'font-size: 0.65rem;',
     'color: $colour_toolboxText;',
     'margin: 8px;',
@@ -1015,7 +1015,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchNotePickerKeyLabel {',
-    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-family: "华文隶书", Helvetica, sans-serif;',
     'font-size: 0.75rem;',
     'fill: $colour_text;',
     'pointer-events: none;',
@@ -1041,7 +1041,7 @@ Blockly.Css.CONTENT = [
     //'background: hsla(100, 100%, 100%, 0.8);',
     //'backdrop-filter: blur(6px);',
     'cursor: default;',
-    'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
+    'font: normal 13px "华文隶书", Helvetica, sans-serif;',
     'margin: 0;',
     'outline: none;',
     'position: absolute;',
@@ -1059,7 +1059,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyDropDownDiv .goog-menu {',
     'cursor: default;',
-    'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
+    'font: normal 13px "华文隶书", Helvetica, sans-serif;',
     'outline: none;',
     'z-index: 20000;',  /* Arbitrary, but some apps depend on it... */
   '}',
@@ -1095,7 +1095,7 @@ Blockly.Css.CONTENT = [
    */
   '.blocklyWidgetDiv .goog-menuitem {',
     'color: #000;',
-    'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
+    'font: normal 13px "华文隶书", Helvetica, sans-serif;',
     'list-style: none;',
     'margin: 0;',
      /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
@@ -1107,7 +1107,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyDropDownDiv .goog-menuitem {',
     'color: #fff;',
-    'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
+    'font: normal 13px "华文隶书", Helvetica, sans-serif;',
     'font-weight: bold;',
     'list-style: none;',
     'margin: 0;',
@@ -1146,7 +1146,7 @@ Blockly.Css.CONTENT = [
   '.blocklyWidgetDiv .goog-menuitem-content ',
   '.blocklyDropDownDiv .goog-menuitem-content {',
     'color: #000;',
-    'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
+    'font: normal 13px "华文隶书", Helvetica, sans-serif;',
   '}',
 
   /* State: disabled. */
