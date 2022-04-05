@@ -1045,11 +1045,15 @@ Blockly.Css.CONTENT = [
     'margin: 0;',
     'outline: none;',
     'position: absolute;',
-    'overflow-y: hidden;',
+    'scrollbar-width: none;',
     'overflow-x: hidden;',
     'box-shadow: 0 8px 8px 0 hsla(0, 0%, 0%, 0.15);',
     'transition: 0.25s ease-out;',
     'z-index: 20000;',  /* Arbitrary, but some apps depend on it... */
+  '}',
+
+  '.blocklyWidgetDiv .goog-menu::-webkit-scrollbar {',
+    'display:none',
   '}',
 
   '[effect=\'blur\'] .blocklyWidgetDiv .goog-menu {',
