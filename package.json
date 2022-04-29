@@ -34,7 +34,7 @@
     "serialize-javascript": "^3.1.0"
   },
   "devDependencies": {
-    "async": "2.6.0",
+    "async": "2.6.4",
     "chromedriver": "^93.0",
     "clipcc-l10n": "3.1.5",
     "copy-webpack-plugin": "4.5.1",
