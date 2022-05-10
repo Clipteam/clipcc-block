@@ -517,6 +517,13 @@ Blockly.FieldTextInput.prototype.resizeEditor_ = function() {
   var borderRadius = this.getBorderRadius() + 0.5;
   div.style.borderRadius = borderRadius + 'px';
   Blockly.FieldTextInput.htmlInput_.style.borderRadius = borderRadius + 'px';
+  if (this.sourceBlock_.isReporter_) {
+    var list = this.sourceBlock_.procCode_.split(' &').filter(s => ! (s === 'b' || s === 's'));
+    if (list.length === 1) {
+      div.style.marginLeft = '10px';
+      div.style.marginTop= '5px';
+    }
+  }
   // Pull stroke colour from the existing shadow block
   var strokeColour = this.sourceBlock_.getColourTertiary();
   div.style.borderColor = strokeColour;

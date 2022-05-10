@@ -1374,50 +1374,50 @@ Blockly.Css.CONTENT = [
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutLabelText, .blocklyText {',
-    'fill: rgb(255, 255, 255);',
+    'fill: white;',
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutButton, {',
-    'fill: rgb(51, 51, 51);',
+    'fill: rgb(45, 51, 59);',
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutButton .blocklyText {',
-    'fill: rgb(255, 255, 255);',
+    'fill: white;',
   '}',
 
   '[theme=\'dark\'] .blocklySvg {',
-    'background-color: rgb(36, 36, 36);',
+    'background-color: rgb(45, 51, 59);',
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutBackground, [theme=\'dark\'] .blocklyFlyoutCheckbox {',
-    'fill: rgb(13, 13, 13);',
+    'fill: rgb(37, 41, 50);',
   '}',
 
   '[theme=\'dark\'] .blocklyToolboxDiv {',
-    'background-color: rgb(51, 51, 51);',
-    'color: rgb(255, 255, 255);',
+    'background-color: rgb(45, 51, 59);',
+    'color: rgb(211, 215, 220);',
   '}',
 
   '[theme=\'dark\'] .scratchCategoryMenu {',
-    'background: rgb(51, 51, 51);',
-    'color: rgb(255, 255, 255);',
+    'background: rgb(45, 51, 59);',
+    'color: rgb(211, 215, 220);',
   '}',
 
   '[theme=\'dark\'] .scratchCategoryMenuItem.categorySelected {',
-    'background: rgb(77, 77, 77);',
-    'color: rgb(255, 255, 255);',
+    'background: rgb(55, 62, 71);',
+    'color: rgb(211, 215, 220);',
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutButton:hover {',
-    'fill: rgb(51, 51, 51);',
+    'fill: rgb(55, 62, 71);',
   '}',
 
   '[theme=\'dark\'] [id ^= "blocklyGridPattern"] line {',
-    'stroke: rgb(51, 51, 51);',
+    'stroke: rgb(45, 51, 59);',
   '}',
 
   '[theme=\'dark\'] .blocklyFlyoutScrollbar, [theme=\'dark\'] .blocklyScrollbarHandle {',
-    'fill: rgb(51, 51, 51);',
+    'fill: rgb(45, 51, 59);',
   '}',
 
   '[theme=\'dark\'] .blocklyZoom>image {',
@@ -1431,7 +1431,7 @@ Blockly.Css.CONTENT = [
 
   '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem-highlight,',
   '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem-hover {',
-    'background-color: rgb(77, 77, 77);',
+    'background-color: rgb(55, 62, 71);',
   '}',
 
   '[theme=\'dark\'] .blocklyWidgetDiv .goog-menuitem {',
