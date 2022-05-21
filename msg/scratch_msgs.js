@@ -18,6 +18,8 @@ Blockly.ScratchMsgs.locales["en"] =
     "CONTROL_STOP_THIS": "this script",
     "CONTROL_STOP_OTHER": "other scripts in sprite",
     "CONTROL_WAIT": "wait %1 seconds",
+    "CONTROL_YIELD": "yield",
+    "CONTROL_BREAKPOINT": "breakpoint",
     "CONTROL_WAITUNTIL": "wait until %1",
     "CONTROL_REPEATUNTIL": "repeat until %1",
     "CONTROL_WHILE": "while %1",

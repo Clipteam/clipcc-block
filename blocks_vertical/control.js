@@ -224,6 +224,36 @@ Blockly.Blocks['control_stop'] = {
   }
 };
 
+Blockly.Blocks['control_suspend'] = {
+  /**
+   * Block to skip a tick.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "id": "control_suspend",
+      "message0": Blockly.Msg.CONTROL_SUSPEND,
+      "category": Blockly.Categories.control,
+      "extensions": ["colours_control", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['control_breakpoint'] = {
+  /**
+   * Block to skip a tick.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "id": "control_breakpoint",
+      "message0": Blockly.Msg.CONTROL_BREAKPOINT,
+      "category": Blockly.Categories.control,
+      "extensions": ["colours_control", "shape_statement"]
+    });
+  }
+};
+
 Blockly.Blocks['control_wait'] = {
   /**
    * Block to wait (pause) stack.
