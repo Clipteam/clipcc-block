@@ -288,27 +288,27 @@ Blockly.ScratchMsgs.locales["en"] =
     "COLOUR_BRIGHTNESS_LABEL": "Brightness",
     "CHANGE_VALUE_TITLE": "Change value:",
     "RENAME_VARIABLE": "Rename variable",
-    "RENAME_VARIABLE_TITLE": "Rename all \"%1\" variables to:",
+    "RENAME_VARIABLE_TITLE": "Rename all '%1' variables to:",
     "RENAME_VARIABLE_MODAL_TITLE": "Rename Variable",
     "NEW_VARIABLE": "Make a Variable",
     "NEW_VARIABLE_TITLE": "New variable name:",
     "VARIABLE_MODAL_TITLE": "New Variable",
-    "VARIABLE_ALREADY_EXISTS": "A variable named \"%1\" already exists.",
-    "VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE": "A variable named \"%1\" already exists for another variable of type \"%2\".",
-    "DELETE_VARIABLE_CONFIRMATION": "Delete %1 uses of the \"%2\" variable?",
-    "CANNOT_DELETE_VARIABLE_PROCEDURE": "Can't delete the variable \"%1\" because it's part of the definition of the function \"%2\"",
-    "DELETE_VARIABLE": "Delete the \"%1\" variable",
+    "VARIABLE_ALREADY_EXISTS": "A variable named '%1' already exists.",
+    "VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE": "A variable named '%1' already exists for another variable of type '%2'.",
+    "DELETE_VARIABLE_CONFIRMATION": "Delete %1 uses of the '%2' variable?",
+    "CANNOT_DELETE_VARIABLE_PROCEDURE": "Can't delete the variable '%1' because it's part of the definition of the function '%2'",
+    "DELETE_VARIABLE": "Delete the '%1' variable",
     "NEW_PROCEDURE": "Make a Function",
-    "PROCEDURE_ALREADY_EXISTS": "A function named \"%1\" already exists.",
+    "PROCEDURE_ALREADY_EXISTS": "A function named '%1' already exists.",
     "PROCEDURE_DEFAULT_NAME": "function name",
     "NEW_LIST": "Make a List",
     "NEW_LIST_TITLE": "New list name:",
     "LIST_MODAL_TITLE": "New List",
-    "LIST_ALREADY_EXISTS": "A list named \"%1\" already exists.",
-    "RENAME_LIST_TITLE": "Rename all \"%1\" lists to:",
+    "LIST_ALREADY_EXISTS": "A list named '%1' already exists.",
+    "RENAME_LIST_TITLE": "Rename all '%1' lists to:",
     "RENAME_LIST_MODAL_TITLE": "Rename List",
     "DEFAULT_LIST_ITEM": "thing",
-    "DELETE_LIST": "Delete the \"%1\" list",
+    "DELETE_LIST": "Delete the '%1' list",
     "RENAME_LIST": "Rename list",
     "NEW_BROADCAST_MESSAGE": "New message",
     "NEW_BROADCAST_MESSAGE_TITLE": "New message name:",
@@ -321,7 +321,16 @@ Blockly.ScratchMsgs.locales["en"] =
     "ENABLE_BLOCK": "Enable Block",
     "PROCEDURE_USED": "To delete a function definition, first remove all uses of the block",
     "CATEGORY_FUNCTIONS": "Functions",
-    "OBSOLETED_BLOCKS": "Obsoleted Blocks"
+    "OBSOLETED_BLOCKS": "Obsoleted Blocks",
+    "CONTROL_YIELD": "yield",
+    "CONTROL_BREAKPOINT": "breakpoint",
+    "@metadata": {
+        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
+        "lastupdated": "2022-05-21 18:50:25.320660",
+        "locale": "en",
+        "messagedocumentation": "qqq"
+    },
+    "CONTROL_SUSPEND": "suspend thread"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn"] =
@@ -636,7 +645,16 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "ENABLE_BLOCK": "启用积木",
     "PROCEDURE_USED": "要删除函数定义，需先删除引用该函数的所有积木",
     "CATEGORY_FUNCTIONS": "函数",
-    "OBSOLETED_BLOCKS": "弃用的积木"
+    "OBSOLETED_BLOCKS": "弃用的积木",
+    "CONTROL_YIELD": "挂起线程",
+    "CONTROL_BREAKPOINT": "断点",
+    "@metadata": {
+        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
+        "lastupdated": "2022-05-21 18:50:25.320660",
+        "locale": "en",
+        "messagedocumentation": "qqq"
+    },
+    "CONTROL_SUSPEND": "挂起线程"
 };
 
 Blockly.ScratchMsgs.locales["zh-tw"] =
@@ -951,7 +969,16 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "ENABLE_BLOCK": "啟用積木",
     "PROCEDURE_USED": "刪除本函數前，請先刪除它的所有引用",
     "CATEGORY_FUNCTIONS": "函數",
-    "OBSOLETED_BLOCKS": "弃用的積木"
+    "OBSOLETED_BLOCKS": "弃用的積木",
+    "CONTROL_YIELD": "yield",
+    "CONTROL_BREAKPOINT": "breakpoint",
+    "@metadata": {
+        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
+        "lastupdated": "2022-05-21 18:50:25.320660",
+        "locale": "en",
+        "messagedocumentation": "qqq"
+    },
+    "CONTROL_SUSPEND": "suspend thread"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
@@ -1266,6 +1293,15 @@ Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
     "ENABLE_BLOCK": "重新理她",
     "PROCEDURE_USED": "废掉这个宝典前请废掉她的所有臣民",
     "CATEGORY_FUNCTIONS": "宝典",
-    "OBSOLETED_BLOCKS": "遗忘之地"
+    "OBSOLETED_BLOCKS": "遗忘之地",
+    "CONTROL_YIELD": "yield",
+    "CONTROL_BREAKPOINT": "breakpoint",
+    "@metadata": {
+        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
+        "lastupdated": "2022-05-21 18:50:25.320660",
+        "locale": "en",
+        "messagedocumentation": "qqq"
+    },
+    "CONTROL_SUSPEND": "suspend thread"
 };
 // End of combined translations
