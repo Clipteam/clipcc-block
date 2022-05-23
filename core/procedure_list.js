@@ -2,8 +2,8 @@
  * @license
  * Visual Blocks Editor
  *
- * Copyright 2018 Google Inc.
- * https://developers.google.com/blockly/
+ * Copyright 2022 Clip Team
+ * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
