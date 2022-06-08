@@ -425,6 +425,48 @@ Blockly.Blocks['sensing_mousey'] = {
   }
 };
 
+Blockly.Blocks['sensing_joystickx'] = {
+  /**
+   * Block to report joystick's x position
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_JOYSTICKX,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_joysticky'] = {
+  /**
+   * Block to report joystick's y position
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_JOYSTICKY,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_joystick_distance'] = {
+  /**
+   * Block to report joystick's distance
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_JOYSTICK_DISTANCE,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_setdragmode'] = {
   /**
    * Block to set drag mode.
