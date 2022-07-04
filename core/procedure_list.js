@@ -61,3 +61,12 @@ Blockly.ProcedureList.prototype.deleteProcedureByProccode = function(proccode) {
 Blockly.ProcedureList.prototype.getProcedureList = function() {
   return this.procedureList_;
 };
+
+Blockly.ProcedureList.prototype.isNameUsed = function(name) {
+  for (var j = 0, procedure; procedure = this.procedureList_[j]; j++) {
+    if (procedure.getAttribute('proccode') == name) {
+      return true;
+    }
+  }
+  return false;
+};
