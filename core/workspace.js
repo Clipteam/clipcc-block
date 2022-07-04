@@ -463,7 +463,7 @@ Blockly.Workspace.prototype.getAllVariables = function() {
 
 Blockly.Workspace.prototype.getProcedureList = function() {
   return this.procedureList_;
-}
+};
 
 Blockly.Workspace.prototype.createProcedureFromMutation = function(mutation) {
   this.procedureList_.createProcedureFromMutation(mutation);

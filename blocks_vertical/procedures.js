@@ -684,6 +684,9 @@ Blockly.ScratchBlocks.ProcedureUtils.updateProcedureShape = function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
   }
+  if (Blockly.WidgetDiv.owner_ && Blockly.WidgetDiv.owner_.resizeEditor_) {
+    Blockly.WidgetDiv.owner_.resizeEditor_();
+  }
 };
 
 /**

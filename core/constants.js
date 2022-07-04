@@ -360,6 +360,12 @@ Blockly.LIST_VARIABLE_TYPE = 'list';
 Blockly.SCALAR_VARIABLE_TYPE = '';
 
 /**
+ * The type of all procedure declaration blocks.
+ * @const {string}
+ */
+Blockly.PROCEDURES_DECLARATION_BLOCK_TYPE = 'procedures_declaration';
+
+/**
  * The type of all procedure definition blocks.
  * @const {string}
  */

@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2021-12-28 12:43:38.124289",
+		"lastupdated": "2022-07-04 21:03:37.288020",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -211,6 +211,9 @@
 	"SENSING_MOUSEPRESSED_RIGHT": "right",
 	"SENSING_MOUSEX": "mouse x",
 	"SENSING_MOUSEY": "mouse y",
+	"SENSING_JOYSTICKX": "joystick x axis",
+	"SENSING_JOYSTICKY": "joystick y axis",
+	"SENSING_JOYSTICK_DISTANCE": "joystick distance",
 	"SENSING_SETDRAGMODE": "set drag mode %1",
 	"SENSING_SETDRAGMODE_DRAGGABLE": "draggable",
 	"SENSING_SETDRAGMODE_NOTDRAGGABLE": "not draggable",
