@@ -1,10 +1,4 @@
 {
-	"@metadata": {
-		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2022-07-04 21:03:37.288020",
-		"locale": "en",
-		"messagedocumentation" : "qqq"
-	},
 	"CONTROL_FOREVER": "forever",
 	"CONTROL_REPEAT": "repeat %1",
 	"CONTROL_IF": "if %1 then",
@@ -14,6 +8,8 @@
 	"CONTROL_STOP_THIS": "this script",
 	"CONTROL_STOP_OTHER": "other scripts in sprite",
 	"CONTROL_WAIT": "wait %1 seconds",
+	"CONTROL_SUSPEND": "suspend thread",
+	"CONTROL_BREAKPOINT": "breakpoint",
 	"CONTROL_WAITUNTIL": "wait until %1",
 	"CONTROL_REPEATUNTIL": "repeat until %1",
 	"CONTROL_WHILE": "while %1",
