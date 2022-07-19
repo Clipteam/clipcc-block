@@ -1102,8 +1102,8 @@ Blockly.Css.CONTENT = [
     'font: normal 13px "Helvetica Neue", Helvetica, sans-serif;',
     'list-style: none;',
     'margin: 0;',
-     /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
-    'padding: 4px 7em 4px 28px;',
+     /* 28px on the left for icon or checkbox; 4em on the right for shortcut. */
+    'padding: 4px 4em 4px 28px;',
     'white-space: nowrap;',
     'transition: 0.25s ease-out;',
     'padding: 10px 20px;',
@@ -1115,8 +1115,10 @@ Blockly.Css.CONTENT = [
     'font-weight: bold;',
     'list-style: none;',
     'margin: 0;',
-     /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
-    'padding: 4px 7em 4px 28px;',
+    'min-height: 25px;',
+    'box-sizing: border-box;',
+     /* 28px on the left for icon or checkbox; 4em on the right for shortcut. */
+    'padding: 4px 4em 4px 28px;',
     'white-space: nowrap;',
     'transition: 0.25s ease-out;',
   '}',
