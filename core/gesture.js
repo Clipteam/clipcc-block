@@ -108,6 +108,13 @@ Blockly.Gesture = function(e, creatorWorkspace) {
   this.targetBlock_ = null;
 
   /**
+   * The original block that this gesture targets.
+   * @type {Blockly.BlockSvg}
+   * @private
+   */
+  this.targetBlockOriginal_ = null;
+
+  /**
    * The workspace that the gesture started on.  There may be multiple
    * workspaces on a page; this is more accurate than using
    * Blockly.getMainWorkspace().
@@ -637,7 +644,7 @@ Blockly.Gesture.prototype.handleRightClick = function(e) {
   if (this.targetBlock_) {
     this.bringBlockToFront_();
     Blockly.hideChaff(this.flyout_);
-    this.targetBlock_.showContextMenu_(e);
+    this.targetBlock_.showContextMenu_(e, this.targetBlockOriginal_);
   } else if (this.startBubble_) {
     this.startBubble_.showContextMenu_(e);
   } else if (this.startWorkspace_ && !this.flyout_) {
@@ -848,6 +855,7 @@ Blockly.Gesture.prototype.setStartBlock = function(block) {
 Blockly.Gesture.prototype.setTargetBlock_ = function(block) {
   if (block.isShadow() && !this.shouldDuplicateOnDrag_) {
     this.setTargetBlock_(block.getParent());
+    this.targetBlockOriginal_ = block;
   } else {
     this.targetBlock_ = block;
   }

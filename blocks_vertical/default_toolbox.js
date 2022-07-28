@@ -559,6 +559,19 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '</shadow>' +
       '</value>' +
     '</block>' +
+    '<block type="operator_join_advanced" id="operator_join_advanced">' +
+      '<mutation argumentids="[&quot;STRING1&quot;, &quot;STRING2&quot;]"></mutation>' +
+      '<value name="STRING1">' +
+        '<shadow type="text">' +
+          '<field name="TEXT">hello</field>' +
+        '</shadow>' +
+      '</value>' +
+      '<value name="STRING2">' +
+        '<shadow type="text">' +
+          '<field name="TEXT">world</field>' +
+        '</shadow>' +
+      '</value>' +
+    '</block>' +
     '<block type="operator_letter_of" id="operator_letter_of">' +
       '<value name="LETTER">' +
         '<shadow type="math_whole_number">' +
