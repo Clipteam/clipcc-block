@@ -157,6 +157,7 @@ Blockly.Blocks['data_listcontents'] = {
   init: function() {
     this.jsonInit({
       "message0": "%1",
+      "lastDummyAlign0": "CENTRE",
       "args0": [
         {
           "type": "field_variable_getter",
