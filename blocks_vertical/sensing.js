@@ -221,6 +221,30 @@ Blockly.Blocks['sensing_directionbetweenposition'] = {
   }
 };
 
+Blockly.Blocks['sensing_colorat'] = {
+  /**
+   * Color at specific position.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_COLORAT,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "X",
+        },
+        {
+          "type": "input_value",
+          "name": "Y",
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_askandwait'] = {
   /**
    * Block to ask a question and wait

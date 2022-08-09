@@ -246,6 +246,7 @@ Blockly.Msg.SENSING_DISTANCETO = 'distance to %1';
 Blockly.Msg.SENSING_DISTANCETO_POINTER = 'mouse-pointer';
 Blockly.Msg.SENSING_DISTANCEBETWEENPOSITION = 'distance from (x: %1, y: %2 ) to (x: %3 , y: %4 )';
 Blockly.Msg.SENSING_DIRECTIONBETWEENPOSITION = 'direction from (x: %1, y: %2 ) to (x: %3 , y: %4 )';
+Blockly.Msg.SENSING_COLORAT = 'get the color at (x: %1, y: %2)';
 Blockly.Msg.SENSING_ASKANDWAIT = 'ask %1 and wait';
 Blockly.Msg.SENSING_ASK_TEXT = 'What\'s your name?';
 Blockly.Msg.SENSING_ANSWER = 'answer';
