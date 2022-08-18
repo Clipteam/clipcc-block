@@ -266,7 +266,7 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @package
  */
  Blockly.scratchBlocksUtils.copyToClipboardCallback = function(block, event) {
-  if (block) {
+  return function () {
     Blockly.scratchBlocksUtils.externalCopyCallback(block, event);
   }
  }
@@ -278,7 +278,7 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @package
  */
  Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(block, event) {
-  if (block) {
+  return function () {
       Blockly.scratchBlocksUtils.externalPasteCallback(block, event);
   }
  }
