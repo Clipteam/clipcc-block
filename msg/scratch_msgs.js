@@ -270,6 +270,8 @@ Blockly.ScratchMsgs.locales["en"] =
     "CATEGORY_VARIABLES": "Variables",
     "CATEGORY_MYBLOCKS": "My Blocks",
     "DUPLICATE": "Duplicate",
+    "COPY_TO_CLIPBOARD": "Copy to Clipboard",
+    "PASTE_FROM_CLIPBOARD": "Paste from Clipboard",
     "DELETE": "Delete",
     "ADD_COMMENT": "Add Comment",
     "REMOVE_COMMENT": "Remove Comment",
@@ -323,12 +325,6 @@ Blockly.ScratchMsgs.locales["en"] =
     "CATEGORY_FUNCTIONS": "Functions",
     "OBSOLETED_BLOCKS": "Obsoleted Blocks",
     "CONTROL_BREAKPOINT": "breakpoint",
-    "@metadata": {
-        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
-        "lastupdated": "2022-05-21 18:50:25.320660",
-        "locale": "en",
-        "messagedocumentation": "qqq"
-    },
     "CONTROL_SUSPEND": "suspend thread",
     "SENSING_JOYSTICKX": "joystick x axis",
     "SENSING_JOYSTICKY": "joystick y axis",
@@ -651,12 +647,6 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "OBSOLETED_BLOCKS": "弃用的积木",
     "CONTROL_YIELD": "挂起线程",
     "CONTROL_BREAKPOINT": "断点",
-    "@metadata": {
-        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
-        "lastupdated": "2022-05-21 18:50:25.320660",
-        "locale": "en",
-        "messagedocumentation": "qqq"
-    },
     "CONTROL_SUSPEND": "挂起线程",
     "SENSING_JOYSTICKX": "摇杆 x 偏移",
     "SENSING_JOYSTICKY": "摇杆 y 偏移",
@@ -977,12 +967,6 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "CATEGORY_FUNCTIONS": "函數",
     "OBSOLETED_BLOCKS": "弃用的積木",
     "CONTROL_BREAKPOINT": "斷點",
-    "@metadata": {
-        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
-        "lastupdated": "2022-05-21 18:50:25.320660",
-        "locale": "en",
-        "messagedocumentation": "qqq"
-    },
     "CONTROL_SUSPEND": "掛起線程",
     "SENSING_JOYSTICKX": "joystick x axis",
     "SENSING_JOYSTICKY": "joystick y axis",
@@ -1304,12 +1288,6 @@ Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
     "OBSOLETED_BLOCKS": "遗忘之地",
     "CONTROL_YIELD": "yield",
     "CONTROL_BREAKPOINT": "breakpoint",
-    "@metadata": {
-        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
-        "lastupdated": "2022-05-21 18:50:25.320660",
-        "locale": "en",
-        "messagedocumentation": "qqq"
-    },
     "CONTROL_SUSPEND": "suspend thread",
     "SENSING_JOYSTICKX": "joystick x axis",
     "SENSING_JOYSTICKY": "joystick y axis",

@@ -266,6 +266,8 @@
 	"CATEGORY_VARIABLES": "Variables",
 	"CATEGORY_FUNCTIONS": "Functions",
 	"DUPLICATE": "Duplicate",
+	"COPY_TO_CLIPBOARD": "Copy to Clipboard",
+	"PASTE_FROM_CLIPBOARD": "Paste from Clipboard",
 	"DELETE": "Delete",
 	"ADD_COMMENT": "Add Comment",
 	"REMOVE_COMMENT": "Remove Comment",

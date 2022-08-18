@@ -242,3 +242,39 @@ Blockly.scratchBlocksUtils.duplicateAndDragCallback = function(oldBlock, event) 
     }, 0);
   };
 };
+
+/**
+ * Callback to serialize and copy block to clipboard.
+ * @public
+ */
+Blockly.scratchBlocksUtils.externalCopyCallback = function(/** block, event */) {
+  alert('External copy callback must be override Blockly.scratchBlocksUtils.externalCopyCallback');
+};
+
+/**
+ * Callback to deserialize and paste block from clipboard.
+ * @public
+ */
+Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */) {
+  alert('External paste callback must be override Blockly.scratchBlocksUtils.externalPasteCallback');
+};
+
+/**
+ * Creates a callback function for a click on the "copy to clipboard" context menu
+ * @param {!Blockly.BlockSvg} oldBlock The block that will be duplicated.
+ * @param {!Event} event Event that caused the context menu to open.
+ * @package
+ */
+ Blockly.scratchBlocksUtils.copyToClipboardCallback = function(block, event) {
+  Blockly.scratchBlocksUtils.externalCopyCallback(block, event);
+ }
+ 
+ /**
+ * Creates a callback function for a click on the "paste from clipboard" context menu
+ * @param {!Blockly.BlockSvg} oldBlock The block that will be duplicated.
+ * @param {!Event} event Event that caused the context menu to open.
+ * @package
+ */
+ Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(block, event) {
+  Blockly.scratchBlocksUtils.externalPasteCallback(block, event);
+ }
