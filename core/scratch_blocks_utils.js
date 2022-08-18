@@ -266,7 +266,9 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @package
  */
  Blockly.scratchBlocksUtils.copyToClipboardCallback = function(block, event) {
-  Blockly.scratchBlocksUtils.externalCopyCallback(block, event);
+  if (block) {
+    Blockly.scratchBlocksUtils.externalCopyCallback(block, event);
+  }
  }
  
  /**
@@ -276,5 +278,7 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @package
  */
  Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(block, event) {
-  Blockly.scratchBlocksUtils.externalPasteCallback(block, event);
+  if (block) {
+      Blockly.scratchBlocksUtils.externalPasteCallback(block, event);
+  }
  }
