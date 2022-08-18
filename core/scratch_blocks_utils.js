@@ -265,9 +265,10 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @param {!Event} event Event that caused the context menu to open.
  * @package
  */
- Blockly.scratchBlocksUtils.copyToClipboardCallback = function(block, event) {
+ Blockly.scratchBlocksUtils.copyToClipboardCallback = function(block) {
   return function () {
-    Blockly.scratchBlocksUtils.externalCopyCallback(block, event);
+    var xml = Blockly.Xml.blockToDom(block, true /* opt_noId */);
+    Blockly.scratchBlocksUtils.externalCopyCallback(xml);
   }
  }
  
@@ -277,8 +278,11 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @param {!Event} event Event that caused the context menu to open.
  * @package
  */
- Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(block, event) {
+ Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(block) {
   return function () {
-      Blockly.scratchBlocksUtils.externalPasteCallback(block, event);
+      var pastedBlock = Blockly.scratchBlocksUtils.externalPasteCallback(block);
+      var xml = Blockly.Xml.blockToDom(pastedBlock);
+      console.log(xml);
+      // todo
   }
  }
