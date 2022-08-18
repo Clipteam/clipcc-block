@@ -680,7 +680,7 @@ Blockly.BlockSvg.prototype.showContextMenu_ = function(e) {
         Blockly.ContextMenu.blockCopyToClipboardOption(block, e));
     if (this.isEditable() && this.workspace.options.comments) {
       menuOptions.push(
-          Blockly.ContextMenu.blockPasteFromClipboardOption(e));
+          Blockly.ContextMenu.blockPasteFromClipboardOption(block, e));
       menuOptions.push(Blockly.ContextMenu.blockCommentOption(block));
     }
     menuOptions.push(Blockly.ContextMenu.blockDeleteOption(block));
