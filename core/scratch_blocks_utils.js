@@ -279,10 +279,8 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @package
  */
  Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(ws, event) {
-  var isMouseEvent = Blockly.Touch.getTouchIdentifierFromEvent(event) === 'mouse';
-  
-  return function () {
-    var pastedBlock = Blockly.scratchBlocksUtils.externalPasteCallback();
+  // var isMouseEvent = Blockly.Touch.getTouchIdentifierFromEvent(event) === 'mouse';
+  var callback = function(pastedBlock) {
     console.log('pastedBlock', pastedBlock);
     // Give the context menu a chance to close.
     setTimeout(function() {
@@ -311,25 +309,10 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
       if (Blockly.Events.isEnabled()) {
         Blockly.Events.fire(new Blockly.Events.BlockCreate(newBlock));
       }
-
-      if (isMouseEvent) {
-        // e is not a real mouseEvent/touchEvent/pointerEvent.  It's an event
-        // created by the context menu and has the coordinates of the mouse
-        // click that opened the context menu.
-        var fakeEvent = {
-          clientX: event.clientX,
-          clientY: event.clientY,
-          type: 'mousedown',
-          preventDefault: function() {
-            e.preventDefault();
-          },
-          stopPropagation: function() {
-            e.stopPropagation();
-          },
-          target: e.target
-        };
-        ws.startDragWithFakeEvent(fakeEvent, newBlock);
-      }
     }, 0);
+  }
+  
+  return function () {
+    Blockly.scratchBlocksUtils.externalPasteCallback(callback);
   }
  }
