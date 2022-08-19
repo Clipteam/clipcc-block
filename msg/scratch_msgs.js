@@ -328,6 +328,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "SENSING_JOYSTICKY": "joystick y axis",
     "SENSING_JOYSTICK_DISTANCE": "joystick distance",
     "SENSING_COLORAT": "get the color at (x: %1, y: %2)",
+    "COPY_IMAGE": "Copy Block Image",
     "COPY_TO_CLIPBOARD": "Copy to Clipboard",
     "PASTE_FROM_CLIPBOARD": "Paste from Clipboard"
 };

@@ -323,6 +323,7 @@ Blockly.Msg.CATEGORY_FUNCTIONS = 'Functions';
 
 // Context menus
 Blockly.Msg.DUPLICATE = 'Duplicate';
+Blockly.Msg.COPY_IMAGE = 'Copy Block Image';
 Blockly.Msg.COPY_TO_CLIPBOARD = 'Copy to Clipboard';
 Blockly.Msg.PASTE_FROM_CLIPBOARD = 'Paste from Clipboard';
 Blockly.Msg.DELETE = 'Delete';
