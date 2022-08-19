@@ -281,7 +281,6 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(ws, event) {
   // var isMouseEvent = Blockly.Touch.getTouchIdentifierFromEvent(event) === 'mouse';
   var callback = function(pastedBlock) {
-    console.log('pastedBlock', pastedBlock);
     // Give the context menu a chance to close.
     setTimeout(function() {
       // Disable events and manually emit events after the block has been
@@ -291,7 +290,6 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
         // Using domToBlock instead of domToWorkspace means that the new block
         // will be placed at position (0, 0) in main workspace units.
         var newBlock = Blockly.Xml.domToBlock(pastedBlock, ws);
-        console.log(newBlock);
 
         // Scratch-specific: Give shadow dom new IDs to prevent duplicating on paste
         Blockly.scratchBlocksUtils.changeObscuredShadowIds(newBlock);
