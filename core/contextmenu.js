@@ -289,6 +289,25 @@ Blockly.ContextMenu.blockDuplicateOption = function(block, event) {
   return duplicateOption;
 };
 
+
+/**
+ * Make a context menu option for generating and copying the current block to clipboard.
+ * @param {!Blockly.BlockSvg} block The block where the right-click originated.
+ * @param {!Event} event Event that caused the context menu to open.
+ * @return {!Object} A menu option, containing text, enabled, and a callback.
+ * @package
+ */
+Blockly.ContextMenu.blockCopyImageOption = function(block) {
+  // inspired by SteveScratch
+  var copyOption = {
+    text: Blockly.Msg.COPY_IMAGE,
+    enabled: true,
+    callback:
+        Blockly.scratchBlocksUtils.copyImageCallback(block)
+  };
+  return copyOption;
+};
+
 /**
  * Make a context menu option for serializing and duplicating the current block to clipboard.
  * @param {!Blockly.BlockSvg} block The block where the right-click originated.

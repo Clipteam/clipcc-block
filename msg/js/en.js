@@ -75,6 +75,7 @@ Blockly.Msg["DELETE_VARIABLE_CONFIRMATION"] = "Delete %1 uses of the '%2' variab
 Blockly.Msg["DELETE_X_BLOCKS"] = "Delete %1 Blocks";
 Blockly.Msg["DISABLE_BLOCK"] = "Disable Block";
 Blockly.Msg["DUPLICATE"] = "Duplicate";
+Blockly.Msg["COPY_IMAGE"] = "Copy Block Image";
 Blockly.Msg["COPY_TO_CLIPBOARD"] = "Copy to Clipboard";
 Blockly.Msg["PASTE_FROM_CLIPBOARD"] = "Paste from Clipboard";
 Blockly.Msg["EDIT_PROCEDURE"] = "Edit";

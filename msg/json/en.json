@@ -266,6 +266,7 @@
 	"CATEGORY_VARIABLES": "Variables",
 	"CATEGORY_FUNCTIONS": "Functions",
 	"DUPLICATE": "Duplicate",
+	"COPY_IMAGE": "Copy Block Image",
 	"COPY_TO_CLIPBOARD": "Copy to Clipboard",
 	"PASTE_FROM_CLIPBOARD": "Paste from Clipboard",
 	"DELETE": "Delete",
