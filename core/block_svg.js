@@ -682,8 +682,6 @@ Blockly.BlockSvg.prototype.showContextMenu_ = function(e) {
       menuOptions.push(Blockly.ContextMenu.blockCommentOption(block));
     }
     menuOptions.push(Blockly.ContextMenu.blockDeleteOption(block));
-    menuOptions.push(
-          Blockly.ContextMenu.blockPasteFromClipboardOption(block, e));
     // menuOptions.push(Blockly.ContextMenu.blockDisableOption(block));
   } else if (this.parentBlock_ && this.isShadow_) {
     this.parentBlock_.showContextMenu_(e);

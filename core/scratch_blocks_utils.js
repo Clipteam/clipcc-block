@@ -278,11 +278,52 @@ Blockly.scratchBlocksUtils.externalPasteCallback = function(/** block, event */)
  * @param {!Event} event Event that caused the context menu to open.
  * @package
  */
- Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(block) {
+ Blockly.scratchBlocksUtils.pasteFromClipboardCallback = function(ws, event) {
+  var isMouseEvent = Blockly.Touch.getTouchIdentifierFromEvent(event) === 'mouse';
   return function () {
-      var pastedBlock = Blockly.scratchBlocksUtils.externalPasteCallback(block);
-      var xml = Blockly.Xml.blockToDom(pastedBlock);
-      console.log(xml);
-      // todo
+    var pastedBlock = Blockly.scratchBlocksUtils.externalPasteCallback();
+    // Give the context menu a chance to close.
+    setTimeout(function() {
+      // Disable events and manually emit events after the block has been
+      // positioned and has had its shadow IDs fixed (Scratch-specific).
+      Blockly.Events.disable();
+      try {
+        // Using domToBlock instead of domToWorkspace means that the new block
+        // will be placed at position (0, 0) in main workspace units.
+        var newBlock = Blockly.Xml.domToBlock(pastedBlock, ws);
+
+        // Scratch-specific: Give shadow dom new IDs to prevent duplicating on paste
+        Blockly.scratchBlocksUtils.changeObscuredShadowIds(newBlock);
+
+        var svgRootNew = newBlock.getSvgRoot();
+        if (!svgRootNew) {
+          throw new Error('newBlock is not rendered.');
+        }
+      } finally {
+        Blockly.Events.enable();
+      }
+      if (Blockly.Events.isEnabled()) {
+        Blockly.Events.fire(new Blockly.Events.BlockCreate(newBlock));
+      }
+
+      if (isMouseEvent) {
+        // e is not a real mouseEvent/touchEvent/pointerEvent.  It's an event
+        // created by the context menu and has the coordinates of the mouse
+        // click that opened the context menu.
+        var fakeEvent = {
+          clientX: event.clientX,
+          clientY: event.clientY,
+          type: 'mousedown',
+          preventDefault: function() {
+            e.preventDefault();
+          },
+          stopPropagation: function() {
+            e.stopPropagation();
+          },
+          target: e.target
+        };
+        ws.startDragWithFakeEvent(fakeEvent, newBlock);
+      }
+    }, 0);
   }
  }

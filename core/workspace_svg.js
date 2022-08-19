@@ -1437,6 +1437,8 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
   // Options to undo/redo previous action.
   menuOptions.push(Blockly.ContextMenu.wsUndoOption(this));
   menuOptions.push(Blockly.ContextMenu.wsRedoOption(this));
+  menuOptions.push(
+          Blockly.ContextMenu.blockPasteFromClipboardOption(this, e));
 
   // Option to clean up blocks.
   if (this.scrollbar) {

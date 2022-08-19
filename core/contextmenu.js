@@ -296,13 +296,13 @@ Blockly.ContextMenu.blockDuplicateOption = function(block, event) {
  * @return {!Object} A menu option, containing text, enabled, and a callback.
  * @package
  */
-Blockly.ContextMenu.blockCopyToClipboardOption = function(block, event) {
+Blockly.ContextMenu.blockCopyToClipboardOption = function(block) {
   // inspired by SteveScratch
   var copyOption = {
     text: Blockly.Msg.COPY_TO_CLIPBOARD,
     enabled: true,
     callback:
-        Blockly.scratchBlocksUtils.copyToClipboardCallback(block, event)
+        Blockly.scratchBlocksUtils.copyToClipboardCallback(block)
   };
   return copyOption;
 };
@@ -314,13 +314,13 @@ Blockly.ContextMenu.blockCopyToClipboardOption = function(block, event) {
  * @return {!Object} A menu option, containing text, enabled, and a callback.
  * @package
  */
-Blockly.ContextMenu.blockPasteFromClipboardOption = function(block, event) {
+Blockly.ContextMenu.blockPasteFromClipboardOption = function(workspace, event) {
   // inspired by SteveScratch
   var pasteOption = {
     text: Blockly.Msg.PASTE_FROM_CLIPBOARD,
     enabled: true,
     callback:
-        Blockly.scratchBlocksUtils.pasteFromClipboardCallback(block, event)
+        Blockly.scratchBlocksUtils.pasteFromClipboardCallback(workspace, event)
   };
   return pasteOption;
 };
