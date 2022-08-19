@@ -18,8 +18,6 @@ Blockly.ScratchMsgs.locales["en"] =
     "CONTROL_STOP_THIS": "this script",
     "CONTROL_STOP_OTHER": "other scripts in sprite",
     "CONTROL_WAIT": "wait %1 seconds",
-    "CONTROL_YIELD": "yield",
-    "CONTROL_BREAKPOINT": "breakpoint",
     "CONTROL_WAITUNTIL": "wait until %1",
     "CONTROL_REPEATUNTIL": "repeat until %1",
     "CONTROL_WHILE": "while %1",
@@ -290,27 +288,27 @@ Blockly.ScratchMsgs.locales["en"] =
     "COLOUR_BRIGHTNESS_LABEL": "Brightness",
     "CHANGE_VALUE_TITLE": "Change value:",
     "RENAME_VARIABLE": "Rename variable",
-    "RENAME_VARIABLE_TITLE": "Rename all '%1' variables to:",
+    "RENAME_VARIABLE_TITLE": "Rename all \"%1\" variables to:",
     "RENAME_VARIABLE_MODAL_TITLE": "Rename Variable",
     "NEW_VARIABLE": "Make a Variable",
     "NEW_VARIABLE_TITLE": "New variable name:",
     "VARIABLE_MODAL_TITLE": "New Variable",
-    "VARIABLE_ALREADY_EXISTS": "A variable named '%1' already exists.",
-    "VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE": "A variable named '%1' already exists for another variable of type '%2'.",
-    "DELETE_VARIABLE_CONFIRMATION": "Delete %1 uses of the '%2' variable?",
-    "CANNOT_DELETE_VARIABLE_PROCEDURE": "Can't delete the variable '%1' because it's part of the definition of the function '%2'",
-    "DELETE_VARIABLE": "Delete the '%1' variable",
+    "VARIABLE_ALREADY_EXISTS": "A variable named \"%1\" already exists.",
+    "VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE": "A variable named \"%1\" already exists for another variable of type \"%2\".",
+    "DELETE_VARIABLE_CONFIRMATION": "Delete %1 uses of the \"%2\" variable?",
+    "CANNOT_DELETE_VARIABLE_PROCEDURE": "Can't delete the variable \"%1\" because it's part of the definition of the function \"%2\"",
+    "DELETE_VARIABLE": "Delete the \"%1\" variable",
     "NEW_PROCEDURE": "Make a Function",
-    "PROCEDURE_ALREADY_EXISTS": "A function named '%1' already exists.",
+    "PROCEDURE_ALREADY_EXISTS": "A function named \"%1\" already exists.",
     "PROCEDURE_DEFAULT_NAME": "function name",
     "NEW_LIST": "Make a List",
     "NEW_LIST_TITLE": "New list name:",
     "LIST_MODAL_TITLE": "New List",
-    "LIST_ALREADY_EXISTS": "A list named '%1' already exists.",
-    "RENAME_LIST_TITLE": "Rename all '%1' lists to:",
+    "LIST_ALREADY_EXISTS": "A list named \"%1\" already exists.",
+    "RENAME_LIST_TITLE": "Rename all \"%1\" lists to:",
     "RENAME_LIST_MODAL_TITLE": "Rename List",
     "DEFAULT_LIST_ITEM": "thing",
-    "DELETE_LIST": "Delete the '%1' list",
+    "DELETE_LIST": "Delete the \"%1\" list",
     "RENAME_LIST": "Rename list",
     "NEW_BROADCAST_MESSAGE": "New message",
     "NEW_BROADCAST_MESSAGE_TITLE": "New message name:",
@@ -329,7 +327,9 @@ Blockly.ScratchMsgs.locales["en"] =
     "SENSING_JOYSTICKX": "joystick x axis",
     "SENSING_JOYSTICKY": "joystick y axis",
     "SENSING_JOYSTICK_DISTANCE": "joystick distance",
-    "CONTROL_SUSPEND": "suspend thread"
+    "SENSING_COLORAT": "get the color at (x: %1, y: %2)",
+    "COPY_TO_CLIPBOARD": "Copy to Clipboard",
+    "PASTE_FROM_CLIPBOARD": "Paste from Clipboard"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn"] =
@@ -645,12 +645,14 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "PROCEDURE_USED": "要删除函数定义，需先删除引用该函数的所有积木",
     "CATEGORY_FUNCTIONS": "函数",
     "OBSOLETED_BLOCKS": "弃用的积木",
-    "CONTROL_YIELD": "挂起线程",
     "CONTROL_BREAKPOINT": "断点",
     "CONTROL_SUSPEND": "挂起线程",
     "SENSING_JOYSTICKX": "摇杆 x 偏移",
     "SENSING_JOYSTICKY": "摇杆 y 偏移",
-    "SENSING_JOYSTICK_DISTANCE": "摇杆距离"
+    "SENSING_JOYSTICK_DISTANCE": "摇杆距离",
+    "SENSING_COLORAT": "获取在点 (x: %1, y: %2) 的值",
+    "COPY_TO_CLIPBOARD": "复制到剪贴板",
+    "PASTE_FROM_CLIPBOARD": "从剪贴板粘贴"
 };
 
 Blockly.ScratchMsgs.locales["zh-tw"] =
@@ -968,9 +970,12 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "OBSOLETED_BLOCKS": "弃用的積木",
     "CONTROL_BREAKPOINT": "斷點",
     "CONTROL_SUSPEND": "掛起線程",
-    "SENSING_JOYSTICKX": "joystick x axis",
-    "SENSING_JOYSTICKY": "joystick y axis",
-    "SENSING_JOYSTICK_DISTANCE": "joystick distance"
+    "SENSING_JOYSTICKX": "搖桿x軸",
+    "SENSING_JOYSTICKY": "搖桿y軸",
+    "SENSING_JOYSTICK_DISTANCE": "搖杆位置",
+    "SENSING_COLORAT": "獲取在點 (x: %1, y:%2) 的顏色",
+    "COPY_TO_CLIPBOARD": "複製到剪貼板",
+    "PASTE_FROM_CLIPBOARD": "從剪貼板粘貼"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
@@ -1286,11 +1291,13 @@ Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
     "PROCEDURE_USED": "废掉这个宝典前请废掉她的所有臣民",
     "CATEGORY_FUNCTIONS": "宝典",
     "OBSOLETED_BLOCKS": "遗忘之地",
-    "CONTROL_YIELD": "yield",
-    "CONTROL_BREAKPOINT": "breakpoint",
-    "CONTROL_SUSPEND": "suspend thread",
-    "SENSING_JOYSTICKX": "joystick x axis",
-    "SENSING_JOYSTICKY": "joystick y axis",
-    "SENSING_JOYSTICK_DISTANCE": "joystick distance"
+    "CONTROL_BREAKPOINT": "打破点子",
+    "CONTROL_SUSPEND": "冻住线程",
+    "SENSING_JOYSTICKX": "咬杆 x 偏移",
+    "SENSING_JOYSTICKY": "咬杆 y 偏移",
+    "SENSING_JOYSTICK_DISTANCE": "咬杆距离",
+    "SENSING_COLORAT": "给 (x: %1, y: %2) 一点颜色看看",
+    "COPY_TO_CLIPBOARD": "打包到马车上",
+    "PASTE_FROM_CLIPBOARD": "从马车上卸货"
 };
 // End of combined translations
