@@ -268,8 +268,6 @@ Blockly.ScratchMsgs.locales["en"] =
     "CATEGORY_VARIABLES": "Variables",
     "CATEGORY_MYBLOCKS": "My Blocks",
     "DUPLICATE": "Duplicate",
-    "COPY_TO_CLIPBOARD": "Copy to Clipboard",
-    "PASTE_FROM_CLIPBOARD": "Paste from Clipboard",
     "DELETE": "Delete",
     "ADD_COMMENT": "Add Comment",
     "REMOVE_COMMENT": "Remove Comment",
@@ -328,9 +326,9 @@ Blockly.ScratchMsgs.locales["en"] =
     "SENSING_JOYSTICKY": "joystick y axis",
     "SENSING_JOYSTICK_DISTANCE": "joystick distance",
     "SENSING_COLORAT": "get the color at (x: %1, y: %2)",
-    "COPY_IMAGE": "Copy Block Image",
     "COPY_TO_CLIPBOARD": "Copy to Clipboard",
-    "PASTE_FROM_CLIPBOARD": "Paste from Clipboard"
+    "PASTE_FROM_CLIPBOARD": "Paste from Clipboard",
+    "COPY_IMAGE": "Copy Block Image"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn"] =
@@ -653,7 +651,8 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "SENSING_JOYSTICK_DISTANCE": "摇杆距离",
     "SENSING_COLORAT": "获取在点 (x: %1, y: %2) 的值",
     "COPY_TO_CLIPBOARD": "复制到剪贴板",
-    "PASTE_FROM_CLIPBOARD": "从剪贴板粘贴"
+    "PASTE_FROM_CLIPBOARD": "从剪贴板粘贴",
+    "COPY_IMAGE": "复制积木图片"
 };
 
 Blockly.ScratchMsgs.locales["zh-tw"] =
@@ -976,7 +975,8 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "SENSING_JOYSTICK_DISTANCE": "搖杆位置",
     "SENSING_COLORAT": "獲取在點 (x: %1, y:%2) 的顏色",
     "COPY_TO_CLIPBOARD": "複製到剪貼板",
-    "PASTE_FROM_CLIPBOARD": "從剪貼板粘貼"
+    "PASTE_FROM_CLIPBOARD": "從剪貼板粘貼",
+    "COPY_IMAGE": "給塊塊拍個照"
 };
 
 Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
@@ -1299,6 +1299,7 @@ Blockly.ScratchMsgs.locales["zh-cn-chunibyo"] =
     "SENSING_JOYSTICK_DISTANCE": "咬杆距离",
     "SENSING_COLORAT": "给 (x: %1, y: %2) 一点颜色看看",
     "COPY_TO_CLIPBOARD": "打包到马车上",
-    "PASTE_FROM_CLIPBOARD": "从马车上卸货"
+    "PASTE_FROM_CLIPBOARD": "从马车上卸货",
+    "COPY_IMAGE": "给块块拍个照"
 };
 // End of combined translations
