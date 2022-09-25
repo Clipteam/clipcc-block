@@ -781,3 +781,31 @@ Blockly.Blocks['sensing_turnoffturbomode'] = {
     });
   }
 };
+
+Blockly.Blocks['sensing_stage_width'] = {
+  /**
+   * Block to report stage width
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_STAGE_WIDTH,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_stage_height'] = {
+  /**
+   * Block to report stage height
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_STAGE_HEIGHT,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};

@@ -295,6 +295,8 @@ Blockly.Msg.SENSING_OPERATINGSYSTEM = 'operating system';
 Blockly.Msg.SENSING_CLIPCC_VERSION = 'ClipCC version';
 Blockly.Msg.SENSING_TURNONTURBOMODE = 'turn on turbo mode';
 Blockly.Msg.SENSING_TURNOFFTURBOMODE = 'turn off turbo mode';
+Blockly.Msg.SENSING_STAGE_WIDTH = 'stage width';
+Blockly.Msg.SENSING_STAGE_HEIGHT = 'stage height';
 
 // Sound blocks
 Blockly.Msg.SOUND_PLAY = 'start sound %1';
